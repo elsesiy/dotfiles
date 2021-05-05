@@ -1,17 +1,22 @@
 format = "$all"
 
+[aws]
+disabled = true
+
 [battery]
 full_symbol = "🔋"
 charging_symbol = "⚡️"
 discharging_symbol = "💀"
 
-# default
-# [[battery.display]]
-# threshold = 10
-# style = "bold red"
-
-# [kubernetes]
-# disabled = false
-
 [gcloud]
 disabled = true
+
+[kubernetes]
+disabled = false
+
+[shlvl]
+disabled = false
+threshold = 3
+
+[status]
+disabled = false
