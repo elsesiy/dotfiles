@@ -1,0 +1,17 @@
+format = "$all"
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+
+# default
+# [[battery.display]]
+# threshold = 10
+# style = "bold red"
+
+# [kubernetes]
+# disabled = false
+
+[gcloud]
+disabled = true

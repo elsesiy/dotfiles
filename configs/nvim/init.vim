@@ -1,0 +1,9 @@
+source $HOME/.config/nvim/plugins.vim
+source $HOME/.config/nvim/settings.vim
+source $HOME/.config/nvim/appearance.vim
+source $HOME/.config/nvim/fzf.vim
+source $HOME/.config/nvim/git.vim
+source $HOME/.config/nvim/coc.vim
+source $HOME/.config/nvim/langs.vim
+source $HOME/.config/nvim/keys.vim
+source $HOME/.config/nvim/nerdtree.vim
