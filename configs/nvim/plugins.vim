@@ -7,6 +7,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ap/vim-css-color'
 Plug 'ryanoasis/vim-devicons'
+Plug 'machakann/vim-highlightedyank'
 
 " Completion
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -15,7 +16,6 @@ Plug 'airblade/vim-rooter'
 
 " Niceties
 Plug 'tpope/vim-commentary'
-" Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'mg979/vim-visual-multi'
