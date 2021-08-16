@@ -23,7 +23,6 @@ if (has("termguicolors"))
     hi LineNr ctermbg=NONE guibg=NONE
 endif
 
-
 " AIRLINE
 
 " enable tabline
