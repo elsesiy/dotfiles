@@ -16,3 +16,10 @@ From the repo root:
     stow --target=/Users/$USER/.config configs
 
 This will automatically symlink all contents in configs to `~/.config`.
+
+
+### Treesitter
+
+Install language servers and enable treesitter via:
+
+    :TSInstall <lang>

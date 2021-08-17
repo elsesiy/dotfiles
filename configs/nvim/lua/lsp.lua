@@ -14,6 +14,9 @@ require'lspconfig'.gopls.setup{
     },
 }
 
+require'lspconfig'.terraformls.setup{ on_attach=on_attach }
+require'lspconfig'.bashls.setup{ on_attach=on_attach }
+
 -- lsp saga
 local saga = require 'lspsaga'
 
