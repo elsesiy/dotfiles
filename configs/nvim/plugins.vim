@@ -13,6 +13,8 @@ Plug 'folke/lsp-colors.nvim', { 'branch': 'main' }
 " Completion
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make', 'branch': 'main' }
+Plug 'ray-x/lsp_signature.nvim'
 
 " Niceties
 Plug 'tpope/vim-commentary'
@@ -21,7 +23,7 @@ Plug 'tpope/vim-endwise'
 Plug 'mg979/vim-visual-multi'
 
 " Git
-Plug 'mhinz/vim-signify'
+Plug 'lewis6991/gitsigns.nvim', { 'branch': 'main' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/gv.vim'

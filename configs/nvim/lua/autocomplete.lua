@@ -33,8 +33,13 @@ require'compe'.setup {
   };
 }
 
+-- :h nvim-treesitter-modules
 require'nvim-treesitter.configs'.setup {
   highlight = { enable = true },
   incremental_selection = { enable = true },
   textobjects = { enable = true },
 }
+
+-- https://github.com/nvim-telescope/telescope-fzf-native.nvim#telescope-setup-and-configuration
+require('telescope').setup {}
+require('telescope').load_extension('fzf')

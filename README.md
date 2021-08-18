@@ -17,7 +17,6 @@ From the repo root:
 
 This will automatically symlink all contents in configs to `~/.config`.
 
-
 ### Treesitter
 
 Install language servers and enable treesitter via:

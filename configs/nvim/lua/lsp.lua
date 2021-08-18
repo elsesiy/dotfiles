@@ -1,4 +1,4 @@
--- lsp config
+-- lsp configs
 require'lspconfig'.rust_analyzer.setup{ on_attach=on_attach }
 
 require'lspconfig'.gopls.setup{
@@ -27,3 +27,6 @@ saga.init_lsp_saga {
   infor_sign = '',
   border_style = "round",
 }
+
+-- lsp signature https://github.com/ray-x/lsp_signature.nvim#attach-the-plugin
+require "lsp_signature".setup()
