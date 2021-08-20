@@ -9,6 +9,7 @@ Plug 'ap/vim-css-color'
 Plug 'ryanoasis/vim-devicons'
 Plug 'machakann/vim-highlightedyank'
 Plug 'folke/lsp-colors.nvim', { 'branch': 'main' }
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Completion
 Plug 'nvim-lua/plenary.nvim'
@@ -19,7 +20,7 @@ Plug 'ray-x/lsp_signature.nvim'
 " Niceties
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-endwise'
+" Plug 'tpope/vim-endwise' - breaks compe
 Plug 'mg979/vim-visual-multi'
 
 " Git
@@ -33,6 +34,7 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+Plug 'onsails/lspkind-nvim'
 
 " Syntactic language support
 Plug 'rust-lang/rust.vim'
