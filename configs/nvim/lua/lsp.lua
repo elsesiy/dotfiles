@@ -17,18 +17,10 @@ require'lspconfig'.gopls.setup{
 require'lspconfig'.terraformls.setup{ on_attach=on_attach }
 require'lspconfig'.bashls.setup{ on_attach=on_attach }
 
--- lsp saga
-local saga = require 'lspsaga'
+-- https://github.com/ray-x/navigator.lua#sample-vimrc-turning-your-neovim-into-a-full-featured-ide
+require'navigator'.setup()
 
-saga.init_lsp_saga {
-    error_sign = '',
-    warn_sign = '',
-    hint_sign = '',
-    infor_sign = '',
-    border_style = "round",
-}
-
--- lsp signature https://github.com/ray-x/lsp_signature.nvim#attach-the-plugin
+-- https://github.com/ray-x/lsp_signature.nvim#attach-the-plugin
 require'lsp_signature'.setup()
 
 -- add pictograms to built-in lsp https://github.com/onsails/lspkind-nvim

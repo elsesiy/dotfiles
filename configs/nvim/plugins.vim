@@ -31,10 +31,12 @@ Plug 'junegunn/gv.vim'
 
 " Semantic language support
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'hrsh7th/vim-vsnip'
-Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+Plug 'ray-x/guihua.lua', {'do': 'cd lua/fzy && make' }
+Plug 'ray-x/navigator.lua'
 Plug 'onsails/lspkind-nvim'
 
 " Syntactic language support
