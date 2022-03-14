@@ -6,7 +6,7 @@ set hidden                              " Required to keep multiple buffers open
 set nowrap                              " Display long lines as just one line
 set pumheight=10                        " Makes popup menu smaller
 set fileencoding=utf-8                  " The encoding written to file
-set ruler                          	" Show the cursor position all the time
+set ruler                          	    " Show the cursor position all the time
 set cmdheight=2                         " More space for displaying messages
 set iskeyword+=-                      	" treat dash separated words as a word text object
 set mouse=a                             " Enable your mouse
@@ -31,8 +31,6 @@ set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 
-" Compe
-set completeopt=menuone,noselect        " Compe, see https://github.com/hrsh7th/nvim-compe#prerequisite
-let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+set completeopt=menu,menuone,noselect   " nvim-cmp
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
