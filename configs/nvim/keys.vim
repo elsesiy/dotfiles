@@ -25,7 +25,6 @@ vnoremap <space>/ :Commentary<CR>
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 
-
 " vsnip
 " Expand
 imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'

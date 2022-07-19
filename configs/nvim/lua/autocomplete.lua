@@ -73,6 +73,10 @@ cmp.setup.cmdline(':', {
   })
 })
 
+if vim.o.ft == 'clap_input' and vim.o.ft == 'guihua' and vim.o.ft == 'guihua_rust' then
+  cmp.setup.buffer { completion = {enable = false} }
+end
+
 -- :h nvim-treesitter-modules
 require'nvim-treesitter.configs'.setup {
   highlight = { enable = true },

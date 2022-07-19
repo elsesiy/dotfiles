@@ -18,9 +18,9 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make', 'branch': 'main
 Plug 'ray-x/lsp_signature.nvim'
 
 " Niceties
-Plug 'tpope/vim-commentary'
+Plug 'windwp/nvim-autopairs'
+Plug 'numToStr/Comment.nvim'
 Plug 'tpope/vim-surround'
-" Plug 'tpope/vim-endwise' - breaks compe
 Plug 'mg979/vim-visual-multi'
 
 " Git
@@ -31,6 +31,7 @@ Plug 'junegunn/gv.vim'
 
 " Semantic language support
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp', { 'branch': 'main' }
@@ -39,6 +40,7 @@ Plug 'hrsh7th/cmp-path', { 'branch': 'main' }
 Plug 'hrsh7th/cmp-cmdline', { 'branch': 'main' }
 Plug 'hrsh7th/cmp-git', { 'branch': 'main' }
 Plug 'hrsh7th/nvim-cmp', { 'branch': 'main' }
+
 " Vsnip
 Plug 'hrsh7th/cmp-vsnip', { 'branch': 'main' }
 Plug 'hrsh7th/vim-vsnip'

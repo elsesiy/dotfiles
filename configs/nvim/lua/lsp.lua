@@ -30,10 +30,10 @@ require'lspconfig'.bashls.setup{
 }
 
 -- https://github.com/ray-x/navigator.lua#sample-vimrc-turning-your-neovim-into-a-full-featured-ide
--- require'navigator'.setup()
+require'navigator'.setup()
 
 -- https://github.com/ray-x/lsp_signature.nvim#attach-the-plugin
--- require'lsp_signature'.setup()
+require'lsp_signature'.setup()
 
 -- add pictograms to built-in lsp https://github.com/onsails/lspkind-nvim
 require'lspkind'.init()
@@ -42,3 +42,11 @@ require'lspkind'.init()
 require'indent_blankline'.setup {
     buftype_exclude = {"help", "terminal"}
 }
+
+-- https://github.com/numToStr/Comment.nvim#-installation
+require'Comment'.setup()
+
+-- https://github.com/windwp/nvim-autopairs#vim-plug
+require("nvim-autopairs").setup({
+    disable_filetype = { "TelescopePrompt" , "guihua", "guihua_rust", "clap_input" },
+})
