@@ -1,0 +1,8 @@
+require('user.settings')
+require('user.plugins')
+require('user.keymaps')
+require('lsp.config')
+require('lsp.autocomplete')
+require('lsp.langs')
+require('plugins.lualine')
+require('plugins.nvimtree')
