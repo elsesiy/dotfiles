@@ -1,13 +1,17 @@
 -- https://github.com/hrsh7th/nvim-cmp#recommended-configuration
-local cmp = require'cmp'
-local t = function(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
+
+local has_words_before = function()
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
+
+local luasnip = require('luasnip')
+local cmp = require('cmp')
 
 cmp.setup({
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
+      require('luasnip').lsp_expand(args.body)
     end,
   },
   mapping = {
@@ -21,30 +25,29 @@ cmp.setup({
     }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ['<Tab>'] = cmp.mapping(function(fallback)
-       if cmp.visible() then
-         cmp.select_next_item()
-       elseif vim.fn["vsnip#available"](1) then
-         vim.fn.feedkeys(t('<Plug>(vsnip-expand-or-jump)', ''))
-       else
-         fallback()
-       end
-     end, {
-       "i",
-       "s"
-     }),
-     ['<S-Tab>'] = function(fallback)
-       if cmp.visible() then
-         cmp.select_prev_item()
-       elseif vim.fn["vsnip#jumpable"](-1) then
-         vim.fn.feedkeys(t('<Plug>(vsnip-jump-prev)', ''))
-       else
-         fallback()
-       end
-     end,
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      elseif has_words_before() then
+        cmp.complete()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'vsnip' },
+    { name = 'luasnip' },
   }, {
     { name = 'buffer' },
   })
@@ -59,13 +62,15 @@ cmp.setup.filetype('gitcommit', {
   })
 })
 
-cmp.setup.cmdline('/', {
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'buffer' }
   }
 })
 
 cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
     { name = 'path' }
   }, {
@@ -88,9 +93,11 @@ require'nvim-treesitter.configs'.setup {
 require('telescope').setup {
     defaults = {
         file_ignore_patterns = {
-            "node_modules",
-            "vendor"
+            'node_modules',
+            'vendor'
         }
     }
 }
 require('telescope').load_extension('fzf')
+
+require('luasnip.loaders.from_vscode').lazy_load()

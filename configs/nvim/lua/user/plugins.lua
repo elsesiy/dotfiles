@@ -67,14 +67,18 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-git'
   use 'hrsh7th/nvim-cmp'
   
-  -- Vsnip
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
-  use {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}
+  -- Luasnip
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+  use "rafamadriz/friendly-snippets"
 
   -- https://github.com/ray-x/navigator.lua#sample-vimrc-turning-your-neovim-into-a-full-featured-ide
   use {
     'ray-x/navigator.lua',
+    requires = {
+        { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+        { 'neovim/nvim-lspconfig' },
+    },
     config = function() require'navigator'.setup() end
   }
 
@@ -99,6 +103,9 @@ return require('packer').startup(function(use)
 
   -- Undo
   use 'mbbill/undotree'
+
+  -- Misc
+  use 'ThePrimeagen/vim-be-good'
 
   if packer_bootstrap then
     require('packer').sync()
