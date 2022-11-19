@@ -89,7 +89,7 @@ return require('packer').startup(function(use)
   }
   
   -- Syntactic language support
-  use 'rust-lang/rust.vim'
+  use 'simrat39/rust-tools.nvim'
   use {'fatih/vim-go', cmd = ':GoUpdateBinaries'}
   
   -- Nav

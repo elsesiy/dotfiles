@@ -1,14 +1,14 @@
 -- lsp configs
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-require'lspconfig'.rust_analyzer.setup{
-    capabilities=capabilities,
-    on_attach=on_attach
-}
+local lspconfig = require "lspconfig"
+local util = require "lspconfig/util"
 
-require'lspconfig'.gopls.setup{
+lspconfig.gopls.setup{
     on_attach=on_attach,
     capabilities=capabilities,
     cmd = {"gopls", "serve"},
+    filetypes = {"go", "gomod"},
+    root_dir = util.root_pattern("go.work", "go.mod", ".git"),
     settings = {
         gopls = {
             analyses = {
@@ -17,16 +17,26 @@ require'lspconfig'.gopls.setup{
             staticcheck = true,
         },
     },
+    init_options = {
+      usePlaceholders = true,
+    }
 }
 
-require'lspconfig'.terraformls.setup{
+lspconfig.terraformls.setup{
     capabilities=capabilities,
     on_attach=on_attach
 }
 
-require'lspconfig'.bashls.setup{
+lspconfig.bashls.setup{
     capabilities=capabilities,
     on_attach=on_attach
+}
+
+require'rust-tools'.setup {
+  server = {
+    capabilities=capabilities,
+    on_attach=on_attach
+  },
 }
 
 -- add | indent https://github.com/lukas-reineke/indent-blankline.nvim
