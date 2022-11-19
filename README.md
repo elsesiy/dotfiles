@@ -13,12 +13,29 @@ I'm using [stow](https://www.gnu.org/software/stow/) to manage my configs via sy
 
 From the repo root:
 
-    stow --target=/Users/$USER/.config configs
+```
+stow --target=/Users/$USER/.config configs
+```
 
 This will automatically symlink all contents in configs to `~/.config`.
 
+### LSPs
+
+Install required language servers via
+
+```
+brew install bash-language-server
+brew install yaml-language-server
+brew install terraform-ls
+brew install rust-analyzer
+brew install gopls
+```
+
 ### Treesitter
 
-Install language servers and enable treesitter via:
+Enable treesitter via
 
-    :TSInstall <lang>
+```
+:TSInstall <lang>
+```
+
