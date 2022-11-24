@@ -54,6 +54,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
   use 'junegunn/gv.vim'
+  use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
   
   -- Semantic language support
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
@@ -66,6 +67,10 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/cmp-git'
   use 'hrsh7th/nvim-cmp'
+  use {
+    'j-hui/fidget.nvim', -- Useful status updates for LSP
+     config = function() require'fidget'.setup() end
+  }
   
   -- Luasnip
   use 'L3MON4D3/LuaSnip'
