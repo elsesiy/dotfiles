@@ -17,7 +17,12 @@ vim.keymap.set('n', '<C-l>', '<C-w>l')
 vim.keymap.set('n', '<Leader>o', 'o<Esc>^Da')
 vim.keymap.set('n', '<Leader>O', 'O<Esc>^Da')
 
--- nerd tree
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+
+-- nvim tree
 vim.keymap.set('n', '<C-f>', ':NvimTreeFocus<CR>')
 vim.keymap.set('n', '<C-t>', ':NvimTreeToggle<CR>')
 
