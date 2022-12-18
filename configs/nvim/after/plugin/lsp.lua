@@ -45,11 +45,13 @@ require'rust-tools'.setup {
   },
 }
 
--- add | indent https://github.com/lukas-reineke/indent-blankline.nvim
-require'indent_blankline'.setup {
-    char = "",
-    context_char = "│",
-    show_current_context = true,
-    show_current_context_start = true,
-    filetype_exclude = {'NvimTree'},
-}
+-- https://github.com/ray-x/go.nvim#installation
+local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+   require('go.format').goimport()
+  end,
+  group = format_sync_grp,
+})
+require('go').setup()
