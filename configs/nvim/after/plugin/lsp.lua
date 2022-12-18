@@ -35,7 +35,15 @@ lspconfig.bashls.setup{
 
 lspconfig.yamlls.setup {
     capabilities=capabilities,
-    on_attach=on_attach
+    on_attach=on_attach,
+    settings = {
+        yaml = {
+            format = {
+                enable = false,
+                singleQuote = true,
+            },
+        },
+    },
 }
 
 require'rust-tools'.setup {
