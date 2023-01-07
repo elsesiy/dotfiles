@@ -18,24 +18,3 @@ stow --target=/Users/$USER/.config configs
 ```
 
 This will automatically symlink all contents in configs to `~/.config`.
-
-### LSPs
-
-Install required language servers via
-
-```
-brew install bash-language-server
-brew install yaml-language-server
-brew install terraform-ls
-brew install rust-analyzer
-brew install gopls
-```
-
-### Treesitter
-
-Enable treesitter via
-
-```
-:TSInstall <lang>
-```
-

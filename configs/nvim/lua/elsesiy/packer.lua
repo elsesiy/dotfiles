@@ -1,8 +1,8 @@
 local ensure_packer = function()
   local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
     vim.cmd [[packadd packer.nvim]]
     return true
   end
@@ -26,11 +26,11 @@ return require('packer').startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-  
+
   -- Completion
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- https://github.com/ray-x/lsp_signature.nvim#attach-the-plugin
   use {
@@ -45,7 +45,7 @@ return require('packer').startup(function(use)
   }
   use 'tpope/vim-surround'
   use 'mg979/vim-visual-multi'
-  
+
   -- Git
   use {
     'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
@@ -55,9 +55,9 @@ return require('packer').startup(function(use)
   use 'tpope/vim-rhubarb'
   use 'junegunn/gv.vim'
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
-  
+
   -- Semantic language support
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/nvim-treesitter-context'
   use 'nvim-treesitter/nvim-treesitter-refactor'
   use 'neovim/nvim-lspconfig'
@@ -69,9 +69,11 @@ return require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use {
     'j-hui/fidget.nvim', -- Useful status updates for LSP
-     config = function() require'fidget'.setup() end
+    config = function() require 'fidget'.setup() end
   }
-  
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+
   -- Luasnip
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
@@ -81,22 +83,22 @@ return require('packer').startup(function(use)
   use {
     'ray-x/navigator.lua',
     requires = {
-        { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
-        { 'neovim/nvim-lspconfig' },
+      { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+      { 'neovim/nvim-lspconfig' },
     },
-    config = function() require'navigator'.setup() end
+    config = function() require 'navigator'.setup() end
   }
 
   -- add pictograms to built-in lsp https://github.com/onsails/lspkind-nvim
   use {
     'onsails/lspkind-nvim',
-    config = function() require'lspkind'.init() end
+    config = function() require 'lspkind'.init() end
   }
-  
+
   -- Syntactic language support
   use 'simrat39/rust-tools.nvim'
   use 'ray-x/go.nvim'
-  
+
   -- Nav
   -- use 'preservim/nerdtree'
   use {

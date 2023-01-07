@@ -83,25 +83,7 @@ cmp.setup.cmdline(':', {
 })
 
 if vim.o.ft == 'clap_input' and vim.o.ft == 'guihua' and vim.o.ft == 'guihua_rust' then
-  cmp.setup.buffer { completion = {enable = false} }
+  cmp.setup.buffer { completion = { enable = false } }
 end
-
--- :h nvim-treesitter-modules
-require'nvim-treesitter.configs'.setup {
-  highlight = { enable = true },
-  incremental_selection = { enable = true },
-  textobjects = { enable = true },
-}
-
--- https://github.com/nvim-telescope/telescope-fzf-native.nvim#telescope-setup-and-configuration
-require('telescope').setup {
-    defaults = {
-        file_ignore_patterns = {
-            'node_modules',
-            'vendor'
-        }
-    }
-}
-require('telescope').load_extension('fzf')
 
 require('luasnip.loaders.from_vscode').lazy_load()
