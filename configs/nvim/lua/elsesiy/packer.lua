@@ -74,6 +74,12 @@ return require('packer').startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
 
+  -- Better search motions
+  use {
+    'ggandor/leap.nvim',
+    requires = { 'tpope/vim-repeat' }
+  }
+
   -- Luasnip
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
@@ -98,6 +104,8 @@ return require('packer').startup(function(use)
   -- Syntactic language support
   use 'simrat39/rust-tools.nvim'
   use 'ray-x/go.nvim'
+  -- currently attaches 2 clients, needs fixing
+  use 'mfussenegger/nvim-jdtls'
 
   -- Nav
   -- use 'preservim/nerdtree'
