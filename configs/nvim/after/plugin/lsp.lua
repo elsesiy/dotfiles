@@ -1,14 +1,7 @@
 -- lsp configs
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lspconfig = require "lspconfig"
-local util = require "lspconfig/util"
-
-lspconfig.gopls.setup {
-    capabilities = capabilities,
-    cmd = { "gopls", "serve" },
-    filetypes = { "go", "gomod" },
-    root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-    settings = {
+local servers = {
+    bashls = {},
+    gopls = {
         gopls = {
             analyses = {
                 unusedparams = true,
@@ -16,22 +9,16 @@ lspconfig.gopls.setup {
             staticcheck = true,
         },
     },
-    init_options = {
-        usePlaceholders = true,
-    }
-}
-
-lspconfig.terraformls.setup {
-    capabilities = capabilities,
-}
-
-lspconfig.bashls.setup {
-    capabilities = capabilities,
-}
-
-lspconfig.yamlls.setup {
-    capabilities = capabilities,
-    settings = {
+    jdtls = {},
+    terraformls = {},
+    lua_ls = {
+        Lua = {
+            workspace = { checkThirdParty = false },
+            telemetry = { enable = false },
+        },
+    },
+    rust_analyzer = {},
+    yamlls = {
         yaml = {
             format = {
                 enable = false,
@@ -39,6 +26,25 @@ lspconfig.yamlls.setup {
             },
         },
     },
+}
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+require("mason").setup()
+local mason_lspconfig = require 'mason-lspconfig'
+
+mason_lspconfig.setup {
+    ensure_installed = vim.tbl_keys(servers),
+}
+
+mason_lspconfig.setup_handlers {
+    function(server_name)
+        require('lspconfig')[server_name].setup {
+            capabilities = capabilities,
+            settings = servers[server_name],
+        }
+    end,
 }
 
 require 'rust-tools'.setup {
@@ -56,4 +62,3 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     end,
     group = format_sync_grp,
 })
-require('go').setup()

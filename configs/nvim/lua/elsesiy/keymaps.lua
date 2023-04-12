@@ -28,6 +28,7 @@ vim.keymap.set('n', '<C-t>', ':NvimTreeToggle<CR>')
 
 -- telescope
 vim.keymap.set('n', '<Leader>ff', '<Cmd>Telescope find_files<CR>')
+vim.keymap.set('n', '<Leader>fd', '<Cmd>Telescope diagnostics<CR>')
 vim.keymap.set('n', '<Leader>fg', '<Cmd>Telescope git_commits<CR>')
 vim.keymap.set('n', '<Leader>fz', '<Cmd>Telescope live_grep<CR>')
 vim.keymap.set('n', '<Leader>fb', '<Cmd>Telescope buffers<CR>')

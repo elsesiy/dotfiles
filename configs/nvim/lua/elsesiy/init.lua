@@ -1,3 +1,3 @@
 require('elsesiy.settings')
-require('elsesiy.packer')
+require('elsesiy.lazy')
 require('elsesiy.keymaps')
