@@ -14,6 +14,10 @@ local plugins = {
 		opts = overrides.telescope,
 	},
 	{
+		"nvim-tree/nvim-tree.lua",
+		opts = overrides.nvimtree
+	},
+	{
 		"mfussenegger/nvim-dap",
 		init = function()
 			require("core.utils").load_mappings("dap")

@@ -48,12 +48,17 @@ M.treesitter = {
 }
 
 M.telescope = {
-  defaults = {
-    file_ignore_patterns = {
-      'node_modules',
-      'vendor'
-    }
-  }
+	defaults = {
+		file_ignore_patterns = {
+			"node_modules",
+			"vendor",
+		},
+	},
+}
+
+M.nvimtree = {
+	disable_netrw = false,
+	hijack_netrw = false,
 }
 
 return M
