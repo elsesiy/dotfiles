@@ -6,12 +6,9 @@ local util = require("lspconfig/util")
 
 local servers = {
 	"bashls",
-	"gopls",
 	"jdtls",
 	"terraformls",
-	"lua_ls",
 	"rust_analyzer",
-	"yamlls",
 }
 
 for _, lsp in ipairs(servers) do
@@ -22,6 +19,8 @@ for _, lsp in ipairs(servers) do
 end
 
 lspconfig.gopls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
 	cmd = { "gopls" },
 	filetypes = { "go", "gomod", "gowork", "gotmpl" },
 	root_dir = util.root_pattern("go.work", "go.mod", ".git"),
@@ -38,6 +37,8 @@ lspconfig.gopls.setup({
 })
 
 lspconfig.lua_ls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
 	Lua = {
 		workspace = { checkThirdParty = false },
 		telemetry = { enable = false },
@@ -45,6 +46,8 @@ lspconfig.lua_ls.setup({
 })
 
 lspconfig.yamlls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
 	yaml = {
 		format = {
 			enable = false,
