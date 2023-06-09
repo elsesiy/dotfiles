@@ -1,6 +1,6 @@
 local M = {}
 
-M.custom = {
+M.general = {
 	n = {
 		["<Leader>u"] = {
 			":UndotreeToggle<CR>",

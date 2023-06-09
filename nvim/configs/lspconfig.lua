@@ -5,32 +5,13 @@ local lspconfig = require("lspconfig")
 local util = require("lspconfig/util")
 
 local servers = {
-	bashls = {},
-	gopls = {
-		gopls = {
-			analyses = {
-				unusedparams = true,
-			},
-			staticcheck = true,
-		},
-	},
-	jdtls = {},
-	terraformls = {},
-	lua_ls = {
-	    Lua = {
-	        workspace = { checkThirdParty = false },
-	        telemetry = { enable = false },
-	    },
-	},
-	rust_analyzer = {},
-	yamlls = {
-		yaml = {
-			format = {
-				enable = false,
-				singleQuote = true,
-			},
-		},
-	},
+	"bashls",
+	"gopls",
+	"jdtls",
+	"terraformls",
+	"lua_ls",
+	"rust_analyzer",
+	"yamlls",
 }
 
 for _, lsp in ipairs(servers) do
@@ -51,6 +32,23 @@ lspconfig.gopls.setup({
 			analyses = {
 				unusedparams = true,
 			},
+			staticcheck = true,
+		},
+	},
+})
+
+lspconfig.lua_ls.setup({
+	Lua = {
+		workspace = { checkThirdParty = false },
+		telemetry = { enable = false },
+	},
+})
+
+lspconfig.yamlls.setup({
+	yaml = {
+		format = {
+			enable = false,
+			singleQuote = true,
 		},
 	},
 })
