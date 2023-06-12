@@ -1,6 +1,9 @@
 -- Disable theme toggle
 vim.g.toggle_theme_icon = ""
-
+-- Enable virtual text inlining for DAP
+vim.g.dap_virtual_text = true
+-- Use relative line numbers
+vim.opt.rnu = true
 -- Always use same cursor style
 vim.opt.guicursor = ""
 -- Display long lines as just one line

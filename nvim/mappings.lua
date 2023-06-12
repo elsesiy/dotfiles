@@ -1,11 +1,45 @@
 local M = {}
 
+M.disabled = {
+	-- disable line number toggle mappings
+	n = {
+		["<leader>n"] = "",
+		["<leader>rn"] = "",
+	},
+}
+
 M.general = {
 	n = {
 		["<Leader>u"] = {
 			":UndotreeToggle<CR>",
 			"Undotree",
 		},
+		["<C-d>"] = {
+			"<C-d>zz",
+			"center down",
+		},
+		["<C-u>"] = {
+			"<C-u>zz",
+			"center up",
+		},
+		["n"] = {
+			"nzzzv",
+			"center forward search",
+		},
+		["N"] = {
+			"Nzzzv",
+			"center backward search",
+		},
+		["<Leader>Y"] = { '"+Y', "", opts = { noremap = true } },
+		["<Leader>y"] = { '"+y', "" },
+		["<Leader>d"] = { '"_d', "" },
+	},
+	x = {
+		["<Leader>p"] = { '"_dP', "" },
+	},
+	v = {
+		["<Leader>y"] = { '"+y', "" },
+		["<Leader>d"] = { '"_d', "" },
 	},
 }
 

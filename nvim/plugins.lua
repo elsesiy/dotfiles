@@ -15,12 +15,19 @@ local plugins = {
 	},
 	{
 		"nvim-tree/nvim-tree.lua",
-		opts = overrides.nvimtree
+		opts = overrides.nvimtree,
 	},
 	{
 		"mfussenegger/nvim-dap",
 		init = function()
 			require("core.utils").load_mappings("dap")
+		end,
+	},
+	{
+		"theHamsta/nvim-dap-virtual-text",
+		lazy = false,
+		config = function(_, _)
+			require("nvim-dap-virtual-text").setup()
 		end,
 	},
 	{
@@ -57,6 +64,17 @@ local plugins = {
 			vim.cmd([[silent! GoInstallDeps]])
 		end,
 	},
+	{
+		"simrat39/rust-tools.nvim",
+		ft = "rust",
+		dependencies = "neovim/nvim-lspconfig",
+		opts = function()
+			return require("custom.configs.rust-tools")
+		end,
+		config = function(_, opts)
+			require("rust-tools").setup(opts)
+		end,
+	},
 
 	-- Git
 	{ "tpope/vim-fugitive", lazy = false },
@@ -77,6 +95,7 @@ local plugins = {
 
 	-- Misc
 	{ "ThePrimeagen/vim-be-good", lazy = false },
+	{ "machakann/vim-highlightedyank", lazy = false },
 	---- Detect tabstop and shiftwidth automatically
 	{ "tpope/vim-sleuth", lazy = false },
 	---- Undo
