@@ -9,6 +9,7 @@ M.mason = {
 		"bash-language-server",
 		"gopls",
 		"jdtls",
+		"lua-language-server",
 		"terraform-ls",
 		"rust-analyzer",
 		"yaml-language-server",
