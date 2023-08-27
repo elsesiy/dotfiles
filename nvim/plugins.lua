@@ -96,6 +96,14 @@ local plugins = {
 		dependencies = { "tpope/vim-repeat" },
 		lazy = false,
 	},
+	-- Mark files for faster navigation
+	{
+		"ThePrimeagen/harpoon",
+		config = function ()
+			require("core.utils").load_mappings("harpoon")
+		end,
+		lazy = false,
+	},
 
 	-- Lang specific plugins
 	{ "mfussenegger/nvim-jdtls" },

@@ -1,10 +1,47 @@
 local M = {}
 
+M.dap = {
+	plugin = true,
+	n = {
+		["<leader>db"] = {
+			"<cmd> DapToggleBreakpoint <CR>",
+			"Add breakpoint at line",
+		},
+		["<leader>dus"] = {
+			function()
+				local widgets = require("dap.ui.widgets")
+				local sidebar = widgets.sidebar(widgets.scopes)
+				sidebar.open()
+			end,
+			"Open debugging sidebar",
+		},
+	},
+}
+
+M.dap_go = {
+	plugin = true,
+	n = {
+		["<leader>dgt"] = {
+			function()
+				require("dap-go").debug_test()
+			end,
+			"Debug go test",
+		},
+		["<leader>dgl"] = {
+			function()
+				require("dap-go").debug_last()
+			end,
+			"Debug last go test",
+		},
+	},
+}
+
 M.disabled = {
 	-- disable line number toggle mappings
 	n = {
 		["<leader>n"] = "",
 		["<leader>rn"] = "",
+		["<leader>th"] = "",
 	},
 }
 
@@ -53,42 +90,6 @@ M.general = {
 	},
 }
 
-M.dap = {
-	plugin = true,
-	n = {
-		["<leader>db"] = {
-			"<cmd> DapToggleBreakpoint <CR>",
-			"Add breakpoint at line",
-		},
-		["<leader>dus"] = {
-			function()
-				local widgets = require("dap.ui.widgets")
-				local sidebar = widgets.sidebar(widgets.scopes)
-				sidebar.open()
-			end,
-			"Open debugging sidebar",
-		},
-	},
-}
-
-M.dap_go = {
-	plugin = true,
-	n = {
-		["<leader>dgt"] = {
-			function()
-				require("dap-go").debug_test()
-			end,
-			"Debug go test",
-		},
-		["<leader>dgl"] = {
-			function()
-				require("dap-go").debug_last()
-			end,
-			"Debug last go test",
-		},
-	},
-}
-
 M.gopher = {
 	plugin = true,
 	n = {
@@ -100,6 +101,61 @@ M.gopher = {
 			"<cmd> GoTagAdd yaml <CR>",
 			"Add yaml struct tags",
 		},
+	},
+}
+
+M.harpoon = {
+	plugin = true,
+	n = {
+		["<leader>a"] = {
+			function()
+				require("harpoon.mark").add_file()
+			end,
+			"Add to harpoon",
+		},
+		["<leader>rm"] = {
+			function()
+				require("harpoon.mark").rm_file()
+			end,
+			"Remove from harpoon",
+		},
+		["<C-e>"] = {
+			function()
+				require("harpoon.ui").toggle_quick_menu()
+			end,
+			"Current marks",
+		},
+		["<leader>H"] = {
+			function()
+				require("harpoon.ui").nav_file(1)
+			end,
+			"Navigate to file 1",
+		},
+		["<leader>T"] = {
+			function()
+				require("harpoon.ui").nav_file(2)
+			end,
+			"Navigate to file 2",
+		},
+		["<leader>N"] = {
+			function()
+				require("harpoon.ui").nav_file(3)
+			end,
+			"Navigate to file 3",
+		},
+		["<leader>S"] = {
+			function()
+				require("harpoon.ui").nav_file(4)
+			end,
+			"Navigate to file 4",
+		},
+	},
+}
+
+M.telescope = {
+	plugin = true,
+	n = {
+		["<leader>ma"] = { "<cmd> Telescope harpoon marks <CR>", "telescope bookmarks" },
 	},
 }
 
