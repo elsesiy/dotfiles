@@ -16,12 +16,18 @@ M.mason = {
 
 		-- formatting
 		"gofumpt",
-		"golines",
 		"goimports",
+		"jq",
 		"prettier",
+		"shfmt",
+		"yamlfmt",
 
 		-- lint
 		"golangci-lint",
+		"shellcheck",
+		"sqlfluff",
+		"tflint",
+		"tfsec",
 		"yamllint",
 	},
 }

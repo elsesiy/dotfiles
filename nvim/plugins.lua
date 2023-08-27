@@ -41,17 +41,24 @@ local plugins = {
 	},
 	{
 		"neovim/nvim-lspconfig",
-
-		dependencies = {
-			"jose-elias-alvarez/null-ls.nvim",
-			opts = function()
-				return require("custom.configs.null-ls")
-			end,
-		},
 		config = function()
 			require("plugins.configs.lspconfig")
 			require("custom.configs.lspconfig")
 		end,
+	},
+	{
+		"mhartington/formatter.nvim",
+		config = function()
+			require("custom.configs.format")
+		end,
+		lazy = false,
+	},
+	{
+		"mfussenegger/nvim-lint",
+		config = function()
+			require("custom.configs.lint")
+		end,
+		lazy = false,
 	},
 	{
 		"olexsmir/gopher.nvim",

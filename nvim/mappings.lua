@@ -33,6 +33,16 @@ M.general = {
 		["<Leader>Y"] = { '"+Y', "", opts = { noremap = true } },
 		["<Leader>y"] = { '"+y', "" },
 		["<Leader>d"] = { '"_d', "" },
+		["<leader>lfm"] = {
+			function()
+				vim.lsp.buf.format({ async = true })
+			end,
+			"LSP formatting",
+		},
+		["<leader>fm"] = {
+			":FormatWrite<CR>",
+			"Formatting",
+		},
 	},
 	x = {
 		["<Leader>p"] = { '"_dP', "" },
