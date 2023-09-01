@@ -9,7 +9,7 @@ lint.linters_by_ft = {
 	sh = { "shellcheck" },
 	terraform = { "tflint", "tfsec" },
 	sql = { "sqlfluff" },
-	yaml = { "yamlllint" },
+	yaml = { "yamllint" },
 }
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
