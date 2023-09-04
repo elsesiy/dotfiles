@@ -32,7 +32,17 @@ local opts = {
 		},
 
 		yaml = {
-			require("formatter.filetypes.yaml").yamlfmt,
+			function()
+				return {
+					exe = "yamlfmt",
+					args = {
+						"-formatter",
+						"include_document_start=true",
+						"-in",
+					},
+					stdin = true,
+				}
+			end,
 		},
 
 		["*"] = {
