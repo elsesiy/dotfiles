@@ -48,17 +48,17 @@ local plugins = {
 	},
 	{
 		"mhartington/formatter.nvim",
-		config = function()
-			require("custom.configs.format")
+		opts = function()
+			return require("custom.configs.format")
 		end,
-		lazy = false,
+		event = "VeryLazy",
 	},
 	{
 		"mfussenegger/nvim-lint",
 		config = function()
 			require("custom.configs.lint")
 		end,
-		lazy = false,
+		event = "VeryLazy",
 	},
 	{
 		"olexsmir/gopher.nvim",
@@ -84,8 +84,8 @@ local plugins = {
 	},
 
 	-- Git
-	{ "tpope/vim-fugitive", lazy = false },
-	{ "tpope/vim-rhubarb", lazy = false },
+	{ "tpope/vim-fugitive", event = "VeryLazy" },
+	{ "tpope/vim-rhubarb", event = "VeryLazy" },
 
 	-- Better search motions
 	{
@@ -94,26 +94,26 @@ local plugins = {
 			require("leap").add_default_mappings()
 		end,
 		dependencies = { "tpope/vim-repeat" },
-		lazy = false,
+		event = "VeryLazy",
 	},
 	-- Mark files for faster navigation
 	{
 		"ThePrimeagen/harpoon",
-		config = function ()
+		config = function()
 			require("core.utils").load_mappings("harpoon")
 		end,
-		lazy = false,
+		event = "VeryLazy",
 	},
 
 	-- Lang specific plugins
 	{ "mfussenegger/nvim-jdtls" },
 
 	-- Misc
-	{ "ThePrimeagen/vim-be-good", lazy = false },
-	{ "machakann/vim-highlightedyank", lazy = false },
+	{ "ThePrimeagen/vim-be-good", event = "VeryLazy" },
+	{ "machakann/vim-highlightedyank", event = "VeryLazy" },
 	---- Detect tabstop and shiftwidth automatically
-	{ "tpope/vim-sleuth", lazy = false },
+	{ "tpope/vim-sleuth", event = "VeryLazy" },
 	---- Undo
-	{ "mbbill/undotree", lazy = false },
+	{ "mbbill/undotree", event = "VeryLazy" },
 }
 return plugins

@@ -1,10 +1,4 @@
-local present, formatter = pcall(require, "formatter")
-
-if not present then
-	return
-end
-
-local opts = {
+local M = {
 	filetype = {
 		go = {
 			require("formatter.filetypes.go").goimports,
@@ -51,4 +45,4 @@ local opts = {
 	},
 }
 
-formatter.setup(opts)
+return M
