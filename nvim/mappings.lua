@@ -104,6 +104,24 @@ M.gopher = {
 	},
 }
 
+M.git_worktree = {
+	plugin = true,
+	n = {
+		["<leader>ga"] = {
+			function()
+				require('telescope').extensions.git_worktree.create_git_worktree()
+			end,
+			"Create git worktree",
+		},
+		["<leader>gl"] = {
+			function()
+				require('telescope').extensions.git_worktree.git_worktrees()
+			end,
+			"Show/Change git worktrees",
+		},
+	}
+}
+
 M.harpoon = {
 	plugin = true,
 	n = {

@@ -96,11 +96,22 @@ local plugins = {
 		dependencies = { "tpope/vim-repeat" },
 		event = "VeryLazy",
 	},
+
 	-- Mark files for faster navigation
 	{
 		"ThePrimeagen/harpoon",
 		config = function()
 			require("core.utils").load_mappings("harpoon")
+		end,
+		event = "VeryLazy",
+	},
+
+	-- Git Worktree support
+	{
+		-- fork from ThePrimeagen/git-worktree with https://github.com/ThePrimeagen/git-worktree.nvim/pull/106
+		"Clumsy-Coder/git-worktree.nvim",
+		config = function()
+			require("core.utils").load_mappings("git_worktree")
 		end,
 		event = "VeryLazy",
 	},

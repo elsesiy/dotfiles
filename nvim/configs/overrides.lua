@@ -61,7 +61,7 @@ M.telescope = {
 			"vendor",
 		},
 	},
-	extensions_list = { "fzf", "harpoon", "themes", "terms" },
+	extensions_list = { "fzf", "git_worktree", "harpoon", "themes", "terms" },
 }
 
 M.nvimtree = {
