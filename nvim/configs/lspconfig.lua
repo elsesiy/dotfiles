@@ -6,8 +6,9 @@ local util = require("lspconfig/util")
 
 local servers = {
 	"bashls",
-	"jdtls",
 	"terraformls",
+
+	-- "jdtls" # managed via nvim-jdtls ft
 	-- "rust_analyzer" # managed via rust-tools.nvim
 }
 

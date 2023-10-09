@@ -117,7 +117,7 @@ local plugins = {
 	},
 
 	-- Lang specific plugins
-	{ "mfussenegger/nvim-jdtls" },
+	{ "mfussenegger/nvim-jdtls", ft = "java" },
 
 	-- Misc
 	{ "ThePrimeagen/vim-be-good", event = "VeryLazy" },

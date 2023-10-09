@@ -18,6 +18,7 @@ From the repo root:
 ```
 stow --target=/Users/$USER/.config configs
 mkdir -p ~/.config/nvim/lua/custom && stow --target=/Users/$USER/.config/nvim/lua/custom nvim
+mkdir -p ~/.config/nvim/ftplugin && stow --target=/Users/$USER/.config/nvim/ftplugin nvim-ftplugin
 mkdir -p ~/.warp/themes && stow --target=/Users/$USER/.warp/themes warp
 ```
 
