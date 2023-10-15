@@ -18,9 +18,9 @@ M.mason = {
 		"gofumpt",
 		"goimports",
 		"jq",
-		"prettier",
 		"shfmt",
-		"yamlfmt",
+		"stylua",
+		"yamlfix",
 
 		-- lint
 		"golangci-lint",
@@ -29,6 +29,9 @@ M.mason = {
 		"tflint",
 		"tfsec",
 		"yamllint",
+
+		-- spelling
+		"codespell",
 	},
 }
 

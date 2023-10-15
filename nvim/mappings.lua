@@ -70,15 +70,20 @@ M.general = {
 		["<Leader>Y"] = { '"+Y', "", opts = { noremap = true } },
 		["<Leader>y"] = { '"+y', "" },
 		["<Leader>d"] = { '"_d', "" },
-		["<leader>lfm"] = {
+		["<leader>fl"] = {
 			function()
-				vim.lsp.buf.format({ async = true })
+				require("lint").try_lint()
 			end,
-			"LSP formatting",
+			"Lint file",
 		},
 		["<leader>fm"] = {
-			":FormatWrite<CR>",
-			"Formatting",
+			function()
+				require("conform").format({
+					lsp_fallback = true,
+					timeout_ms = 5000,
+				})
+			end,
+			"Format file",
 		},
 	},
 	x = {
@@ -109,17 +114,17 @@ M.git_worktree = {
 	n = {
 		["<leader>ga"] = {
 			function()
-				require('telescope').extensions.git_worktree.create_git_worktree()
+				require("telescope").extensions.git_worktree.create_git_worktree()
 			end,
 			"Create git worktree",
 		},
 		["<leader>gl"] = {
 			function()
-				require('telescope').extensions.git_worktree.git_worktrees()
+				require("telescope").extensions.git_worktree.git_worktrees()
 			end,
 			"Show/Change git worktrees",
 		},
-	}
+	},
 }
 
 M.harpoon = {

@@ -1,48 +1,21 @@
-local M = {
-	filetype = {
-		go = {
-			require("formatter.filetypes.go").goimports,
-			require("formatter.filetypes.go").gofumpt,
-		},
+local present, conform = pcall(require, "conform")
 
-		json = {
-			require("formatter.filetypes.json").jq,
-		},
+if not present then
+	return
+end
 
-		lua = {
-			require("formatter.filetypes.lua").stylua,
-		},
-
-		rust = {
-			require("formatter.filetypes.rust").rustfmt,
-		},
-
-		sh = {
-			require("formatter.filetypes.sh").shfmt,
-		},
-
-		terraform = {
-			require("formatter.filetypes.terraform").terraformfmt,
-		},
-
-		yaml = {
-			function()
-				return {
-					exe = "yamlfmt",
-					args = {
-						"-formatter",
-						"include_document_start=true",
-						"-in",
-					},
-					stdin = true,
-				}
-			end,
-		},
-
-		["*"] = {
-			require("formatter.filetypes.any").remove_trailing_whitespace,
-		},
-	},
+conform.formatters_by_ft = {
+	go = { "gofumpt", "goimports" },
+	json = { "jq" },
+	lua = { "stylua" },
+	rust = { "rustfmt" },
+	sh = { "shfmt" },
+	terraform = { "terraform_fmt" },
+	yaml = { "yamlfix" },
+	["*"] = { "codespell", "trim_newlines" },
 }
 
-return M
+-- customize yaml formatter
+require("conform.formatters.yamlfix").env = {
+	YAMLFIX_SEQUENCE_STYLE = "block_style",
+}

@@ -47,18 +47,18 @@ local plugins = {
 		end,
 	},
 	{
-		"mhartington/formatter.nvim",
-		opts = function()
-			return require("custom.configs.format")
+		"stevearc/conform.nvim",
+		config = function()
+			require("custom.configs.format")
 		end,
-		event = "VeryLazy",
+		event = { "BufReadPre", "BufNewFile" },
 	},
 	{
 		"mfussenegger/nvim-lint",
 		config = function()
 			require("custom.configs.lint")
 		end,
-		event = "VeryLazy",
+		event = { "BufReadPre", "BufNewFile" },
 	},
 	{
 		"olexsmir/gopher.nvim",
