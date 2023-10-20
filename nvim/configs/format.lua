@@ -12,7 +12,8 @@ conform.formatters_by_ft = {
 	sh = { "shfmt" },
 	terraform = { "terraform_fmt" },
 	yaml = { "yamlfix" },
-	["*"] = { "codespell", "trim_newlines" },
+	["_"] = { "codespell" },
+	["*"] = { "trim_newlines" },
 }
 
 -- customize yaml formatter
