@@ -47,6 +47,10 @@ M.disabled = {
 
 M.general = {
 	n = {
+		["-"] = {
+			"<CMD>Oil<CR>",
+			"Open parent directory",
+		},
 		["<Leader>u"] = {
 			":UndotreeToggle<CR>",
 			"Undotree",

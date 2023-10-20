@@ -106,6 +106,18 @@ local plugins = {
 		event = "VeryLazy",
 	},
 
+	-- file explorer
+	{
+		"stevearc/oil.nvim",
+		opts = function()
+			return require("custom.configs.oil")
+		end,
+		config = function(_, opts)
+			require("oil").setup(opts)
+		end,
+		lazy = false,
+	},
+
 	-- Git Worktree support
 	{
 		-- fork from ThePrimeagen/git-worktree with https://github.com/ThePrimeagen/git-worktree.nvim/pull/106
