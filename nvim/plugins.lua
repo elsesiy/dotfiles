@@ -113,6 +113,7 @@ local plugins = {
 			return require("custom.configs.oil")
 		end,
 		config = function(_, opts)
+			require("core.utils").load_mappings("oil")
 			require("oil").setup(opts)
 		end,
 		lazy = false,
