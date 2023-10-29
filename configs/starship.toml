@@ -15,16 +15,11 @@ discharging_symbol = "💀"
 [gcloud]
 disabled = true
 
+[golang]
+format = '[ $version](bold cyan) '
+
 [kubernetes]
 disabled = false
-
-[shlvl]
-disabled = false
-threshold = 3
-
-[status]
-disabled = false
-
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
@@ -53,3 +48,14 @@ surface0 = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
+
+[shlvl]
+disabled = false
+threshold = 3
+
+[status]
+disabled = false
+
+[time]
+disabled = false
+use_12hr = true
