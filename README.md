@@ -8,6 +8,7 @@ Central place to manage my terminal configs such as neovim, zhsrc, etc.
 Either use `JetBrainsMono` located in `fonts` or browse others [here](https://github.com/ryanoasis/nerd-fonts)
 - Install [NvChad](https://github.com/NvChad/NvChad)
 - Install [Warp](https://www.warp.dev/)
+- Install [Oh My Zsh](https://ohmyz.sh/#install)
 
 ## Usage
 

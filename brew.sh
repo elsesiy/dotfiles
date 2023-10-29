@@ -53,6 +53,8 @@ formulae=(
 	vercel-cli
 	wget
 	zoxide
+	zsh-autosuggestions
+	zsh-syntax-highlighting
 )
 
 casks=(
