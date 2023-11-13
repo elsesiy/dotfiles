@@ -136,6 +136,15 @@ local plugins = {
 	-- Lang specific plugins
 	{ "mfussenegger/nvim-jdtls", ft = "java" },
 
+	-- GenAI
+	{
+		"David-Kunz/gen.nvim",
+		config = function()
+			require("core.utils").load_mappings("gen")
+		end,
+		event = "VeryLazy",
+	},
+
 	-- Misc
 	{ "ThePrimeagen/vim-be-good", event = "VeryLazy" },
 	{ "machakann/vim-highlightedyank", event = "VeryLazy" },

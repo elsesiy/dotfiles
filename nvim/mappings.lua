@@ -198,4 +198,14 @@ M.oil = {
 	},
 }
 
+M.gen = {
+	plugin = true,
+	n = {
+		["<leader>ge"] = { ":Gen<CR>", "Gen AI" },
+	},
+	v = {
+		["<leader>ge"] = { ":Gen<CR>", "Gen AI" },
+	},
+}
+
 return M
