@@ -63,13 +63,9 @@ M.telescope = {
 			"node_modules",
 			"vendor",
 		},
+		prompt_prefix = " 🔍 ",
 	},
-	extensions_list = { "fzf", "git_worktree", "harpoon", "themes", "terms" },
-}
-
-M.nvimtree = {
-	disable_netrw = false,
-	hijack_netrw = false,
+	extensions_list = { "fzf", "git_worktree" },
 }
 
 return M

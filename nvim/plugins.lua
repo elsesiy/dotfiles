@@ -15,7 +15,11 @@ local plugins = {
 	},
 	{
 		"nvim-tree/nvim-tree.lua",
-		opts = overrides.nvimtree,
+		enabled = false,
+	},
+	{
+		"NvChad/nvterm",
+		enabled = false,
 	},
 	{
 		"mfussenegger/nvim-dap",

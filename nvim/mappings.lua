@@ -182,7 +182,7 @@ M.harpoon = {
 M.telescope = {
 	plugin = true,
 	n = {
-		["<leader>ma"] = { "<cmd> Telescope harpoon marks <CR>", "telescope bookmarks" },
+		["<leader>tr"] = { "<cmd> Telescope resume <CR>", "telescope resume" },
 	},
 }
 
