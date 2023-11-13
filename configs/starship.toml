@@ -1,6 +1,6 @@
 add_newline = false
 command_timeout = 1000
-format = "$directory$character"
+format = "$time$directory$character"
 palette = "catppuccin_mocha"
 right_format = "$all"
 
@@ -58,4 +58,6 @@ disabled = false
 
 [time]
 disabled = false
-use_12hr = true
+format = '[\[$time\]]($style) '
+style = 'subtext0'
+use_12hr = false
