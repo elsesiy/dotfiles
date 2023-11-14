@@ -16,14 +16,6 @@ vim.opt.ruler = true
 vim.opt.iskeyword:append("-")
 -- So that I can see `` in markdown files
 vim.opt.conceallevel = 0
--- Insert 4 spaces for a tab
-vim.opt.tabstop = 4
--- Move 4 columns when tabbing
-vim.opt.softtabstop = 4
--- Change the number of space characters inserted for indentation
-vim.opt.shiftwidth = 4
--- Converts tabs to spaces
-vim.opt.expandtab = true
 -- Keep min 8 lines before/after before scrolling
 vim.opt.scrolloff = 8
 -- Visual column for line length

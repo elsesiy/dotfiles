@@ -51,6 +51,7 @@ M.treesitter = {
 		"proto",
 		"rust",
 		"sql",
+		"terraform",
 		"vim",
 		"vimdoc",
 		"yaml",
