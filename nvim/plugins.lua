@@ -148,6 +148,7 @@ local plugins = {
 	-- Misc
 	{ "ThePrimeagen/vim-be-good", event = "VeryLazy" },
 	{ "machakann/vim-highlightedyank", event = "VeryLazy" },
+	{ "kevinhwang91/nvim-bqf", event = "VeryLazy" },
 	---- Detect tabstop and shiftwidth automatically
 	{ "tpope/vim-sleuth", event = "VeryLazy" },
 	---- Undo
