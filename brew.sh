@@ -27,6 +27,7 @@ formulae=(
 	kubernetes-cli
 	lsd
 	maven
+	noahgorstein/tap/jqp
 	ncdu
 	neovim
 	nghttp2
