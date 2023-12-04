@@ -28,3 +28,5 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.formatoptions:remove("c", "r", "o")
 -- Disable clipboard
 vim.opt.clipboard = ""
+-- Disable lsp logging, set to "debug" when needed
+vim.lsp.set_log_level("off")
