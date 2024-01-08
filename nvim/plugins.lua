@@ -110,13 +110,22 @@ local plugins = {
 		event = "VeryLazy",
 	},
 
+	-- Better diagnostics
+	{
+		"folke/trouble.nvim",
+		config = function()
+			require("core.utils").load_mappings("trouble")
+		end,
+		event = "VeryLazy",
+	},
+
 	-- file explorer
 	{
 		"stevearc/oil.nvim",
 		opts = function()
 			return require("custom.configs.oil")
 		end,
-		config = function(_, opts)
+		config = function(_, _)
 			require("core.utils").load_mappings("oil")
 			require("custom.configs.oil")
 		end,

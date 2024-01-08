@@ -83,8 +83,7 @@ M.general = {
 		["<leader>fm"] = {
 			function()
 				require("conform").format({
-					lsp_fallback = true,
-					timeout_ms = 5000,
+					async = true,
 				})
 			end,
 			"Format file",
@@ -183,6 +182,30 @@ M.telescope = {
 	plugin = true,
 	n = {
 		["<leader>tr"] = { "<cmd> Telescope resume <CR>", "telescope resume" },
+	},
+}
+
+M.trouble = {
+	plugin = true,
+	n = {
+		["<leader>tx"] = {
+			function()
+				require("trouble").toggle()
+			end,
+			"trouble toggle",
+		},
+		["<leader>tn"] = {
+			function()
+				require("trouble").next({ skip_groups = true, jump = true })
+			end,
+			"trouble next",
+		},
+		["<leader>tp"] = {
+			function()
+				require("trouble").previous({ skip_groups = true, jump = true })
+			end,
+			"trouble previous",
+		},
 	},
 }
 

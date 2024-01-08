@@ -4,19 +4,26 @@ if not present then
 	return
 end
 
-conform.formatters_by_ft = {
-	go = { "gofumpt", "goimports" },
-	json = { "jq" },
-	lua = { "stylua" },
-	rust = { "rustfmt" },
-	sh = { "shfmt" },
-	terraform = { "terraform_fmt" },
-	yaml = { "yamlfix" },
-	["_"] = { "codespell" },
-	["*"] = { "trim_newlines" },
+local opts = {
+	formatters_by_ft = {
+		go = { "gofumpt", "goimports" },
+		json = { "jq" },
+		lua = { "stylua" },
+		rust = { "rustfmt" },
+		sh = { "shfmt" },
+		terraform = { "terraform_fmt" },
+		yaml = { "yamlfix" },
+		["_"] = { "codespell" },
+		["*"] = { "trim_newlines" },
+	},
+	formatters = {
+		yamlfix = {
+			env = {
+				YAMLFIX_SEQUENCE_STYLE = "keep_style",
+			},
+		},
+	},
+	lsp_fallback = true,
 }
 
--- customize yaml formatter
-require("conform.formatters.yamlfix").env = {
-	YAMLFIX_SEQUENCE_STYLE = "block_style",
-}
+conform.setup(opts)
