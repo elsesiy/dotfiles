@@ -185,6 +185,13 @@ M.telescope = {
 	},
 }
 
+M.treesj = {
+	plugin = true,
+	n = {
+		["<leader>ts"] = { "<cmd> TSJToggle <CR>", "TreeSJ toggle" },
+	},
+}
+
 M.trouble = {
 	plugin = true,
 	n = {

@@ -162,5 +162,25 @@ local plugins = {
 	{ "tpope/vim-sleuth", event = "VeryLazy" },
 	---- Undo
 	{ "mbbill/undotree", event = "VeryLazy" },
+
+	-- surround text objects
+	{
+		"kylechui/nvim-surround",
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup()
+		end,
+	},
+
+	-- split/join objects, arrays, etc.
+	{
+		"Wansmer/treesj",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		event = "VeryLazy",
+		config = function()
+			require("treesj").setup()
+			require("core.utils").load_mappings("treesj")
+		end,
+	},
 }
 return plugins
