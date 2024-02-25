@@ -101,15 +101,6 @@ local plugins = {
 		event = "VeryLazy",
 	},
 
-	-- Mark files for faster navigation
-	{
-		"ThePrimeagen/harpoon",
-		config = function()
-			require("core.utils").load_mappings("harpoon")
-		end,
-		event = "VeryLazy",
-	},
-
 	-- Better diagnostics
 	{
 		"folke/trouble.nvim",

@@ -130,54 +130,6 @@ M.git_worktree = {
 	},
 }
 
-M.harpoon = {
-	plugin = true,
-	n = {
-		["<leader>a"] = {
-			function()
-				require("harpoon.mark").add_file()
-			end,
-			"Add to harpoon",
-		},
-		["<leader>rm"] = {
-			function()
-				require("harpoon.mark").rm_file()
-			end,
-			"Remove from harpoon",
-		},
-		["<C-e>"] = {
-			function()
-				require("harpoon.ui").toggle_quick_menu()
-			end,
-			"Current marks",
-		},
-		["<leader>H"] = {
-			function()
-				require("harpoon.ui").nav_file(1)
-			end,
-			"Navigate to file 1",
-		},
-		["<leader>T"] = {
-			function()
-				require("harpoon.ui").nav_file(2)
-			end,
-			"Navigate to file 2",
-		},
-		["<leader>N"] = {
-			function()
-				require("harpoon.ui").nav_file(3)
-			end,
-			"Navigate to file 3",
-		},
-		["<leader>S"] = {
-			function()
-				require("harpoon.ui").nav_file(4)
-			end,
-			"Navigate to file 4",
-		},
-	},
-}
-
 M.telescope = {
 	plugin = true,
 	n = {
