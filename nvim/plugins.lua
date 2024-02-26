@@ -76,14 +76,15 @@ local plugins = {
 		end,
 	},
 	{
-		"simrat39/rust-tools.nvim",
+		"mrcjkb/rustaceanvim",
+		version = "^4",
 		ft = "rust",
-		dependencies = "neovim/nvim-lspconfig",
-		opts = function()
-			return require("custom.configs.rust-tools")
-		end,
 		config = function(_, opts)
-			require("rust-tools").setup(opts)
+			require("core.utils").load_mappings("rustaceanvim")
+			vim.g.rustaceanvim = vim.tbl_deep_extend("force", {}, opts or {})
+		end,
+		opts = function()
+			return require("custom.configs.rustaceanvim")
 		end,
 	},
 

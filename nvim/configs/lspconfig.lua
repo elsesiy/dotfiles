@@ -9,7 +9,7 @@ local servers = {
 	"terraformls",
 
 	-- "jdtls" # managed via nvim-jdtls ft
-	-- "rust_analyzer" # managed via rust-tools.nvim
+	-- "rust_analyzer" # managed via rustaceanvim
 }
 
 for _, lsp in ipairs(servers) do

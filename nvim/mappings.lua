@@ -36,6 +36,16 @@ M.dap_go = {
 	},
 }
 
+M.gen = {
+	plugin = true,
+	n = {
+		["<leader>ge"] = { ":Gen<CR>", "Gen AI" },
+	},
+	v = {
+		["<leader>ge"] = { ":Gen<CR>", "Gen AI" },
+	},
+}
+
 M.disabled = {
 	-- disable line number toggle mappings
 	n = {
@@ -203,13 +213,11 @@ M.oil = {
 	},
 }
 
-M.gen = {
+M.rustaceanvim = {
 	plugin = true,
 	n = {
-		["<leader>ge"] = { ":Gen<CR>", "Gen AI" },
-	},
-	v = {
-		["<leader>ge"] = { ":Gen<CR>", "Gen AI" },
+    ["<leader>ca"] = { function() vim.cmd.RustLsp("codeAction") end, "Code Action" },
+    ["<leader>rd"] = { function() vim.cmd.RustLsp("debuggables") end, "Rust debuggables" },
 	},
 }
 
