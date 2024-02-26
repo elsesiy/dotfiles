@@ -66,7 +66,7 @@ M.telescope = {
 		},
 		prompt_prefix = " 🔍 ",
 	},
-	extensions_list = { "git_worktree" },
+	extensions_list = { "git_worktree", "ui-select" },
 }
 
 return M

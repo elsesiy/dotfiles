@@ -216,7 +216,6 @@ M.oil = {
 M.rustaceanvim = {
 	plugin = true,
 	n = {
-    ["<leader>ca"] = { function() vim.cmd.RustLsp("codeAction") end, "Code Action" },
     ["<leader>rd"] = { function() vim.cmd.RustLsp("debuggables") end, "Rust debuggables" },
 	},
 }

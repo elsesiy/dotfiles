@@ -174,5 +174,10 @@ local plugins = {
 			require("core.utils").load_mappings("treesj")
 		end,
 	},
+
+	-- hijack vim.ui.select to use Telescope instead
+	{
+		"nvim-telescope/telescope-ui-select.nvim",
+	},
 }
 return plugins
