@@ -122,6 +122,18 @@ M.gopher = {
 	},
 }
 
+M.git_file_history = {
+	plugin = true,
+	n = {
+		["<leader>gh"] = {
+			function()
+				require("telescope").extensions.git_file_history.git_file_history()
+			end,
+			"View git file history",
+		},
+	},
+}
+
 M.git_worktree = {
 	plugin = true,
 	n = {

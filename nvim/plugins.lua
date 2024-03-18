@@ -91,6 +91,22 @@ local plugins = {
 	-- Git
 	{ "tpope/vim-fugitive", event = "VeryLazy" },
 	{ "tpope/vim-rhubarb", event = "VeryLazy" },
+	{
+		"isak102/telescope-git-file-history.nvim",
+		config = function()
+			require("core.utils").load_mappings("git_file_history")
+		end,
+		event = "VeryLazy",
+	},
+	-- Git Worktree support
+	{
+		-- fork from ThePrimeagen/git-worktree with https://github.com/ThePrimeagen/git-worktree.nvim/pull/106
+		"Clumsy-Coder/git-worktree.nvim",
+		config = function()
+			require("core.utils").load_mappings("git_worktree")
+		end,
+		event = "VeryLazy",
+	},
 
 	-- Better search motions
 	{
@@ -122,16 +138,6 @@ local plugins = {
 			require("custom.configs.oil")
 		end,
 		lazy = false,
-	},
-
-	-- Git Worktree support
-	{
-		-- fork from ThePrimeagen/git-worktree with https://github.com/ThePrimeagen/git-worktree.nvim/pull/106
-		"Clumsy-Coder/git-worktree.nvim",
-		config = function()
-			require("core.utils").load_mappings("git_worktree")
-		end,
-		event = "VeryLazy",
 	},
 
 	-- Lang specific plugins
@@ -179,5 +185,8 @@ local plugins = {
 	{
 		"nvim-telescope/telescope-ui-select.nvim",
 	},
+
+	-- fix until https://github.com/neovim/neovim/issues/12517 lands to avoid files opening in quickfix and similar buffers
+	{ "stevearc/stickybuf.nvim" },
 }
 return plugins
