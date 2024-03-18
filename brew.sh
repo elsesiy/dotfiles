@@ -3,6 +3,7 @@
 set -euo pipefail
 
 formulae=(
+	atuin
 	anchore/grype/grype
 	bat
 	bazel
