@@ -2,13 +2,14 @@
 
 Central place to manage my terminal configs such as neovim, zhsrc, etc.
 
-## Prerequisites
+## Pre-requisites
 
 - Install font for icons to work & update terminal accordingly.
 Either use `JetBrainsMono` located in `fonts` or browse others [here](https://github.com/ryanoasis/nerd-fonts)
 - Install [NvChad](https://github.com/NvChad/NvChad)
 - Install [iterm2](https://iterm2.com/)
 - Install [Oh My Zsh](https://ohmyz.sh/#install)
+- Install [zellij](https://zellij.dev/)
 
 ## Usage
 

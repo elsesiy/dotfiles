@@ -1,0 +1,22 @@
+keybinds {
+    unbind "Ctrl g" // unbind in all modes
+    unbind "Ctrl q" // unbind in all modes
+    locked {
+        bind "Ctrl l" { SwitchToMode "Normal"; }
+    }
+    shared_except "locked" {
+        bind "Ctrl l" { SwitchToMode "Locked"; }
+    }
+}
+
+pane_frames false
+
+plugins {
+    tab-bar { path "tab-bar"; }
+    status-bar { path "status-bar"; }
+    strider { path "strider"; }
+    compact-bar { path "compact-bar"; }
+    session-manager { path "session-manager"; }
+}
+
+theme "catppuccin-mocha"
