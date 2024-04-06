@@ -105,6 +105,8 @@ M.general = {
 	v = {
 		["<Leader>y"] = { '"+y', "" },
 		["<Leader>d"] = { '"_d', "" },
+		["<C-j>"] = { ":m '>+1<CR>gv=gv", "Move visual selection down" },
+		["<C-k>"] = { ":m '<-2<CR>gv=gv", "Move visual selection up" },
 	},
 }
 
