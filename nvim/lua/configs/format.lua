@@ -27,3 +27,12 @@ local opts = {
 }
 
 conform.setup(opts)
+
+---- keymaps -----
+vim.keymap.set("n", "<leader>fm", function()
+	conform.format({
+		async = true,
+	})
+end, {
+	desc = "Format file",
+})

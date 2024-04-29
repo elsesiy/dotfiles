@@ -19,3 +19,10 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
 		lint.try_lint()
 	end,
 })
+
+---- keymaps -----
+vim.keymap.set("n", "<leader>fl", function()
+	lint.try_lint()
+end, {
+	desc = "Lint file",
+})

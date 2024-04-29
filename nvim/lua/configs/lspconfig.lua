@@ -1,5 +1,6 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
+local on_attach = require("nvchad.configs.lspconfig").on_attach
+local on_init = require("nvchad.configs.lspconfig").on_init
+local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require("lspconfig")
 local util = require("lspconfig/util")
@@ -15,15 +16,17 @@ local servers = {
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
 		on_attach = on_attach,
+		on_init = on_init,
 		capabilities = capabilities,
 	})
 end
 
 lspconfig.gopls.setup({
-	on_attach = on_attach,
 	capabilities = capabilities,
 	cmd = { "gopls" },
 	filetypes = { "go", "gomod", "gowork", "gotmpl" },
+	on_attach = on_attach,
+	on_init = on_init,
 	root_dir = util.root_pattern("go.work", "go.mod", ".git"),
 	settings = {
 		gopls = {
@@ -38,17 +41,27 @@ lspconfig.gopls.setup({
 })
 
 lspconfig.lua_ls.setup({
-	on_attach = on_attach,
 	capabilities = capabilities,
-	Lua = {
-		workspace = { checkThirdParty = false },
-		telemetry = { enable = false },
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+			workspace = {
+				checkThirdParty = false,
+				library = vim.api.nvim_get_runtime_file("", true),
+			},
+			telemetry = { enable = false },
+		},
 	},
+	on_attach = on_attach,
+	on_init = on_init,
 })
 
 lspconfig.yamlls.setup({
-	on_attach = on_attach,
 	capabilities = capabilities,
+	on_attach = on_attach,
+	on_init = on_init,
 	yaml = {
 		format = {
 			enable = false,

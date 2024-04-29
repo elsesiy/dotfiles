@@ -1,32 +1,39 @@
--- Disable theme toggle
-vim.g.toggle_theme_icon = ""
--- Enable virtual text inlining for DAP
-vim.g.dap_virtual_text = true
--- Use relative line numbers
-vim.opt.rnu = true
--- Always use same cursor style
-vim.opt.guicursor = ""
--- Display long lines as just one line
-vim.opt.wrap = false
--- The encoding written to file
-vim.opt.fileencoding = "utf-8"
--- Show the cursor position all the time
-vim.opt.ruler = true
--- Treat dash separated words as a word text object
-vim.opt.iskeyword:append("-")
--- So that I can see `` in markdown files
-vim.opt.conceallevel = 0
--- Keep min 8 lines before/after before scrolling
-vim.opt.scrolloff = 8
--- Visual column for line length
-vim.opt.colorcolumn = "80"
--- Don't create file backups
-vim.opt.backup = false
--- Persistent undotree
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
--- Stop newline continution of comments
-vim.opt.formatoptions:remove("c", "r", "o")
--- Disable clipboard
-vim.opt.clipboard = ""
--- Disable lsp logging, set to "debug" when needed
-vim.lsp.set_log_level("off")
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
+vim.g.mapleader = " "
+
+-- bootstrap lazy and all plugins
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+
+if not vim.loop.fs_stat(lazypath) then
+  local repo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
+end
+
+vim.opt.rtp:prepend(lazypath)
+
+local lazy_config = require "configs.lazy"
+
+-- load plugins
+require("lazy").setup({
+  {
+    "NvChad/NvChad",
+    lazy = false,
+    branch = "v2.5",
+    import = "nvchad.plugins",
+    config = function()
+      require "options"
+    end,
+  },
+
+  { import = "plugins" },
+}, lazy_config)
+
+-- load theme
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
+
+require "nvchad.autocmds"
+
+vim.schedule(function()
+  require "mappings"
+end)
