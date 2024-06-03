@@ -20,7 +20,7 @@ local plugins = {
 		},
 		opts = overrides.telescope,
 		-- https://github.com/ThePrimeagen/git-worktree.nvim/issues/122
-		version = "0.1.5"
+		version = "0.1.5",
 	},
 	{
 		"hrsh7th/nvim-cmp",
@@ -247,6 +247,34 @@ local plugins = {
 				desc = "trouble previous",
 			},
 		},
+	},
+
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		event = "VeryLazy",
+		keys = {
+			{
+				"]t",
+				function()
+					require("todo-comments").jump_next()
+				end,
+				desc = "Next todo comment",
+			},
+			{
+				"[t",
+				function()
+					require("todo-comments").jump_prev()
+				end,
+				desc = "Previous todo comment",
+			},
+			{
+				"<Leader>td",
+				"<cmd> TodoTelescope <CR>",
+				desc = "Search todo comments",
+			},
+		},
+		opts = {},
 	},
 
 	-- file explorer
