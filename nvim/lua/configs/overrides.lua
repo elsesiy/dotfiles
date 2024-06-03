@@ -64,7 +64,6 @@ M.telescope = {
 			"node_modules",
 			"vendor",
 		},
-		prompt_prefix = " 🔍 ",
 	},
 	extensions_list = { "git_file_history", "git_worktree", "ui-select" },
 }
