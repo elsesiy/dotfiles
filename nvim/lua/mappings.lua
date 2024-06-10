@@ -38,6 +38,7 @@ map("x", "<Leader>p", '"_dP')
 ----- disabled ------
 local disabled = {
 	n = {
+		"<leader>e",
 		"<leader>fa",
 		"<leader>fo",
 		"<leader>ma",
@@ -45,6 +46,8 @@ local disabled = {
 		"<leader>pt",
 		"<leader>rn",
 		"<leader>th",
+		"<leader>h",
+		"<leader>v",
 	},
 }
 
@@ -53,3 +56,22 @@ for mode, mappings in pairs(disabled) do
 		nomap(mode, keys)
 	end
 end
+
+
+----- autocommands -----
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = {
+        "checkhealth",
+        "fugitive*",
+        "git",
+        "help",
+        "lspinfo",
+        "netrw",
+        "notify",
+        "qf",
+        "query",
+    },
+    callback = function()
+        vim.keymap.set("n", "q", vim.cmd.close, { desc = "Close the current buffer", buffer = true })
+    end,
+})
