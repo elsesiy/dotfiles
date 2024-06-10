@@ -2,6 +2,9 @@
 local M = {}
 
 M.ui = {
+	lsp = {
+		signature = false,
+	},
 	statusline = {
 		theme = "minimal",
 	},
