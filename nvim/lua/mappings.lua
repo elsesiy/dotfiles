@@ -21,6 +21,7 @@ map("n", "<Leader>Y", '"+Y', {
 })
 map("n", "<Leader>y", '"+y')
 map("n", "<Leader>d", '"_d')
+map("n", "<leader>sx", "yy2o<ESC>kpV:!/bin/bash<CR>", { desc = "execute command in shell and print output to buffer" })
 
 ----- visual mode -----
 map("v", "<Leader>y", '"+y')
@@ -31,6 +32,12 @@ map("v", "<C-j>", ":m '>+1<CR>gv=gv", {
 map("v", "<C-k>", ":m '<-2<CR>gv=gv", {
 	desc = "Move visual selection up",
 })
+map(
+	"v",
+	"<leader>sx",
+	"y'<P'<O<ESC>'>o<ESC>:<C-u>'<,'>!/bin/bash<CR>",
+	{ desc = "execute command in shell and print output to buffer" }
+)
 
 ----- command mode -----
 map("x", "<Leader>p", '"_dP')
@@ -57,21 +64,20 @@ for mode, mappings in pairs(disabled) do
 	end
 end
 
-
 ----- autocommands -----
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {
-        "checkhealth",
-        "fugitive*",
-        "git",
-        "help",
-        "lspinfo",
-        "netrw",
-        "notify",
-        "qf",
-        "query",
-    },
-    callback = function()
-        vim.keymap.set("n", "q", vim.cmd.close, { desc = "Close the current buffer", buffer = true })
-    end,
+	pattern = {
+		"checkhealth",
+		"fugitive*",
+		"git",
+		"help",
+		"lspinfo",
+		"netrw",
+		"notify",
+		"qf",
+		"query",
+	},
+	callback = function()
+		vim.keymap.set("n", "q", vim.cmd.close, { desc = "Close the current buffer", buffer = true })
+	end,
 })
