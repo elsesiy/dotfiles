@@ -1,6 +1,7 @@
 local overrides = require("configs.overrides")
 
 local plugins = {
+	-- override misc built-in plugin configs
 	{
 		"williamboman/mason.nvim",
 		opts = overrides.mason,
@@ -20,21 +21,27 @@ local plugins = {
 			},
 		},
 		opts = overrides.telescope,
-		-- https://github.com/ThePrimeagen/git-worktree.nvim/issues/122
-		version = "0.1.5",
 	},
 	{
 		"hrsh7th/nvim-cmp",
 		opts = overrides.cmp,
 	},
 	{
+		"folke/which-key.nvim",
+		opts = overrides.which_key,
+	},
+
+	-- disable misc built-in plugins
+	{
 		"nvim-tree/nvim-tree.lua",
 		enabled = false,
 	},
 	{
-		"NvChad/nvterm",
+		"NvChad/nvim-colorizer.lua",
 		enabled = false,
 	},
+
+	-- other plugins
 	{
 		"mfussenegger/nvim-dap",
 		keys = {
@@ -184,10 +191,14 @@ local plugins = {
 			},
 		},
 	},
+
 	-- Git Worktree support
 	{
-		-- fork from ThePrimeagen/git-worktree with https://github.com/ThePrimeagen/git-worktree.nvim/pull/106
-		"Clumsy-Coder/git-worktree.nvim",
+		-- fork from ThePrimeagen/git-worktree with
+		-- https://github.com/ThePrimeagen/git-worktree.nvim/pull/124
+		-- https://github.com/ThePrimeagen/git-worktree.nvim/pull/106
+		"elsesiy/git-worktree.nvim",
+		branch = "telescope-fix",
 		keys = {
 			{
 				"<leader>ga",
@@ -283,6 +294,85 @@ local plugins = {
 		opts = {},
 	},
 
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		keys = {
+			{
+				"<leader>nl",
+				function()
+					require("noice").cmd("last")
+				end,
+				desc = "Show last message (Noice)",
+			},
+			{
+				"<leader>nh",
+				function()
+					require("noice").cmd("history")
+				end,
+				desc = "Show message history (Noice)",
+			},
+		},
+		opts = {
+			lsp = {
+				-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+				override = {
+					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+					["vim.lsp.util.stylize_markdown"] = true,
+					["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+				},
+				progress = {
+					enabled = false,
+				},
+			},
+			presets = {
+				long_message_to_split = true, -- long messages will be sent to a split
+				lsp_doc_border = true, -- add a border to hover docs and signature help
+			},
+			routes = {
+				-- send long messages to split instead
+				{
+					view = "split",
+					filter = {
+						event = "msg_show",
+						min_height = 20,
+					},
+				},
+				-- hide 'written' messages
+				{
+					filter = {
+						event = "msg_show",
+						find = "written",
+					},
+					opts = { skip = true },
+				},
+				-- re-enable showmode messages
+				{
+					view = "notify",
+					filter = { event = "msg_showmode" },
+				},
+			},
+			views = {
+				-- automatically enter split
+				split = {
+					enter = true,
+				},
+				-- configure notif with border & transparency
+				mini = {
+					border = {
+						style = "rounded",
+					},
+					win_options = {
+						winblend = 0,
+					},
+				},
+			},
+		},
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
+	},
+
 	-- file explorer
 	{
 		"stevearc/oil.nvim",
@@ -358,7 +448,23 @@ local plugins = {
 	},
 
 	-- fix until https://github.com/neovim/neovim/issues/12517 lands to avoid files opening in quickfix and similar buffers
-	{ "stevearc/stickybuf.nvim" },
+	{
+		"stevearc/stickybuf.nvim",
+		opts = {},
+	},
+
+	-- highlight colors, replaces NvChad/nvim-colorizer.lua
+	{
+		"brenoprata10/nvim-highlight-colors",
+		event = "VeryLazy",
+		opts = {
+			exclude_buftypes = {
+				"help",
+				"prompt",
+			},
+			render = "virtual",
+		},
+	},
 }
 
 return plugins
