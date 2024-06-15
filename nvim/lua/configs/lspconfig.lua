@@ -1,6 +1,11 @@
-local on_attach = require("nvchad.configs.lspconfig").on_attach
+local nv_on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
+
+local on_attach = function(client, buffer)
+	nv_on_attach(client, buffer)
+	vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+end
 
 local lspconfig = require("lspconfig")
 
@@ -32,6 +37,7 @@ lspconfig.gopls.setup({
 			},
 			completeUnimported = true,
 			gofumpt = true,
+			-- ref: https://github.com/golang/tools/blob/master/gopls/doc/inlayHints.md
 			hints = {
 				assignVariableTypes = true,
 				compositeLiteralFields = true,
@@ -50,8 +56,13 @@ lspconfig.gopls.setup({
 
 lspconfig.lua_ls.setup({
 	capabilities = capabilities,
+	on_attach = on_attach,
+	on_init = on_init,
 	settings = {
 		Lua = {
+			hint = {
+				enable = true,
+			},
 			diagnostics = {
 				globals = { "vim" },
 			},
@@ -62,8 +73,6 @@ lspconfig.lua_ls.setup({
 			telemetry = { enable = false },
 		},
 	},
-	on_attach = on_attach,
-	on_init = on_init,
 })
 
 lspconfig.yamlls.setup({
