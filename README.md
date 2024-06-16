@@ -7,11 +7,19 @@ Central place to manage my terminal configs such as neovim, zhsrc, etc.
 - Install font for icons to work & update terminal accordingly.
 Either use `JetBrainsMono` located in `fonts` or browse others [here](https://github.com/ryanoasis/nerd-fonts)
 - Install [bat](https://github.com/sharkdp/bat)
+- Install [fish](https://fishshell.com/)
 - Install [NvChad](https://github.com/NvChad/NvChad)
 - Install [iterm2](https://iterm2.com/)
 - Install [Oh My Zsh](https://ohmyz.sh/#install)
 - Install [yazi](https://yazi-rs.github.io/)
 - Install [zellij](https://zellij.dev/)
+
+### Setting up fish (Mac)
+
+```shell
+$(which fish) > /etc/shells
+chsh -s $(which fish) $(id)
+```
 
 ## Usage
 
@@ -24,7 +32,10 @@ From the repo root:
 mv ~/.config/nvim ~/.config/nvim.bak
 rm -rf ~/.local/share/nvim
 
-# symlink configs for bat, starship, yazi & zellij
+# backup existing fish config
+mv ~/.config/fish/config.fish{,.bak}
+
+# symlink configs for bat, fish, starship, yazi & zellij
 stow --target=/Users/$USER/.config configs
 
 # rebuild bat cache
