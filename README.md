@@ -9,7 +9,6 @@ Either use `JetBrainsMono` located in `fonts` or browse others [here](https://gi
 - Install [bat](https://github.com/sharkdp/bat)
 - Install [fish](https://fishshell.com/)
 - Install [NvChad](https://github.com/NvChad/NvChad)
-- Install [Oh My Zsh](https://ohmyz.sh/#install)
 - Install [wezterm](https://wezfurlong.org/wezterm/index.html)
 - Install [yazi](https://yazi-rs.github.io/)
 - Install [zellij](https://zellij.dev/)
