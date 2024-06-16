@@ -22,6 +22,7 @@ map("n", "<Leader>Y", '"+Y', {
 map("n", "<Leader>y", '"+y')
 map("n", "<Leader>d", '"_d')
 map("n", "<leader>sx", "yy2o<ESC>kpV:!/bin/bash<CR>", { desc = "execute command in shell and print output to buffer" })
+map("n", "`", ":cd %:h<CR>", { desc = "set cwd to folder for open file" })
 
 ----- visual mode -----
 map("v", "<Leader>y", '"+y')
