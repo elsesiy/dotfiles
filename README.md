@@ -6,6 +6,7 @@ Central place to manage my terminal configs such as neovim, zhsrc, etc.
 
 - Install font for icons to work & update terminal accordingly.
 Either use `JetBrainsMono` located in `fonts` or browse others [here](https://github.com/ryanoasis/nerd-fonts)
+- Install [bat](https://github.com/sharkdp/bat)
 - Install [NvChad](https://github.com/NvChad/NvChad)
 - Install [iterm2](https://iterm2.com/)
 - Install [Oh My Zsh](https://ohmyz.sh/#install)
@@ -23,8 +24,11 @@ From the repo root:
 mv ~/.config/nvim ~/.config/nvim.bak
 rm -rf ~/.local/share/nvim
 
-# symlink configs for yazi, zellij & starship
+# symlink configs for bat, starship, yazi & zellij
 stow --target=/Users/$USER/.config configs
+
+# rebuild bat cache
+bat cache --build
 
 # nvim
 mkdir -p ~/.config/nvim && stow --target=/Users/$USER/.config/nvim nvim
