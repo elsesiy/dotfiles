@@ -64,7 +64,6 @@ casks=(
 	cryptomator
 	ferdium
 	insomnia
-	iterm2
 	java
 	keepassxc
 	keybase
