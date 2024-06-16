@@ -11,6 +11,7 @@ Either use `JetBrainsMono` located in `fonts` or browse others [here](https://gi
 - Install [NvChad](https://github.com/NvChad/NvChad)
 - Install [iterm2](https://iterm2.com/)
 - Install [Oh My Zsh](https://ohmyz.sh/#install)
+- Install [wezterm](https://wezfurlong.org/wezterm/index.html)
 - Install [yazi](https://yazi-rs.github.io/)
 - Install [zellij](https://zellij.dev/)
 
@@ -35,7 +36,7 @@ rm -rf ~/.local/share/nvim
 # backup existing fish config
 mv ~/.config/fish/config.fish{,.bak}
 
-# symlink configs for bat, fish, starship, yazi & zellij
+# symlink configs for bat, fish, starship, wezterm, yazi & zellij
 stow --target=/Users/$USER/.config configs
 
 # rebuild bat cache
