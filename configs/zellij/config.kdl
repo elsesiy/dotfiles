@@ -1,11 +1,11 @@
 keybinds {
-    unbind "Ctrl g" // unbind in all modes
-    unbind "Ctrl q" // unbind in all modes
+    unbind "Ctrl g" "Ctrl q" // unbind in all modes
     locked {
-        bind "Ctrl l" { SwitchToMode "Normal"; }
+        bind "Alt g" { SwitchToMode "Normal"; }
     }
     shared_except "locked" {
-        bind "Ctrl l" { SwitchToMode "Locked"; }
+        bind "Alt g" { SwitchToMode "Locked"; }
+        bind "Alt q" { Quit ; }
     }
 }
 
