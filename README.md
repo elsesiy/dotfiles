@@ -42,6 +42,9 @@ stow --target=/Users/$USER/.config configs
 # rebuild bat cache
 bat cache --build
 
+# install fish plugins
+fisher update
+
 # nvim
 mkdir -p ~/.config/nvim && stow --target=/Users/$USER/.config/nvim nvim
 mkdir -p ~/.config/nvim/ftplugin && stow --target=/Users/$USER/.config/nvim/ftplugin nvim-ftplugin

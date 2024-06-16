@@ -14,7 +14,6 @@ set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
 # load utils
 rbenv init - | source
 zoxide init fish | source
-fzf --fish | source
 
 if status is-interactive
     eval (zellij setup --generate-auto-start fish | string collect)
