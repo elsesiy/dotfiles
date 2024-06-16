@@ -9,6 +9,7 @@ Either use `JetBrainsMono` located in `fonts` or browse others [here](https://gi
 - Install [NvChad](https://github.com/NvChad/NvChad)
 - Install [iterm2](https://iterm2.com/)
 - Install [Oh My Zsh](https://ohmyz.sh/#install)
+- Install [yazi](https://yazi-rs.github.io/)
 - Install [zellij](https://zellij.dev/)
 
 ## Usage
@@ -22,7 +23,7 @@ From the repo root:
 mv ~/.config/nvim ~/.config/nvim.bak
 rm -rf ~/.local/share/nvim
 
-# symlink configs for zellij & starship
+# symlink configs for yazi, zellij & starship
 stow --target=/Users/$USER/.config configs
 
 # nvim

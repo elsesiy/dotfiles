@@ -53,6 +53,7 @@ formulae=(
 	tokei
 	vault
 	vercel-cli
+	yazi
 	wget
 	zoxide
 	zsh-autosuggestions
@@ -60,7 +61,6 @@ formulae=(
 )
 
 casks=(
-	adoptopenjdk11
 	brave-browser
 	cryptomator
 	ferdium
@@ -70,15 +70,14 @@ casks=(
 	keepassxc
 	keybase
 	meld
-	ngrok
 	osxfuse
 	paw
 	rectangle
-	secretive
 	steam
 	superproductivity
 	uhk-agent
 	virtualbox
+	wezterm
 	wireshark
 	zoom
 )
