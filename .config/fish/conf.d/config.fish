@@ -11,11 +11,3 @@ set -Ux EDITOR nvim
 set -Ux LANG en_US.UTF-8
 set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -Ux RIPGREP_CONFIG_PATH ~/.config/ripgreprc
-
-# load utils
-rbenv init - | source
-zoxide init fish | source
-
-if status is-interactive
-    eval (zellij setup --generate-auto-start fish | string collect)
-end

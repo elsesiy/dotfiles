@@ -1,5 +1,6 @@
 abbr bubu "brew update && brew outdated && brew upgrade && brew cleanup"
 abbr cat "bat --plain --wrap character"
+abbr dgit "git --git-dir=$HOME/.local/share/dotfiles/ --work-tree=$HOME"
 abbr fishcfg "nvim ~/.config/fish/config.fish"
 abbr k "kubectl"
 abbr l "eza -al"
