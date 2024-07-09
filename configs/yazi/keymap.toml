@@ -1,0 +1,7 @@
+[manager]
+
+prepend_keymap = [
+	{ on = [ "F" ], run  = "plugin smart-filter", desc = "Smart filter" },
+	{ on = [ "l" ], run  = "plugin --sync smart-enter", desc = "Enter the child directory, or open the file" },
+	{ on = [ "p" ], run  = "plugin --sync smart-paste", desc = "Paste into the hovered directory or CWD" },
+]
