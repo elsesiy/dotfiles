@@ -1,0 +1,5 @@
+--glob=!.git/*
+--hidden
+--max-columns-preview
+--max-columns=5000
+--smart-case
