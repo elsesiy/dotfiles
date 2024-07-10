@@ -1,6 +1,6 @@
-# Configs
+# dotfiles
 
-Central place to manage my terminal configs such as neovim, zhsrc, etc.
+Central place to manage my terminal configs such as neovim, fish, etc.
 
 ## Pre-requisites
 
