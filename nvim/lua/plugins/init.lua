@@ -320,6 +320,7 @@ local plugins = {
 		opts = {
 			open_for_directories = true,
 			hooks = {
+				--- @diagnostic disable: unused-local
 				yazi_closed_successfully = function(chosen_file, config, state)
 					-- changes cwd when navigating in yazi without selecting a file
 					if chosen_file == nil and state.last_directory.filename then
@@ -393,7 +394,6 @@ local plugins = {
 		},
 	},
 
-
 	---- Undo
 	{
 		"mbbill/undotree",
@@ -453,6 +453,21 @@ local plugins = {
 			},
 			render = "virtual",
 		},
+	},
+
+	{
+		"gelguy/wilder.nvim",
+		keys = {
+			":",
+			"/",
+			"?",
+		},
+		dependencies = {
+			"catppuccin/nvim",
+		},
+		config = function()
+			require("configs.wilder")
+		end,
 	},
 }
 
