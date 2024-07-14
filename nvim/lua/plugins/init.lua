@@ -394,6 +394,20 @@ local plugins = {
 		},
 	},
 
+	-- Search & Replace
+	{
+		"nvim-pack/nvim-spectre",
+		event = "VeryLazy",
+		cmd = { "Spectre" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"catppuccin/nvim",
+		},
+		config = function()
+			require("configs.spectre")
+		end,
+	},
+
 	---- Undo
 	{
 		"mbbill/undotree",

@@ -77,6 +77,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		"notify",
 		"qf",
 		"query",
+		"spectre_panel",
 	},
 	callback = function()
 		vim.keymap.set("n", "q", vim.cmd.close, { desc = "Close the current buffer", buffer = true })
