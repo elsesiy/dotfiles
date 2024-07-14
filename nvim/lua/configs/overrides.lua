@@ -66,7 +66,7 @@ M.telescope = {
 			"vendor",
 		},
 	},
-	extensions_list = { "git_file_history", "git_worktree", "noice", "ui-select" },
+	extensions_list = { "git_file_history", "git_worktree", "ui-select" },
 }
 
 M.which_key = {
