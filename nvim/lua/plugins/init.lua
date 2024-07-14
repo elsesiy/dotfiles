@@ -176,6 +176,9 @@ local plugins = {
 		version = "^4",
 	},
 
+	-- FZF
+	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+
 	-- Git
 	{ "tpope/vim-fugitive", event = "VeryLazy" },
 	{ "tpope/vim-rhubarb", event = "VeryLazy" },
@@ -372,24 +375,24 @@ local plugins = {
 		keys = {
 			{
 				"zR",
-				function ()
+				function()
 					require("ufo").openAllFolds()
 				end,
-				"Open all folds"
+				"Open all folds",
 			},
 			{
 				"zM",
-				function ()
+				function()
 					require("ufo").closeAllFolds()
 				end,
-				"Close all folds"
+				"Close all folds",
 			},
 			{
 				"zV",
-				function ()
+				function()
 					require("ufo").peekFoldedLinesUnderCursor()
 				end,
-				"Peek folded lines"
+				"Peek folded lines",
 			},
 		},
 	},
