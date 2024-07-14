@@ -32,3 +32,9 @@ vim.opt.formatoptions:remove("c", "r", "o")
 vim.opt.clipboard = ""
 -- Disable lsp logging, set to "debug" when needed
 vim.lsp.set_log_level("off")
+-- fold config settings
+-- See: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
+vim.opt.foldcolumn = '0' -- disable fold column
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true

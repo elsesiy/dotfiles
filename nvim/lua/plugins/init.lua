@@ -432,6 +432,47 @@ local plugins = {
 	---- Detect tabstop and shiftwidth automatically
 	{ "tpope/vim-sleuth", event = "VeryLazy" },
 
+	-- Better folds
+	{
+		"kevinhwang91/nvim-ufo",
+		event = "BufEnter",
+		config = function()
+			--- @diagnostic disable: unused-local
+			require("ufo").setup({
+				provider_selector = function(_bufnr, _filetype, _buftype)
+					return { "treesitter", "indent" }
+				end,
+			})
+		end,
+		dependencies = {
+			"kevinhwang91/promise-async",
+		},
+		keys = {
+			{
+				"zR",
+				function ()
+					require("ufo").openAllFolds()
+				end,
+				"Open all folds"
+			},
+			{
+				"zM",
+				function ()
+					require("ufo").closeAllFolds()
+				end,
+				"Close all folds"
+			},
+			{
+				"zV",
+				function ()
+					require("ufo").peekFoldedLinesUnderCursor()
+				end,
+				"Peek folded lines"
+			},
+		},
+	},
+
+
 	---- Undo
 	{
 		"mbbill/undotree",
