@@ -1,11 +1,6 @@
-local nv_on_attach = require("nvchad.configs.lspconfig").on_attach
+local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
-
-local on_attach = function(client, buffer)
-	nv_on_attach(client, buffer)
-	vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-end
 
 local lspconfig = require("lspconfig")
 
@@ -85,4 +80,12 @@ lspconfig.yamlls.setup({
 			singleQuote = true,
 		},
 	},
+})
+
+---- keymaps -----
+vim.keymap.set("n", "<leader>I", function()
+	--- @diagnostic disable: missing-parameter
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, {
+	desc = "Toggle inlay hints",
 })
