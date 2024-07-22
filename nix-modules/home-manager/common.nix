@@ -4,7 +4,6 @@
   home.packages = [
     pkgs.bat
     pkgs.binutils
-    pkgs.cargo
     pkgs.clang-tools
     pkgs.cosign
     pkgs.crane
@@ -30,6 +29,9 @@
     pkgs.neovim
     pkgs.openssl
     pkgs.procs
+    pkgs.postgresql
+    pkgs.protobuf
+    pkgs.python3
     pkgs.rectangle
     pkgs.ripgrep
     pkgs.tldr
