@@ -29,18 +29,6 @@ formulae=(
 	vercel-cli
 )
 
-casks=(
-	java
-	keybase
-	osxfuse
-	paw
-	virtualbox
-)
-
 for f in "${formulae[@]}"; do
 	brew install "$f"
-done
-
-for c in "${casks[@]}"; do
-	brew install --cask "$c"
 done

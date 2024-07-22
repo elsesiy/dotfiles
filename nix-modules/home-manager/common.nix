@@ -17,6 +17,7 @@
     (pkgs.writeShellScriptBin "gsed" "exec ${pkgs.gnused}/bin/sed \"$@\"")
     pkgs.go
     pkgs.grpcurl
+    pkgs.jdk
     pkgs.jq
     pkgs.less
     pkgs.meld
@@ -94,6 +95,9 @@
       enableZshIntegration = true;
     };
 
-    zoxide.enable = true; # default shell integrations
+    zoxide = {
+      enable = true; # default shell integrations
+      options = ["--cmd cd"];
+    };
   };
 }
