@@ -3,22 +3,7 @@
 set -euo pipefail
 
 formulae=(
-	anchore/grype/grype
-	bazel
-	exercism
-	exiftool
-	ffmpeg
-	gradle
-	highlight
-	httpie
-	hyperfine
-	kind
-	kubebuilder
-	kubernetes-cli
-	maven
-	noahgorstein/tap/jqp
 	ncdu
-	pdfgrep
 	postgresql@14
 	protobuf
 	python@3.10

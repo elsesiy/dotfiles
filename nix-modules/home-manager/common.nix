@@ -17,8 +17,14 @@
     (pkgs.writeShellScriptBin "gsed" "exec ${pkgs.gnused}/bin/sed \"$@\"")
     pkgs.go
     pkgs.grpcurl
+    pkgs.httpie
+    pkgs.hyperfine
     pkgs.jdk
     pkgs.jq
+    pkgs.jqp
+    pkgs.kind
+    pkgs.kubebuilder
+    pkgs.kubectl
     pkgs.less
     pkgs.meld
     pkgs.neovim
@@ -26,7 +32,6 @@
     pkgs.procs
     pkgs.rectangle
     pkgs.ripgrep
-    pkgs.stow
     pkgs.tldr
     pkgs.tokei
     pkgs.tzdata
