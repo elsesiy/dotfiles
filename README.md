@@ -56,10 +56,10 @@ All required system configuration and packages utilize nix flakes (unstable nix 
 Depending on the target system, invocation will be different:
 ```
 # nix-darwin (mac)
-nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ~/.config/nix-modules/#MBP15TB
+nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ~/nix-modules/#MBP15TB
 
 # home-manager (linux)
-nix run home-manager/master --extra-experimental-features "nix-command flakes"  -- switch --flake ~/.config/nix-modules/#development
+nix run home-manager/master --extra-experimental-features "nix-command flakes"  -- switch --flake ~/nix-modules/#development
 ```
 
 Things you'd likely want to do periodically:

@@ -54,7 +54,7 @@
         work = darwin.lib.darwinSystem {
           inherit system;
           modules = common_modules ++ [
-            ./nix-darwin/work.nix
+            ./nix-darwin/homebrew/work.nix
             {
               users.users.jelsesiy = {
                 name = "jelsesiy";
