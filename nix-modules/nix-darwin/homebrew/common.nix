@@ -7,7 +7,7 @@
     casks = [
       "ferdium"
       "uhk-agent"
-      "wezterm"
+      "wezterm" # nixpkg fails to build on x86
     ];
   };
 }

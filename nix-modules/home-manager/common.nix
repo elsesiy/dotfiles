@@ -24,23 +24,24 @@
     pkgs.kind
     pkgs.kubebuilder
     pkgs.kubectl
+    pkgs.kubectx
     pkgs.less
     pkgs.meld
     pkgs.neovim
     pkgs.openssl
-    pkgs.procs
     pkgs.postgresql
+    pkgs.procs
     pkgs.protobuf
     pkgs.python3
     pkgs.rectangle
     pkgs.ripgrep
+    pkgs.tcptraceroute
     pkgs.tldr
     pkgs.tokei
     pkgs.tzdata
-    # pkgs.wezterm - fails to build on x86, installed via brew
     pkgs.watch
-    pkgs.wireshark
     pkgs.wget
+    pkgs.wireshark
     pkgs.yq
   ];
 
