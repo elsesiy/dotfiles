@@ -1,5 +1,8 @@
 {
   homebrew = {
+    brews = [
+      "pulumi"
+    ];
     casks = [
       "jetbrains-toolbox"
       "snowflake-snowsql"

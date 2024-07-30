@@ -31,7 +31,6 @@
     pkgs.protoc-gen-go
     pkgs.protoc-gen-go-grpc
     pkgs.protoc-gen-grpc-web
-    pkgs.pulumi
     pkgs.qemu
     pkgs.redis
     pkgs.tfswitch
