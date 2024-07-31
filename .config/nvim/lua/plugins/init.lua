@@ -197,11 +197,13 @@ local plugins = {
 
 	-- Git Worktree support
 	{
-		-- fork from ThePrimeagen/git-worktree with
-		-- https://github.com/ThePrimeagen/git-worktree.nvim/pull/124
-		-- https://github.com/ThePrimeagen/git-worktree.nvim/pull/106
 		"elsesiy/git-worktree.nvim",
-		branch = "telescope-fix",
+		branch = "misc",
+		config = function()
+			local hooks = require("git-worktree.hooks")
+			hooks.register(hooks.type.SWITCH, hooks.builtins.update_current_buffer_on_switch)
+		end,
+		dependencies = { "nvim-lua/plenary.nvim" },
 		keys = {
 			{
 				"<leader>ga",
@@ -213,7 +215,7 @@ local plugins = {
 			{
 				"<leader>gl",
 				function()
-					require("telescope").extensions.git_worktree.git_worktrees()
+					require("telescope").extensions.git_worktree.git_worktree()
 				end,
 				desc = "Show/Change git worktrees",
 			},
