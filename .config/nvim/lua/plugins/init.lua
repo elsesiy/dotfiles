@@ -24,7 +24,12 @@ local plugins = {
 	},
 	{
 		"hrsh7th/nvim-cmp",
-		opts = overrides.cmp,
+		opts = function()
+			return require("configs.cmp")
+		end,
+		config = function(_, opts)
+			require("cmp").setup(opts)
+		end,
 	},
 	{
 		"folke/which-key.nvim",
@@ -337,16 +342,22 @@ local plugins = {
 	-- Lang specific plugins
 	{ "mfussenegger/nvim-jdtls", ft = "java" },
 
-	-- GenAI
+	-- Copilot
 	{
-		"David-Kunz/gen.nvim",
-		keys = {
-			{
-				"<leader>ge",
-				":Gen<CR>",
-				mode = { "n", "v" },
-				desc = "Gen AI",
-			},
+		"zbirenbaum/copilot-cmp",
+		event = "InsertEnter",
+		config = function()
+			require("copilot_cmp").setup()
+		end,
+		dependencies = {
+			"zbirenbaum/copilot.lua",
+			cmd = "Copilot",
+			config = function()
+				require("copilot").setup({
+					suggestion = { enabled = false },
+					panel = { enabled = false },
+				})
+			end,
 		},
 	},
 
