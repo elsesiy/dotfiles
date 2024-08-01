@@ -74,6 +74,17 @@ M.telescope = {
 		"git_worktree",
 		"ui-select",
 	},
+	pickers = {
+		buffers = {
+			show_all_buffers = true,
+			sort_mru = true,
+			mappings = {
+				i = {
+					["<c-x>"] = "delete_buffer",
+				},
+			},
+		},
+	},
 }
 
 M.which_key = {

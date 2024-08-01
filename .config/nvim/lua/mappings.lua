@@ -3,6 +3,31 @@ require("nvchad.mappings")
 local map = vim.keymap.set
 local nomap = vim.keymap.del
 
+----- disabled nvchad mappings ------
+local disabled = {
+	n = {
+		"<leader>e",
+		"<leader>fa",
+		"<leader>fo",
+		"<leader>ma",
+		"<leader>n",
+		"<leader>pt",
+		"<leader>rn",
+		"<leader>th",
+		"<leader>h",
+		"<leader>v",
+		"<leader>x",
+		"<tab>",
+		"<S-tab>",
+	},
+}
+
+for mode, mappings in pairs(disabled) do
+	for _, keys in pairs(mappings) do
+		nomap(mode, keys)
+	end
+end
+
 ----- normal mode -----
 map("n", "<C-d>", "<C-d>zz", {
 	desc = "center down",
@@ -23,6 +48,9 @@ map("n", "<Leader>y", '"+y')
 map("n", "<Leader>d", '"_d')
 map("n", "<leader>sx", "yy2o<ESC>kpV:!/bin/bash<CR>", { desc = "execute command in shell and print output to buffer" })
 map("n", "`", ":cd %:h<CR>", { desc = "set cwd to folder for open file" })
+map("n", "<C-x>", ":bd<CR>", { desc = "Close the current buffer" })
+map("n", "<tab>", ":bn<CR>", { desc = "Show next buffer", noremap = true })
+map("n", "<S-tab>", ":bp<CR>", { desc = "Show previous buffer", noremap = true })
 
 ----- visual mode -----
 map("v", "<Leader>y", '"+y')
@@ -42,28 +70,6 @@ map(
 
 ----- command mode -----
 map("x", "<Leader>p", '"_dP')
-
------ disabled ------
-local disabled = {
-	n = {
-		"<leader>e",
-		"<leader>fa",
-		"<leader>fo",
-		"<leader>ma",
-		"<leader>n",
-		"<leader>pt",
-		"<leader>rn",
-		"<leader>th",
-		"<leader>h",
-		"<leader>v",
-	},
-}
-
-for mode, mappings in pairs(disabled) do
-	for _, keys in pairs(mappings) do
-		nomap(mode, keys)
-	end
-end
 
 ----- autocommands -----
 vim.api.nvim_create_autocmd("FileType", {
