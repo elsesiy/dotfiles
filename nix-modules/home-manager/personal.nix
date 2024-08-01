@@ -11,7 +11,6 @@
     pkgs.insomnia
     pkgs.macfuse-stubs
     pkgs.pdfgrep
-    pkgs.rustup
     pkgs.tailscale
     pkgs.tor
     pkgs.yubikey-manager

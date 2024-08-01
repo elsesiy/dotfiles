@@ -6,6 +6,7 @@ local lspconfig = require("lspconfig")
 
 local servers = {
 	"bashls",
+	"ruff",
 	"terraformls",
 
 	-- "jdtls" # managed via nvim-jdtls ft

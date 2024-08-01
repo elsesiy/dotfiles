@@ -9,6 +9,7 @@ local opts = {
 		go = { "gofumpt", "goimports" },
 		json = { "jq" },
 		lua = { "stylua" },
+		python = { "ruff_organize_imports", "ruff_format", "ruff_fix" },
 		rust = { "rustfmt" },
 		sh = { "shfmt" },
 		terraform = { "terraform_fmt" },

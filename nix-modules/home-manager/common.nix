@@ -25,6 +25,8 @@
     pkgs.kubebuilder
     pkgs.kubectl
     pkgs.kubectx
+    pkgs.lua
+    pkgs.luajitPackages.luarocks
     pkgs.less
     pkgs.meld
     pkgs.neovim
@@ -33,8 +35,10 @@
     pkgs.procs
     pkgs.protobuf
     pkgs.python3
+    pkgs.python312Packages.pip
     pkgs.rectangle
     pkgs.ripgrep
+    pkgs.rustup
     pkgs.tcptraceroute
     pkgs.tldr
     pkgs.tokei

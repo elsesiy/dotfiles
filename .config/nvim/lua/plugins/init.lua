@@ -135,9 +135,6 @@ local plugins = {
 	},
 	{
 		"olexsmir/gopher.nvim",
-		config = function(_, opts)
-			require("gopher").setup(opts)
-		end,
 		build = function()
 			vim.cmd([[silent! GoInstallDeps]])
 		end,
@@ -154,6 +151,7 @@ local plugins = {
 				desc = "Add yaml struct tags",
 			},
 		},
+		opts = {},
 	},
 	{
 		"mrcjkb/rustaceanvim",
