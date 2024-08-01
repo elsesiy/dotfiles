@@ -6,19 +6,30 @@ local nomap = vim.keymap.del
 ----- disabled nvchad mappings ------
 local disabled = {
 	n = {
+		"<A-h>",
+		"<A-i>",
+		"<A-v>",
+		"<C-n>",
+		"<S-tab>",
+		"<leader>ds",
 		"<leader>e",
 		"<leader>fa",
 		"<leader>fo",
+		"<leader>h",
 		"<leader>ma",
 		"<leader>n",
 		"<leader>pt",
 		"<leader>rn",
 		"<leader>th",
-		"<leader>h",
 		"<leader>v",
 		"<leader>x",
 		"<tab>",
-		"<S-tab>",
+	},
+	t = {
+		"<A-h>",
+		"<A-i>",
+		"<A-v>",
+		"<C-x>",
 	},
 }
 
