@@ -2,40 +2,40 @@
   home.username = "jelsesiy"; 
   home.homeDirectory = "/Users/jelsesiy"; 
 
-  home.packages = [
-    pkgs.argocd
-    pkgs.aws-iam-authenticator
-    pkgs.awscli2
-    pkgs.azure-cli
-    pkgs.bazelisk
-    pkgs.buf
-    pkgs.dive
-    pkgs.ghz
-    pkgs.git-secrets
-    pkgs.gnupg
-    pkgs.google-cloud-sdk
-    pkgs.grpcui
-    pkgs.grype
-    pkgs.istioctl
-    pkgs.jsonnet
-    pkgs.k9s
-    pkgs.kube-linter
-    pkgs.kubeconform
-    pkgs.kubernetes-helm
-    pkgs.kubeval
-    pkgs.kustomize
-    pkgs.lcov
-    pkgs.maven
-    pkgs.mdp
-    pkgs.open-policy-agent
-    pkgs.protoc-gen-go
-    pkgs.protoc-gen-go-grpc
-    pkgs.protoc-gen-grpc-web
-    pkgs.qemu
-    pkgs.redis
-    pkgs.tfswitch
-    pkgs.vault
-    pkgs.vhs
-    pkgs.wrk
+  home.packages = with pkgs; [
+    argocd
+    aws-iam-authenticator
+    awscli2
+    azure-cli
+    bazelisk
+    buf
+    dive
+    ghz
+    git-secrets
+    gnupg
+    google-cloud-sdk
+    grpcui
+    grype
+    istioctl
+    jsonnet
+    k9s
+    kube-linter
+    kubeconform
+    kubernetes-helm
+    kubeval
+    kustomize
+    lcov
+    maven
+    mdp
+    open-policy-agent
+    protoc-gen-go
+    protoc-gen-go-grpc
+    protoc-gen-grpc-web
+    qemu
+    redis
+    tfswitch
+    vault
+    vhs
+    wrk
   ];
 }

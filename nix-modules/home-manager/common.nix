@@ -1,54 +1,63 @@
 { pkgs, lib, ... }: {
   home.stateVersion = "24.05";
 
-  home.packages = [
-    pkgs.bat
-    pkgs.binutils
-    pkgs.clang-tools
-    pkgs.cosign
-    pkgs.crane
-    pkgs.curl
-    pkgs.fd
-    pkgs.fzf
-    pkgs.git
-    pkgs.gnused
+  home.packages = with pkgs; [
+    bat
+    binutils
+    clang-tools
+    cosign
+    crane
+    curl
+    fd
+    fzf
+    git
+    gnused
     # https://github.com/nvim-pack/nvim-spectre/issues/101
-    (pkgs.writeShellScriptBin "gsed" "exec ${pkgs.gnused}/bin/sed \"$@\"")
-    pkgs.go
-    pkgs.grpcurl
-    pkgs.httpie
-    pkgs.hyperfine
-    pkgs.jdk
-    pkgs.jq
-    pkgs.jqp
-    pkgs.kind
-    pkgs.kubebuilder
-    pkgs.kubectl
-    pkgs.kubectx
-    pkgs.lua
-    pkgs.luajitPackages.luarocks
-    pkgs.less
-    pkgs.meld
-    pkgs.neovim
-    pkgs.openssl
-    pkgs.postgresql
-    pkgs.procs
-    pkgs.protobuf
-    pkgs.python3
-    pkgs.python312Packages.pip
-    pkgs.rectangle
-    pkgs.ripgrep
-    pkgs.rustup
-    pkgs.ruby
-    pkgs.rubyPackages.psych
-    pkgs.tcptraceroute
-    pkgs.tldr
-    pkgs.tokei
-    pkgs.tzdata
-    pkgs.watch
-    pkgs.wget
-    pkgs.wireshark
-    pkgs.yq
+    (writeShellScriptBin "gsed" "exec ${pkgs.gnused}/bin/sed \"$@\"")
+    go
+    grpcurl
+    httpie
+    hyperfine
+    jdk
+    jq
+    jqp
+    kind
+    kubebuilder
+    kubectl
+    kubectx
+    lua
+    luajitPackages.luarocks
+    less
+    meld
+    neovim
+    openssl
+    postgresql
+    procs
+    protobuf
+    python3
+    python312Packages.pip
+    rectangle
+    ripgrep
+    ruby
+    rubyPackages.psych
+    tcptraceroute
+    tldr
+    tokei
+    tzdata
+    watch
+    wget
+    wireshark
+    yq
+
+    # rust
+    (fenix.complete.withComponents [
+        "cargo"
+        "clippy"
+        "rust-src"
+        "rustc"
+        "rustfmt"
+    ])
+    rust-analyzer-nightly
   ];
 
   home.sessionVariables = {
