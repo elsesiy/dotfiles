@@ -39,6 +39,8 @@
     pkgs.rectangle
     pkgs.ripgrep
     pkgs.rustup
+    pkgs.ruby
+    pkgs.rubyPackages.psych
     pkgs.tcptraceroute
     pkgs.tldr
     pkgs.tokei
@@ -85,8 +87,6 @@
         git_protocol = "ssh";
       };
     };
-
-    rbenv.enable = true; # default shell integration
 
     starship = {
       enable = true;
