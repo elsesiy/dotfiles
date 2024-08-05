@@ -1,12 +1,83 @@
 keybinds {
-    unbind "Ctrl g" "Ctrl q" // unbind in all modes
-    locked {
-        bind "Alt g" { SwitchToMode "Normal"; }
-    }
-    shared_except "locked" {
-        bind "Alt g" { SwitchToMode "Locked"; }
-        bind "Alt q" { Quit ; }
-    }
+  locked {
+    bind "Alt g" { SwitchToMode "Normal"; }
+  }
+
+  move {
+    bind "Alt h" { SwitchToMode "Normal"; }
+  }
+
+  pane {
+    bind "Alt p" { SwitchToMode "Normal"; }
+  }
+
+  resize {
+    bind "Alt n" { SwitchToMode "Normal"; }
+  }
+
+  scroll {
+    bind "Alt s" { SwitchToMode "Normal"; }
+  }
+
+  session {
+    bind "Alt o" { SwitchToMode "Normal"; }
+    bind "Alt s" { SwitchToMode "scroll"; }
+  }
+
+  tab {
+    bind "Alt t" { SwitchToMode "Normal"; }
+  }
+
+  shared_except "locked" {
+    unbind "Ctrl h" // was Move, now Alt-h
+    unbind "Ctrl o" // was Session, now Alt-o
+    unbind "Ctrl s" // was Scroll, now Alt-s
+    unbind "Ctrl n" // was Resize, now Alt-n
+    unbind "Ctrl p" // was Pane, now Alt-p
+    unbind "Ctrl t" // was Tab, now Alt-t
+    unbind "Ctrl g" // was Locked, now Alt-g
+    unbind "Ctrl q" // was Quit, now Alt-q
+    bind "Alt g" { SwitchToMode "locked"; }
+    bind "Alt q" { Quit; }
+    bind "Alt t" { NewTab; }
+    bind "Alt d" { NewPane "down";}
+    bind "Alt r" { NewPane "right"; }
+    bind "Alt w" { ToggleFloatingPanes; }
+    bind "Alt 1" { GoToTab 1; }
+    bind "Alt 2" { GoToTab 2; }
+    bind "Alt 3" { GoToTab 3; }
+    bind "Alt 4" { GoToTab 4; }
+    bind "Alt 5" { GoToTab 5; }
+    bind "Alt 6" { GoToTab 6; }
+    bind "Alt 7" { GoToTab 7; }
+    bind "Alt 8" { GoToTab 8; }
+    bind "Alt 9" { GoToTab 9; }
+    bind "Alt 0" { GoToTab 10; }
+  }
+
+  shared_except "move" "locked" {
+    bind "Alt h" { SwitchToMode "move"; }
+  }
+
+  shared_except "pane" "locked" {
+    bind "Alt p" { SwitchToMode "pane"; }
+  }
+
+  shared_except "resize" "locked" {
+    bind "Alt n" { SwitchToMode "resize"; }
+  }
+
+  shared_except "scroll" "locked" {
+    bind "Alt s" { SwitchToMode "scroll"; }
+  }
+
+  shared_except "session" "locked" {
+    bind "Alt o" { SwitchToMode "session"; }
+  }
+
+  shared_except "tab" "locked" {
+    bind "Alt t" { SwitchToMode "tab"; }
+  }
 }
 
 pane_frames false
