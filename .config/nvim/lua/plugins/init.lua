@@ -363,6 +363,18 @@ local plugins = {
 
 	-- Misc
 	{ "ThePrimeagen/vim-be-good", event = "VeryLazy" },
+	{
+		"m4xshen/hardtime.nvim",
+		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+		keys = {
+			{
+				"<Leader>ht",
+				":Hardtime toggle<CR>",
+				desc = "Hardtime toggle",
+			},
+		},
+		opts = {},
+	},
 	{ "machakann/vim-highlightedyank", event = "VeryLazy" },
 	{ "kevinhwang91/nvim-bqf", event = "VeryLazy" },
 	---- Detect tabstop and shiftwidth automatically
