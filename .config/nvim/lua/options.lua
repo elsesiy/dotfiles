@@ -16,8 +16,6 @@ vim.opt.fileencoding = "utf-8"
 vim.opt.ruler = true
 -- Treat dash separated words as a word text object
 vim.opt.iskeyword:append("-")
--- So that I can see `` in markdown files
-vim.opt.conceallevel = 0
 -- Keep min 8 lines before/after before scrolling
 vim.opt.scrolloff = 8
 -- Visual column for line length

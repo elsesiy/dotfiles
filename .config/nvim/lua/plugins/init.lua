@@ -497,6 +497,23 @@ local plugins = {
 			require("configs.wilder")
 		end,
 	},
+
+	-- markdown support
+	{
+		"OXY2DEV/markview.nvim",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
+		},
+		ft = "markdown",
+		keys = {
+			{
+				"<Leader>md",
+				":Markview<CR>",
+				desc = "Markview toggle",
+			},
+		},
+	},
 }
 
 return plugins
