@@ -40,7 +40,8 @@ keybinds {
     bind "Alt g" { SwitchToMode "locked"; }
     bind "Alt q" { Quit; }
     bind "Alt t" { NewTab; }
-    bind "Alt d" { NewPane "down";}
+    bind "Alt N" { NewPane; }
+    bind "Alt d" { NewPane "down"; }
     bind "Alt r" { NewPane "right"; }
     bind "Alt w" { ToggleFloatingPanes; }
     bind "Alt 1" { GoToTab 1; }
