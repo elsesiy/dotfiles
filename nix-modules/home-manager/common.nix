@@ -44,9 +44,11 @@
     tldr
     tokei
     tzdata
+    vhs
     watch
     wget
     wireshark
+    wrk
     yq
 
     # rust

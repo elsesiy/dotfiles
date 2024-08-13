@@ -35,7 +35,5 @@
     redis
     tfswitch
     vault
-    vhs
-    wrk
   ];
 }
