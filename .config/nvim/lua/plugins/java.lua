@@ -37,14 +37,7 @@ return {
 
 				root_dir = vim.fs.root(0, { ".git", "mvnw", "gradlew" }),
 				settings = {
-					java = {
-						format = {
-							settings = {
-								url = vim.fn.expand("~/.local/share/eclipse/eclipse-java-google-style.xml"),
-								profile = "GoogleStyle",
-							},
-						},
-					},
+					java = {},
 					signatureHelp = { enabled = true },
 					completion = {
 						favoriteStaticMembers = {

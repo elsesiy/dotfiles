@@ -20,6 +20,7 @@ M.mason = {
 		-- formatting
 		"gofumpt",
 		"goimports",
+		"google-java-format",
 		"shfmt",
 		"stylua",
 		"yamlfix",
