@@ -90,6 +90,8 @@ vim.api.nvim_create_autocmd("FileType", {
 		"git",
 		"help",
 		"lspinfo",
+		"neotest-output-panel",
+		"neotest-summary",
 		"netrw",
 		"notify",
 		"qf",

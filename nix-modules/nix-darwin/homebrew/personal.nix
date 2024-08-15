@@ -11,6 +11,7 @@
       "firefox"
       "keepassxc"
       "keybase"
+      "librewolf"
       "microsoft-teams"
       "osxfuse"
       "paw"

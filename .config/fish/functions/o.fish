@@ -1,4 +1,4 @@
 function o
-	z $argv && open .
+	cd $argv && open .
 end
 
