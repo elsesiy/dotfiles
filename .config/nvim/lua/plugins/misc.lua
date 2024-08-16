@@ -33,6 +33,10 @@ local plugins = {
 		"NvChad/nvim-colorizer.lua",
 		enabled = false,
 	},
+	{
+		"windwp/nvim-autopairs",
+		enabled = false,
+	},
 
 	-- other plugins
 	{
@@ -226,6 +230,26 @@ local plugins = {
 				desc = "Markview toggle",
 			},
 		},
+	},
+
+	-- highlight words under cursor
+	{
+		"echasnovski/mini.cursorword",
+		event = "VeryLazy",
+		config = function()
+			require("mini.cursorword").setup()
+		end,
+		version = false,
+	},
+
+	-- more/enhanced treesitter textobjects
+	{
+		"echasnovski/mini.ai",
+		event = "VeryLazy",
+		config = function()
+			require("mini.ai").setup()
+		end,
+		version = false,
 	},
 }
 
