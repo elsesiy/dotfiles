@@ -83,6 +83,22 @@ lspconfig.yamlls.setup({
 	},
 })
 
+---- lsp customization ----
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	border = {
+		{ "╭", "Comment" },
+		{ "─", "Comment" },
+		{ "╮", "Comment" },
+		{ "│", "Comment" },
+		{ "╯", "Comment" },
+		{ "─", "Comment" },
+		{ "╰", "Comment" },
+		{ "│", "Comment" },
+	},
+	-- hide 'No information available' message
+	silent = true,
+})
+
 ---- keymaps -----
 vim.keymap.set("n", "<leader>I", function()
 	--- @diagnostic disable: missing-parameter
