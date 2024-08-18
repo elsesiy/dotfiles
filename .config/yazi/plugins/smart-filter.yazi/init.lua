@@ -1,3 +1,4 @@
+-- source: https://github.com/yazi-rs/plugins/blob/ac88ed352aa02730fdf6fdc5f064676de78b56d8/smart-filter.yazi/init.lua
 local hovered = ya.sync(function()
 	local h = cx.active.current.hovered
 	if not h then
