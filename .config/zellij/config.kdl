@@ -4,7 +4,7 @@ keybinds {
   }
 
   move {
-    bind "Alt h" { SwitchToMode "Normal"; }
+    bind "Alt m" { SwitchToMode "Normal"; }
   }
 
   pane {
@@ -57,7 +57,7 @@ keybinds {
   }
 
   shared_except "move" "locked" {
-    bind "Alt h" { SwitchToMode "move"; }
+    bind "Alt m" { SwitchToMode "move"; }
   }
 
   shared_except "pane" "locked" {
