@@ -4,7 +4,14 @@ local plugins = {
 	-- override misc built-in plugin configs
 	{
 		"williamboman/mason.nvim",
-		opts = overrides.mason,
+		cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
+		opts = function()
+			local nvopts = require("nvchad.configs.mason")
+			nvopts.PATH = "prepend"
+		end,
+		config = function(_, opts)
+			require("mason").setup(opts)
+		end,
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -21,7 +28,10 @@ local plugins = {
 	},
 	{
 		"folke/which-key.nvim",
-		opts = overrides.which_key,
+		opts = {
+			show_help = false,
+			show_keys = false,
+		},
 	},
 
 	-- disable misc built-in plugins

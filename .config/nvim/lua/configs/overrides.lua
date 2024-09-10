@@ -1,44 +1,5 @@
 local M = {}
 
-M.mason = {
-	ensure_installed = {
-		-- dap
-		"delve",
-		"java-debug-adapter",
-		"java-test",
-
-		-- lsp
-		"bash-language-server",
-		"gopls",
-		"jdtls",
-		"lua-language-server",
-		"nil",
-		"ruff",
-		"terraform-ls",
-		"yaml-language-server",
-
-		-- formatting
-		"gofumpt",
-		"goimports",
-		"google-java-format",
-		"shfmt",
-		"stylua",
-		"yamlfix",
-
-		-- lint
-		"golangci-lint",
-		"shellcheck",
-		"sqlfluff",
-		"tflint",
-		"tfsec",
-		"yamllint",
-
-		-- spelling
-		"codespell",
-	},
-	PATH = "prepend",
-}
-
 M.treesitter = {
 	ensure_installed = {
 		"awk",
@@ -94,11 +55,6 @@ M.treesitter = {
 		"xml",
 		"yaml",
 	},
-}
-
-M.which_key = {
-	show_help = false,
-	show_keys = false,
 }
 
 return M
