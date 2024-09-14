@@ -11,6 +11,7 @@
     buf
     dive
     ghz
+    git-lfs
     git-secrets
     gnupg
     google-cloud-sdk

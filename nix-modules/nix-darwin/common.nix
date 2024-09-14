@@ -18,6 +18,7 @@
   };
 
   system = {
+    stateVersion = 5;
     # activationScripts are executed every time you boot the system or run `nixos-rebuild` / `darwin-rebuild`.
     # on nix-darwin only certain scripts are run, see https://github.com/LnL7/nix-darwin/issues/663
     activationScripts.postUserActivation.text = ''

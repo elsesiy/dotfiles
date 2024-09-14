@@ -11,6 +11,7 @@
     fd
     fzf
     git
+    glow
     gnused
     # https://github.com/nvim-pack/nvim-spectre/issues/101
     (writeShellScriptBin "gsed" "exec ${pkgs.gnused}/bin/sed \"$@\"")
@@ -31,6 +32,7 @@
     meld
     neovim
     openssl
+    pet
     postgresql
     procs
     protobuf
