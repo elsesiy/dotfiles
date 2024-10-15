@@ -261,6 +261,13 @@ local plugins = {
 		end,
 		version = false,
 	},
+
+	-- show visual separator for multiple windows
+	{
+		"nvim-zh/colorful-winsep.nvim",
+		config = true,
+		event = { "WinLeave" },
+	},
 }
 
 return plugins
