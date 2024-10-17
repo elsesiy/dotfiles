@@ -79,9 +79,6 @@ map(
 	{ desc = "execute command in shell and print output to buffer" }
 )
 
------ command mode -----
-map("x", "<Leader>p", '"_dP')
-
 ----- autocommands -----
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {
