@@ -1,8 +1,11 @@
-local on_attach = require("nvchad.configs.lspconfig").on_attach
-local on_init = require("nvchad.configs.lspconfig").on_init
-local capabilities = require("nvchad.configs.lspconfig").capabilities
-
+local nvlsp = require("nvchad.configs.lspconfig")
 local lspconfig = require("lspconfig")
+
+nvlsp.defaults()
+
+local on_attach = nvlsp.on_attach
+local on_init = nvlsp.on_init
+local capabilities = nvlsp.capabilities
 
 local servers = {
 	"bashls",
@@ -25,6 +28,7 @@ lspconfig.gopls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	on_init = on_init,
+
 	settings = {
 		gopls = {
 			analyses = {
@@ -50,31 +54,11 @@ lspconfig.gopls.setup({
 	},
 })
 
-lspconfig.lua_ls.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	on_init = on_init,
-	settings = {
-		Lua = {
-			hint = {
-				enable = true,
-			},
-			diagnostics = {
-				globals = { "vim" },
-			},
-			workspace = {
-				checkThirdParty = false,
-				library = vim.api.nvim_get_runtime_file("", true),
-			},
-			telemetry = { enable = false },
-		},
-	},
-})
-
 lspconfig.yamlls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	on_init = on_init,
+
 	yaml = {
 		format = {
 			enable = false,
@@ -106,3 +90,6 @@ vim.keymap.set("n", "<leader>I", function()
 end, {
 	desc = "Toggle inlay hints",
 })
+
+---- override NvChad defaults for diagnostics config ----
+vim.diagnostic.config({ virtual_text = false })

@@ -1,26 +1,74 @@
-local overrides = require("configs.overrides")
-
 local plugins = {
 	-- override misc built-in plugin configs
 	{
 		"williamboman/mason.nvim",
-		cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
-		opts = function()
-			local nvopts = require("nvchad.configs.mason")
-			nvopts.PATH = "prepend"
-		end,
-		config = function(_, opts)
-			require("mason").setup(opts)
-		end,
+		opts = {
+			PATH = "prepend",
+		},
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
-		opts = overrides.treesitter,
+		opts = {
+			ensure_installed = {
+				"awk",
+				"bash",
+				"cmake",
+				"cpp",
+				"css",
+				"csv",
+				"diff",
+				"dockerfile",
+				"editorconfig",
+				"fish",
+				"git_config",
+				"git_rebase",
+				"gitattributes",
+				"gitcommit",
+				"gitignore",
+				"go",
+				"gomod",
+				"gosum",
+				"gotmpl",
+				"gowork",
+				"gpg",
+				"graphql",
+				"groovy",
+				"hcl",
+				"html",
+				"http",
+				"java",
+				"javascript",
+				"jq",
+				"json",
+				"jsonnet",
+				"kdl",
+				"lua",
+				"make",
+				"markdown",
+				"markdown_inline",
+				"nix",
+				"passwd",
+				"pem",
+				"promql",
+				"proto",
+				"python",
+				"regex",
+				"rust",
+				"scss",
+				"sql",
+				"terraform",
+				"typescript",
+				"vim",
+				"vimdoc",
+				"xml",
+				"yaml",
+			},
+		},
 	},
 	{
 		"hrsh7th/nvim-cmp",
 		opts = function()
-			return require("configs.cmp")
+			return require("configs.nvim-cmp")
 		end,
 		config = function(_, opts)
 			require("cmp").setup(opts)
@@ -52,7 +100,6 @@ local plugins = {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			require("nvchad.configs.lspconfig").defaults()
 			require("configs.lspconfig")
 		end,
 	},
