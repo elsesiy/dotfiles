@@ -10,6 +10,8 @@
     curl
     fd
     fzf
+    delta
+    gum
     git
     glow
     gnused
@@ -26,6 +28,7 @@
     kubebuilder
     kubectl
     kubectx
+    lolcat
     lua
     luajitPackages.luarocks
     less

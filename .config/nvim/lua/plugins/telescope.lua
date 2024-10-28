@@ -2,6 +2,13 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		cmd = "Telescope",
+		dependencies = {
+			{
+				"nvim-telescope/telescope-ui-select.nvim",
+				"nvim-telescope/telescope-fzf-native.nvim",
+				build = "make",
+			},
+		},
 		keys = {
 			{
 				"<leader>tr",
@@ -34,13 +41,5 @@ return {
 				},
 			},
 		},
-	},
-
-	-- fzf
-	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-
-	-- hijack vim.ui.select to use Telescope instead
-	{
-		"nvim-telescope/telescope-ui-select.nvim",
 	},
 }
