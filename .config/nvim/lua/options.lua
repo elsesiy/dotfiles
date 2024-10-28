@@ -37,5 +37,9 @@ vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
 
+-- Improve diff experience
+vim.opt.diffopt:append('algorithm:patience')
+vim.opt.diffopt:append('indent-heuristic')
+
 -- Re-enable python provider https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/options.lua#L51-L55
 vim.g.loaded_python3_provider = 1

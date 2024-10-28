@@ -63,6 +63,11 @@ map("n", "<C-x>", ":bd<CR>", { desc = "Close the current buffer" })
 map("n", "<tab>", ":bn<CR>", { desc = "Show next buffer", noremap = true })
 map("n", "<S-tab>", ":bp<CR>", { desc = "Show previous buffer", noremap = true })
 
+-- custom fugitive mappings
+map("n", "<leader>gr", ":G reset HEAD~1<CR>", { desc = "Soft reset by one commit" })
+map("n", "<leader>gR", ":G reset HEAD~", { desc = "Soft reset by n commits" })
+map("n", "<leader>gb", ":G blame<CR>", { desc = "Git blame" })
+
 ----- visual mode -----
 map("v", "<Leader>y", '"+y')
 map("v", "<Leader>d", '"_d')

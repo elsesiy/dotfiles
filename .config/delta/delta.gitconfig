@@ -2,14 +2,25 @@
   path = "./themes/catppuccin.gitconfig"
 [core]
   pager = delta
-[interactive]
-  diffFilter = delta --color-only
 [delta]
   features = catppuccin-mocha
+  file-decoration-style = none
+  hunk-header-style = file line-number syntax
   hyperlinks = true
   line-numbers = true
   navigate = true
-[merge]
-  conflictstyle = diff3
+  side-by-side = true
 [diff]
   colorMoved = default
+[interactive]
+  diffFilter = delta --color-only
+[merge]
+  tool = nvimdiff
+  conflictstyle = diff3
+[mergetool "nvimdiff"]
+    cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[pager]
+  blame  = delta
+  diff   = delta
+  reflog = delta
+  show   = delta
