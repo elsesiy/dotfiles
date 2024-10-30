@@ -31,7 +31,7 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		keys = {
 			{
-				"<leader>ga",
+				"<leader>gw",
 				function()
 					require("telescope").extensions.git_worktree.create_git_worktree()
 				end,

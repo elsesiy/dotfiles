@@ -64,6 +64,7 @@ map("n", "<tab>", ":bn<CR>", { desc = "Show next buffer", noremap = true })
 map("n", "<S-tab>", ":bp<CR>", { desc = "Show previous buffer", noremap = true })
 
 -- custom fugitive mappings
+map("n", "<leader>ga", ":G add --all<CR>", { desc = "Git add all" })
 map("n", "<leader>gr", ":G reset HEAD~1<CR>", { desc = "Soft reset by one commit" })
 map("n", "<leader>gR", ":G reset HEAD~", { desc = "Soft reset by n commits" })
 map("n", "<leader>gb", ":G blame<CR>", { desc = "Git blame" })
