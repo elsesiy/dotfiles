@@ -104,3 +104,13 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.keymap.set("n", "q", vim.cmd.close, { desc = "Close the current buffer", buffer = true })
 	end,
 })
+
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(args)
+		vim.schedule(function()
+			map({ "n", "v" }, "<leader>ca", function()
+				require("tiny-code-action").code_action()
+			end, { noremap = true, silent = true, buffer = args.buf })
+		end)
+	end,
+})
