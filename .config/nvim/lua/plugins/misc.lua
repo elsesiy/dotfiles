@@ -206,7 +206,7 @@ local plugins = {
 		"mbbill/undotree",
 		keys = {
 			{
-				"<Leader>u",
+				"<Leader>U",
 				":UndotreeToggle<CR>",
 				desc = "Undotree",
 			},
