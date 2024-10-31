@@ -45,9 +45,17 @@
       };
       finder = {
         AppleShowAllFiles = true;
+        FXEnableExtensionChangeWarning = false;
+        FXPreferredViewStyle = "clmv";
         ShowPathbar = true;
         ShowStatusBar = true;
         _FXShowPosixPathInTitle = true;
+      };
+      trackpad = {
+        TrackpadRightClick = true;
+      };
+      WindowManager = {
+        EnableStandardClickToShowDesktop = false;
       };
     };
     startup.chime = false;
