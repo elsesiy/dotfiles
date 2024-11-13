@@ -33,6 +33,7 @@
     luajitPackages.luarocks
     less
     meld
+    nodejs_22
     neovim
     openssl
     pet

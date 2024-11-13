@@ -36,5 +36,6 @@
     redis
     tfswitch
     vault
+    zstd
   ];
 }
