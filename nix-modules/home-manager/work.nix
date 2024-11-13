@@ -6,7 +6,6 @@
     argocd
     aws-iam-authenticator
     awscli2
-    azure-cli
     bazelisk
     buf
     dive

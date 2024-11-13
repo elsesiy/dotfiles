@@ -33,8 +33,8 @@
     luajitPackages.luarocks
     less
     meld
-    nodejs_22
     neovim
+    nodejs_22
     openssl
     pet
     postgresql
