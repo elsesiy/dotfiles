@@ -4,7 +4,10 @@ fish_config theme choose "Catppuccin Mocha"
 fish_add_path ~/.cargo/bin
 fish_add_path ~/.krew/bin
 fish_add_path (go env GOPATH)/bin
-eval (brew shellenv)
+set BREW_PATH (which brew)
+if string length --quiet $BREW_PATH
+    eval ($BREW_PATH shellenv)
+end
 
 # global opts
 set -U fish_greeting
