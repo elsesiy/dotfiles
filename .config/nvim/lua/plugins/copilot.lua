@@ -1,3 +1,21 @@
+-- https://github.com/jellydn/lazy-nvim-ide/blob/main/lua/plugins/extras/copilot-chat-v2.lua
+local prompts = {
+	-- Code related prompts
+	Explain = "Please explain how the following code works.",
+	Review = "Please review the following code and provide suggestions for improvement.",
+	Tests = "Please explain how the selected code works, then generate unit tests for it.",
+	Refactor = "Please refactor the following code to improve its clarity and readability.",
+	FixCode = "Please fix the following code to make it work as intended.",
+	FixError = "Please explain the error in the following text and provide a solution.",
+	BetterNamings = "Please provide better names for the following variables and functions.",
+	Documentation = "Please provide documentation for the following code.",
+	-- Text related prompts
+	Summarize = "Please summarize the following text.",
+	Spelling = "Please correct any grammar and spelling errors in the following text.",
+	Wording = "Please improve the grammar and wording of the following text.",
+	Concise = "Please rewrite the following text to make it more concise.",
+}
+
 return {
 	-- Copilot support with cmp source
 	{
@@ -28,8 +46,6 @@ return {
 			-- Use unnamed register for the selection
 			opts.selection = select.unnamed
 			chat.setup(opts)
-			-- Setup the CMP integration
-			require("CopilotChat.integrations.cmp").setup()
 
 			vim.api.nvim_create_user_command("CopilotChatVisual", function(args)
 				chat.ask(args.args, { selection = select.visual })
@@ -71,15 +87,6 @@ return {
 		end,
 		event = "VeryLazy",
 		keys = {
-			-- Show help actions with telescope
-			{
-				"<leader>ah",
-				function()
-					local actions = require("CopilotChat.actions")
-					require("CopilotChat.integrations.telescope").pick(actions.help_actions())
-				end,
-				desc = "CopilotChat - Help actions",
-			},
 			-- Show prompts actions with telescope
 			{
 				"<leader>ap",
@@ -131,11 +138,6 @@ return {
 				"<cmd>CopilotChatCommit<cr>",
 				desc = "CopilotChat - Generate commit message for all changes",
 			},
-			{
-				"<leader>aM",
-				"<cmd>CopilotChatCommitStaged<cr>",
-				desc = "CopilotChat - Generate commit message for staged changes",
-			},
 			-- Quick chat with Copilot
 			{
 				"<leader>aq",
@@ -159,11 +161,13 @@ return {
 			{ "<leader>a?", "<cmd>CopilotChatModels<cr>", desc = "CopilotChat - Select Models" },
 		},
 		opts = {
+			auto_follow_cursor = false,
 			mappings = {
 				complete = {
 					insert = "",
 				},
 			},
+			prompts = prompts,
 			question_header = "## Me ",
 		},
 	},

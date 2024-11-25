@@ -34,7 +34,6 @@
     less
     meld
     neovim
-    nodejs_22
     openssl
     pet
     postgresql

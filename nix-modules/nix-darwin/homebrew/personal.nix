@@ -16,7 +16,7 @@
       "osxfuse"
       "paw"
       "steam"
-      "superproductivity"
+      "super-productivity"
       "virtualbox"
     ];
   };
