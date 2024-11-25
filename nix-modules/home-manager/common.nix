@@ -25,6 +25,7 @@
     jq
     jqp
     kind
+    krew
     kubebuilder
     kubectl
     kubectx

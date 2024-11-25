@@ -41,7 +41,11 @@ abbr grb "git rebase"
 abbr grba "git rebase --abort"
 abbr grbc "git rebase --continue"
 abbr grbi "git rebase -i"
+abbr grd 'git for-each-ref --format="%(refname:short)" refs/heads | xargs git branch -D'
 abbr gsh "git show"
 abbr gst "git status"
 abbr gwch "git whatchanged -p --abbrev-commit --pretty=medium"
 abbr gwtf 'git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"'
+
+abbr ppr 'pulumi preview'
+abbr pup 'pulumi up'
