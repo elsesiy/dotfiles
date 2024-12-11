@@ -13,7 +13,6 @@
   };
 
   services = {
-    activate-system.enable = true;
     nix-daemon.enable = true;
   };
 

@@ -7,6 +7,7 @@
       "ferdium"
       "uhk-agent"
       "wezterm" # nixpkg fails to build on x86
+      "wireshark" # nipkgs broken
     ];
     enable = true;
     # updates homebrew packages on activation,

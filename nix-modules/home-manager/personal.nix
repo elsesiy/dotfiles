@@ -8,8 +8,6 @@
     ffmpeg
     gradle
     highlight
-    insomnia
-    macfuse-stubs
     pdfgrep
     tailscale
     tor

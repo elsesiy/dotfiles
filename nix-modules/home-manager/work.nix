@@ -16,6 +16,7 @@
     google-cloud-sdk
     grpcui
     grype
+    insomnia
     istioctl
     jsonnet
     k9s

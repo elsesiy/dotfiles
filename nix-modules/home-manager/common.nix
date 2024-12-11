@@ -1,5 +1,5 @@
 { pkgs, lib, ... }: {
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
 
   home.packages = with pkgs; [
     bat
@@ -53,7 +53,6 @@
     vhs
     watch
     wget
-    wireshark
     wrk
     yq
 

@@ -12,12 +12,10 @@
       "keepassxc"
       "keybase"
       "librewolf"
+      "macfuse"
       "microsoft-teams"
-      "osxfuse"
       "paw"
       "steam"
-      "super-productivity"
-      "virtualbox"
     ];
   };
 }
