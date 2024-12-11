@@ -30,16 +30,22 @@ Either use `JetBrainsMono` located in `fonts` or browse others [here](https://gi
 
 2. Clone the repo & create alias to interact with it
 
-       git clone --bare git@github.com:elsesiy/dotfiles.git $HOME/.local/share/dotfiles
+       git clone --bare https://github.com/elsesiy/dotfiles.git $HOME/.local/share/dotfiles
        alias dgit='git --git-dir=$HOME/.local/share/dotfiles/ --work-tree=$HOME'
        dgit status
 
        # restore missing files in homedir, make sure to backup local changes first if there are any conflicts i.e. modified instead of deleted files
        dgit reset && dgit restore .
 
+       # (optional) update repo for ssh cloning
+       dgit remote set-url origin git@github.com:elsesiy/dotfiles.git
+
 3. Install packages via [Nix](#Nix)
 
 4. Misc configuration
+
+       # set fish as default shell
+       chsh -s /run/current-system/sw/bin/fish $(whoami)
 
        # rebuild bat cache
        bat cache --build
