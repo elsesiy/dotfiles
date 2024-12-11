@@ -62,6 +62,9 @@ map("n", "`", ":cd %:h<CR>", { desc = "set cwd to folder for open file" })
 map("n", "<C-x>", ":bd<CR>", { desc = "Close the current buffer" })
 map("n", "<tab>", ":bn<CR>", { desc = "Show next buffer", noremap = true })
 map("n", "<S-tab>", ":bp<CR>", { desc = "Show previous buffer", noremap = true })
+-- https://github.com/williamboman/mason.nvim/discussions/1795
+map("n", "<Leader>MIA", ":lua require('nvchad.mason').install_all()<CR>", { desc = "Install all mason packages" })
+
 
 -- custom fugitive mappings
 map("n", "<leader>ga", ":G add --all<CR>", { desc = "Git add all" })
