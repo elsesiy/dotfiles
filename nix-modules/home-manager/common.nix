@@ -50,6 +50,7 @@
     tldr
     tokei
     tzdata
+    utm
     vhs
     watch
     wget
