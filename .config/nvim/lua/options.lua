@@ -4,6 +4,8 @@ require "nvchad.options"
 vim.g.toggle_theme_icon = ""
 -- Enable virtual text inlining for DAP
 vim.g.dap_virtual_text = true
+-- Disable more messages
+vim.opt.more = false
 -- Use relative line numbers
 vim.opt.rnu = true
 -- Always use same cursor style
