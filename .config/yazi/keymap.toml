@@ -3,6 +3,6 @@
 prepend_keymap = [
 	{ on = [ "f" ], run  = "plugin jump-to-char", desc = "Jumpt to char" },
 	{ on = [ "F" ], run  = "plugin smart-filter", desc = "Smart filter" },
-	{ on = [ "l" ], run  = "plugin --sync smart-enter", desc = "Enter the child directory, or open the file" },
-	{ on = [ "p" ], run  = "plugin --sync smart-paste", desc = "Paste into the hovered directory or CWD" },
+	{ on = [ "l" ], run  = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
+	{ on = [ "p" ], run  = "plugin smart-paste", desc = "Paste into the hovered directory or CWD" },
 ]
