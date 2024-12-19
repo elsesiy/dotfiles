@@ -48,4 +48,5 @@ abbr gwch "git whatchanged -p --abbrev-commit --pretty=medium"
 abbr gwtf 'git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"'
 
 abbr ppr 'pulumi preview'
+abbr pss 'pulumi stack select'
 abbr pup 'pulumi up'

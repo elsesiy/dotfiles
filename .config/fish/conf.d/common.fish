@@ -15,3 +15,12 @@ function commandpath
     command -s $cmd
 end
 abbr --add --position anywhere --regex '=.*' --function commandpath commandpath
+
+# source: https://github.com/kubermatic/fubectl/blob/master/fubectl.source#L9-L10
+function _inline_fzf
+    fzf --multi --ansi -i -1 --height=50% --reverse -0 --header-lines=1 --inline-info --border
+end
+
+function _inline_fzf_nh
+    fzf --multi --ansi -i -1 --height=50% --reverse -0 --inline-info --border
+end
