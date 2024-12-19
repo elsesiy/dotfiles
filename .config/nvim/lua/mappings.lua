@@ -65,12 +65,13 @@ map("n", "<S-tab>", ":bp<CR>", { desc = "Show previous buffer", noremap = true }
 -- https://github.com/williamboman/mason.nvim/discussions/1795
 map("n", "<Leader>MIA", ":lua require('nvchad.mason').install_all()<CR>", { desc = "Install all mason packages" })
 
-
 -- custom fugitive mappings
 map("n", "<leader>ga", ":G add --all<CR>", { desc = "Git add all" })
 map("n", "<leader>gr", ":G reset HEAD~1<CR>", { desc = "Soft reset by one commit" })
 map("n", "<leader>gR", ":G reset HEAD~", { desc = "Soft reset by n commits" })
 map("n", "<leader>gb", ":G blame<CR>", { desc = "Git blame" })
+map("n", "<leader>gp", ":G push<CR>", { desc = "Git push" })
+map("n", "<leader>gP", ":G push -f<CR>", { desc = "Git push (force)" })
 
 ----- visual mode -----
 map("v", "<Leader>y", '"+y')
