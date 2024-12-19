@@ -8,14 +8,14 @@
       "1password"
       "brave-browser"
       "cryptomator"
-      "firefox"
       "keepassxc"
       "keybase"
       "librewolf"
       "macfuse"
       "microsoft-teams"
-      "paw"
+      "rapidapi"
       "steam"
+      "zen-browser"
     ];
   };
 }

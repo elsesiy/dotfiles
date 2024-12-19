@@ -9,6 +9,7 @@
     gradle
     highlight
     pdfgrep
+    podman
     tailscale
     tor
     yubikey-manager
