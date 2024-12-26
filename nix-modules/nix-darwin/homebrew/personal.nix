@@ -10,11 +10,10 @@
       "cryptomator"
       "keepassxc"
       "keybase"
-      "librewolf"
       "macfuse"
-      "microsoft-teams"
       "rapidapi"
       "steam"
+      "tuta-mail"
       "zen-browser"
     ];
   };
