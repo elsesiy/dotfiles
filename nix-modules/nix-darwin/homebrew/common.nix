@@ -5,6 +5,7 @@
     ];
     casks = [
       "ferdium"
+      "ghostty"
       "uhk-agent"
       "wezterm" # nixpkg fails to build on x86
       "wireshark" # nipkgs broken

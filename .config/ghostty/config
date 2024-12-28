@@ -1,0 +1,33 @@
+# ghostty +show-config --default --docs
+# ghostty +list-themes
+# repetition = fallback
+
+# Font
+font-family                    = JetBrains Mono
+font-family                    = FiraCode
+font-size                      = 16
+font-thicken                   = false
+window-inherit-font-size       = true
+window-title-font-family       = JetBrains Mono
+
+# Look and Feel
+cursor-style-blink             = false
+macos-titlebar-style           = hidden
+mouse-hide-while-typing        = true
+theme                          = catppuccin-mocha
+
+# Icon
+macos-icon                     = custom-style
+macos-icon-frame               = plastic
+macos-icon-ghost-color         = purple
+macos-icon-screen-color        = black
+
+# Other
+command                        = /etc/profiles/per-user/$USER/bin/zellij
+confirm-close-surface          = false
+shell-integration-features     = no-cursor
+
+# Key bindings
+keybind                       = super+shift+i=inspector:toggle
+keybind                       = super+shift+r=reload_config
+keybind                       = global:cmd+s=toggle_quick_terminal
