@@ -10,6 +10,8 @@ local disabled = {
 		"<A-i>",
 		"<A-v>",
 		"<C-n>",
+		"<C-s>",
+		"<C-c>",
 		"<S-tab>",
 		"<leader>ds",
 		"<leader>e",
@@ -59,7 +61,6 @@ map("n", "<Leader>y", '"+y')
 map("n", "<Leader>d", '"_d')
 map("n", "<leader>sx", "yy2o<ESC>kpV:!/bin/bash<CR>", { desc = "execute command in shell and print output to buffer" })
 map("n", "`", ":cd %:h<CR>", { desc = "set cwd to folder for open file" })
-map("n", "<C-x>", ":bd<CR>", { desc = "Close the current buffer" })
 map("n", "<tab>", ":bn<CR>", { desc = "Show next buffer", noremap = true })
 map("n", "<S-tab>", ":bp<CR>", { desc = "Show previous buffer", noremap = true })
 -- https://github.com/williamboman/mason.nvim/discussions/1795

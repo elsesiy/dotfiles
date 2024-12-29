@@ -1,5 +1,4 @@
 return {
-
 	-- Git integration
 	{ "tpope/vim-fugitive", event = "VeryLazy" },
 
