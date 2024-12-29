@@ -4,11 +4,11 @@ Central place to manage my dotfiles.
 
 |Component|Application|
 |---|---|
-|OS|Darwin/Linx|
-|Terminal|WezTerm|
-|Terminal Multiplexer|Zellij|
+|OS|Darwin/Linux|
+|Terminal|[Ghostty](https://ghostty.org/)|
+|Terminal Multiplexer|[Zellij](https://zellij.dev/)|
 |Editor|Neovim ([NvChad](https://github.com/NvChad/NvChad))|
-|Shell|Fish|
+|Shell|[Fish](https://fishshell.com/)|
 |Misc configs|bat, rg, yazi|
 
 ## Pre-requisites
