@@ -1,11 +1,11 @@
 local nvlsp = require("nvchad.configs.lspconfig")
 local lspconfig = require("lspconfig")
+local capabilities = require('blink.cmp').get_lsp_capabilities()
 
 nvlsp.defaults()
 
 local on_attach = nvlsp.on_attach
 local on_init = nvlsp.on_init
-local capabilities = nvlsp.capabilities
 
 local servers = {
 	"bashls",

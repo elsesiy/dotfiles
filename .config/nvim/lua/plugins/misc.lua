@@ -66,15 +66,6 @@ local plugins = {
 		},
 	},
 	{
-		"hrsh7th/nvim-cmp",
-		opts = function()
-			return require("configs.nvim-cmp")
-		end,
-		config = function(_, opts)
-			require("cmp").setup(opts)
-		end,
-	},
-	{
 		"folke/which-key.nvim",
 		opts = {
 			show_help = false,
@@ -94,6 +85,10 @@ local plugins = {
 	},
 
 	-- disable misc built-in plugins
+	{
+		"hrsh7th/nvim-cmp",
+		enabled = false,
+	},
 	{
 		"nvim-tree/nvim-tree.lua",
 		enabled = false,
@@ -270,21 +265,6 @@ local plugins = {
 			},
 			render = "virtual",
 		},
-	},
-
-	{
-		"gelguy/wilder.nvim",
-		keys = {
-			":",
-			"/",
-			"?",
-		},
-		dependencies = {
-			"catppuccin/nvim",
-		},
-		config = function()
-			require("configs.wilder")
-		end,
 	},
 
 	-- markdown support

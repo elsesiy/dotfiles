@@ -15,6 +15,11 @@ M.ui = {
 	},
 }
 
+-- continue to use nvchads lsp signature help until blink is more mature
+-- M.lsp = {
+-- 	signature = false,
+-- }
+
 M.mason = {
 	cmd = true,
 	pkgs = {
