@@ -44,17 +44,25 @@ return {
 			use_nvim_cmp_as_default = true,
 		},
 
-		-- TODO: dynamic?
-		-- completion = {
-		-- 	ghost_text = { enabled = true },
-		-- },
+		completion = {
+			-- TODO: dynamic?
+			-- ghost_text = { enabled = true },
+
+			menu = { border = "rounded" },
+			documentation = { window = { border = "rounded" } },
+		},
 
 		keymap = {
 			preset = "default",
 		},
 
 		-- TODO: disabled for now until more configurable
-		-- signature = { enabled = true },
+		-- signature = {
+		-- 	enabled = true,
+		-- 	window = {
+		-- 		border = "rounded",
+		-- 	},
+		-- },
 
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer", "copilot" },
