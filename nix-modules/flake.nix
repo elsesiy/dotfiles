@@ -38,7 +38,7 @@
           ./nix-darwin/homebrew/common.nix
         ];
       in {
-        MBP15TB = darwin.lib.darwinSystem {
+        personal = darwin.lib.darwinSystem {
           inherit system;
           modules = common_modules ++ [
             ./nix-darwin/homebrew/personal.nix
