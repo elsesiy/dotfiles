@@ -35,7 +35,7 @@ return {
 			bigfile = {
 				enabled = true,
 				notify = false,
-				size = 100 * 1024, -- 50 KB
+				size = 500 * 1024, -- 500 KB
 			},
 
 			-- https://github.com/folke/snacks.nvim/blob/main/docs/debug.md
