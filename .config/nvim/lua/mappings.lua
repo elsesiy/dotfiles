@@ -73,6 +73,7 @@ map("n", "<leader>gR", ":G reset HEAD~", { desc = "Soft reset by n commits" })
 map("n", "<leader>gb", ":G blame<CR>", { desc = "Git blame" })
 map("n", "<leader>gp", ":G push<CR>", { desc = "Git push" })
 map("n", "<leader>gP", ":G push -f<CR>", { desc = "Git push (force)" })
+map("n", "<leader>gi", ":G rebase -i", { desc = "Interactive rebase" })
 
 ----- visual mode -----
 map("v", "<Leader>y", '"+y')
