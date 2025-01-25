@@ -13,6 +13,7 @@
     tailscale
     tor
     yubikey-manager
+    zig
     zoom-us
   ];
 }
