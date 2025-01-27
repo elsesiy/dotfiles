@@ -11,6 +11,7 @@ local servers = {
 	"bashls",
 	"ruff",
 	"terraformls",
+	"zls",
 
 	-- "jdtls" # managed via nvim-jdtls ft
 	-- "rust_analyzer" # managed via rustaceanvim

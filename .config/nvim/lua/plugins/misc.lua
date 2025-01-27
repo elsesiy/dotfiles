@@ -62,6 +62,7 @@ local plugins = {
 				"vimdoc",
 				"xml",
 				"yaml",
+				"zig",
 			},
 		},
 	},

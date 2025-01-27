@@ -36,6 +36,7 @@ M.mason = {
 		"ruff",
 		"terraform-ls",
 		"yaml-language-server",
+		"zls",
 
 		-- formatting
 		"gofumpt",
