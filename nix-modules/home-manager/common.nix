@@ -12,6 +12,7 @@
     fzf
     delta
     gum
+    gh-dash
     git
     glow
     gnused
@@ -19,7 +20,6 @@
     (writeShellScriptBin "gsed" "exec ${pkgs.gnused}/bin/sed \"$@\"")
     go
     grpcurl
-    httpie
     hyperfine
     jdk
     jq
@@ -46,6 +46,8 @@
     ripgrep
     ruby
     rubyPackages.psych
+    taskwarrior-tui
+    taskwarrior3
     tcptraceroute
     tldr
     tokei
@@ -55,6 +57,7 @@
     watch
     wget
     wrk
+    xh
     yq
 
     # rust
