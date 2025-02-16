@@ -12,10 +12,6 @@
     zsh.enable = true;
   };
 
-  services = {
-    nix-daemon.enable = true;
-  };
-
   system = {
     stateVersion = 5;
     # activationScripts are executed every time you boot the system or run `nixos-rebuild` / `darwin-rebuild`.
@@ -62,6 +58,7 @@
   security.pam.enableSudoTouchIdAuth = true;
 
   nix.settings.sandbox = false;
+  ids.gids.nixbld = 30000;
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
