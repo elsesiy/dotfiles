@@ -55,7 +55,7 @@
     };
     startup.chime = false;
   };
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   nix.settings.sandbox = false;
   ids.gids.nixbld = 30000;
