@@ -52,6 +52,8 @@ return {
 			documentation = { window = { border = "rounded" } },
 		},
 
+		fuzzy = { implementation = "prefer_rust_with_warning" },
+
 		keymap = {
 			preset = "default",
 		},
