@@ -79,12 +79,12 @@ return {
 		end,
 		event = "VeryLazy",
 		keys = {
-			-- Show prompts actions with telescope
+			-- Show prompts actions with snacks
 			{
 				"<leader>ap",
 				function()
 					local actions = require("CopilotChat.actions")
-					require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+					require("CopilotChat.integrations.snacks").pick(actions.prompt_actions())
 				end,
 				desc = "CopilotChat - Prompt actions",
 			},
@@ -97,7 +97,7 @@ return {
 			-- Chat with Copilot in visual mode
 			{
 				"<leader>ap",
-				":lua require('CopilotChat.integrations.telescope').pick(require('CopilotChat.actions').prompt_actions({selection = require('CopilotChat.select').visual}))<CR>",
+				":lua require('CopilotChat.integrations.snacks').pick(require('CopilotChat.actions').prompt_actions({selection = require('CopilotChat.select').visual}))<CR>",
 				mode = "x",
 				desc = "CopilotChat - Prompt actions",
 			},

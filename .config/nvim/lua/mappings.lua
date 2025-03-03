@@ -1,45 +1,49 @@
-require("nvchad.mappings")
-
+-- removed stock mappings from https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/mappings.lua
 local map = vim.keymap.set
-local nomap = vim.keymap.del
 
------ disabled nvchad mappings ------
-local disabled = {
-	n = {
-		"<A-h>",
-		"<A-i>",
-		"<A-v>",
-		"<C-n>",
-		"<C-s>",
-		"<C-c>",
-		"<S-tab>",
-		"<leader>ds",
-		"<leader>e",
-		"<leader>fa",
-		"<leader>fo",
-		"<leader>h",
-		"<leader>ma",
-		"<leader>n",
-		"<leader>pt",
-		"<leader>rn",
-		"<leader>th",
-		"<leader>v",
-		"<leader>x",
-		"<tab>",
-	},
-	t = {
-		"<A-h>",
-		"<A-i>",
-		"<A-v>",
-		"<C-x>",
-	},
-}
+map("i", "<C-b>", "<ESC>^i", { desc = "move beginning of line" })
+map("i", "<C-e>", "<End>", { desc = "move end of line" })
+map("i", "<C-h>", "<Left>", { desc = "move left" })
+map("i", "<C-l>", "<Right>", { desc = "move right" })
+map("i", "<C-j>", "<Down>", { desc = "move down" })
+map("i", "<C-k>", "<Up>", { desc = "move up" })
 
-for mode, mappings in pairs(disabled) do
-	for _, keys in pairs(mappings) do
-		nomap(mode, keys)
-	end
-end
+map("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
+map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
+map("n", "<C-j>", "<C-w>j", { desc = "switch window down" })
+map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
+
+map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
+
+map("n", "<leader>fm", function()
+  require("conform").format { lsp_fallback = true }
+end, { desc = "general format file" })
+
+-- global lsp mappings
+map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP diagnostic loclist" })
+
+-- tabufline
+map("n", "<leader>b", "<cmd>enew<CR>", { desc = "buffer new" })
+
+map("n", "<tab>", function()
+  require("nvchad.tabufline").next()
+end, { desc = "buffer goto next" })
+
+map("n", "<S-tab>", function()
+  require("nvchad.tabufline").prev()
+end, { desc = "buffer goto prev" })
+
+map("n", "<leader>x", function()
+  require("nvchad.tabufline").close_buffer()
+end, { desc = "buffer close" })
+
+-- whichkey
+map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
+
+map("n", "<leader>wk", function()
+  vim.cmd("WhichKey " .. vim.fn.input "WhichKey: ")
+end, { desc = "whichkey query lookup" })
+
 
 ----- normal mode -----
 map("n", "<C-d>", "<C-d>zz", {
@@ -112,12 +116,13 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
-vim.api.nvim_create_autocmd("LspAttach", {
-	callback = function(args)
-		vim.schedule(function()
-			map({ "n", "v" }, "<leader>ca", function()
-				require("tiny-code-action").code_action()
-			end, { noremap = true, silent = true, buffer = args.buf })
-		end)
-	end,
-})
+-- TODO: doesn't support snacks yet
+-- vim.api.nvim_create_autocmd("LspAttach", {
+-- 	callback = function(args)
+-- 		vim.schedule(function()
+-- 			map({ "n", "v" }, "<leader>ca", function()
+-- 				require("tiny-code-action").code_action()
+-- 			end, { noremap = true, silent = true, buffer = args.buf })
+-- 		end)
+-- 	end,
+-- })
