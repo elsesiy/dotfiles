@@ -16,6 +16,7 @@ if test -x $BREW_PATH
 end
 
 # global opts
+set -U fish_cursor_insert block
 set -U fish_greeting
 set -U fish_key_bindings fish_vi_key_bindings
 set -Ux EDITOR nvim
