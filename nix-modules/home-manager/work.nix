@@ -29,9 +29,6 @@
     maven
     mdp
     open-policy-agent
-    protoc-gen-go
-    protoc-gen-go-grpc
-    protoc-gen-grpc-web
     qemu
     redis
     tfswitch
