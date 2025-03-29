@@ -481,6 +481,18 @@ return {
           -- TODO: should be default
 					-- man_pager = "col -bx",
 				},
+
+				sources = {
+					files = {
+						hidden = true,
+						ignored = true,
+						exclude = {
+							"**/.git/*",
+							"**/node_modules/*",
+							"**/vendor/*",
+						},
+					},
+				},
 			},
 
 			-- https://github.com/folke/snacks.nvim/blob/main/docs/quickfile.md
