@@ -35,8 +35,7 @@ return {
 		config = function(_, opts)
 			local chat = require("CopilotChat")
 			local select = require("CopilotChat.select")
-			-- Use unnamed register for the selection
-			opts.selection = select.unnamed
+
 			chat.setup(opts)
 
 			vim.api.nvim_create_user_command("CopilotChatVisual", function(args)
@@ -79,12 +78,15 @@ return {
 		end,
 		event = "VeryLazy",
 		keys = {
-			-- Show prompts actions with snacks
+			-- Show prompts actions
 			{
 				"<leader>ap",
 				function()
-					local actions = require("CopilotChat.actions")
-					require("CopilotChat.integrations.snacks").pick(actions.prompt_actions())
+					require("CopilotChat").select_prompt({
+						context = {
+							"buffers",
+						},
+					})
 				end,
 				desc = "CopilotChat - Prompt actions",
 			},
@@ -97,7 +99,9 @@ return {
 			-- Chat with Copilot in visual mode
 			{
 				"<leader>ap",
-				":lua require('CopilotChat.integrations.snacks').pick(require('CopilotChat.actions').prompt_actions({selection = require('CopilotChat.select').visual}))<CR>",
+				function ()
+					require("CopilotChat").select_prompt()
+				end,
 				mode = "x",
 				desc = "CopilotChat - Prompt actions",
 			},
@@ -159,6 +163,7 @@ return {
 					insert = "",
 				},
 			},
+			model = "claude-3.7-sonnet",
 			prompts = prompts,
 			question_header = "## Me ",
 		},
