@@ -16,7 +16,7 @@ local prompts = {
 	Concise = "Please rewrite the following text to make it more concise.",
 }
 
-local default_model = function ()
+local default_model = function()
 	if vim.env.USER == "jelsesiy" then
 		return "claude-3.7-sonnet"
 	else
@@ -30,8 +30,16 @@ return {
 		cmd = "Copilot",
 		config = function()
 			require("copilot").setup({
+				copilot_model = default_model(),
 				suggestion = { enabled = false },
 				panel = { enabled = false },
+				server_opts_overrides = {
+					settings = {
+						telemetry = {
+							telemetryLevel = "off",
+						},
+					},
+				},
 			})
 		end,
 	},
@@ -106,7 +114,7 @@ return {
 			-- Chat with Copilot in visual mode
 			{
 				"<leader>ap",
-				function ()
+				function()
 					require("CopilotChat").select_prompt()
 				end,
 				mode = "x",

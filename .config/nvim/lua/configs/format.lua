@@ -10,6 +10,7 @@ local opts = {
 		java = { "google-java-format" },
 		json = { "jq" },
 		lua = { "stylua" },
+		nix = { "nixfmt" },
 		python = { "ruff_organize_imports", "ruff_format", "ruff_fix" },
 		rust = { "rustfmt" },
 		sh = { "shfmt" },
