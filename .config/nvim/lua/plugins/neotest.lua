@@ -1,7 +1,6 @@
 return {
 	{
 		"nvim-neotest/neotest",
-		event = "VeryLazy",
 		dependencies = {
 			"nvim-neotest/nvim-nio",
 			"nvim-lua/plenary.nvim",
@@ -20,7 +19,6 @@ return {
 		},
 		opts = function(_, opts)
 			opts.adapters = opts.adapters or {}
-			opts.adapters["neotest-golang"] = {}
 			opts.adapters["neotest-java"] = {}
 			opts.adapters["rustaceanvim.neotest"] = {}
 		end,

@@ -16,6 +16,14 @@ local prompts = {
 	Concise = "Please rewrite the following text to make it more concise.",
 }
 
+local default_model = function ()
+	if vim.env.USER == "jelsesiy" then
+		return "claude-3.7-sonnet"
+	else
+		return "claude-3.5-sonnet"
+	end
+end
+
 return {
 	{
 		"zbirenbaum/copilot.lua",
@@ -76,7 +84,6 @@ return {
 				end,
 			})
 		end,
-		event = "VeryLazy",
 		keys = {
 			-- Show prompts actions
 			{
@@ -163,7 +170,7 @@ return {
 					insert = "",
 				},
 			},
-			model = "claude-3.7-sonnet",
+			model = default_model(),
 			prompts = prompts,
 			question_header = "## Me ",
 		},

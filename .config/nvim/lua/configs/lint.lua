@@ -5,6 +5,7 @@ if not present then
 end
 
 lint.linters_by_ft = {
+	dockerfile = { "hadolint" },
 	go = { "golangcilint" },
 	sh = { "shellcheck" },
 	terraform = { "tflint", "tfsec" },

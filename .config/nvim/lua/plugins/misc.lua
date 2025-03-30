@@ -189,11 +189,7 @@ local plugins = {
 		"m4xshen/hardtime.nvim",
 		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
 		keys = {
-			{
-				"<Leader>ht",
-				":Hardtime toggle<CR>",
-				desc = "[h]ardtime [t]oggle",
-			},
+			{ "<Leader>ht", ":Hardtime toggle<CR>", desc = "[h]ardtime [t]oggle" },
 		},
 		opts = {},
 	},
@@ -218,53 +214,17 @@ local plugins = {
 			"kevinhwang91/promise-async",
 		},
 		keys = {
-			{
-				"zR",
-				function()
-					require("ufo").openAllFolds()
-				end,
-				"Open all folds",
-			},
-			{
-				"zM",
-				function()
-					require("ufo").closeAllFolds()
-				end,
-				"Close all folds",
-			},
-			{
-				"zV",
-				function()
-					require("ufo").peekFoldedLinesUnderCursor()
-				end,
-				"Peek folded lines",
-			},
+			{ "zR", function() require("ufo").openAllFolds() end, "Open all folds" },
+			{ "zM", function() require("ufo").closeAllFolds() end, "Close all folds" },
+			{ "zV", function() require("ufo").peekFoldedLinesUnderCursor() end, "Peek folded lines" },
 		},
-	},
-
-	-- Search & Replace
-	{
-		"nvim-pack/nvim-spectre",
-		event = "VeryLazy",
-		cmd = { "Spectre" },
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"catppuccin/nvim",
-		},
-		config = function()
-			require("configs.spectre")
-		end,
 	},
 
 	---- Undo
 	{
 		"mbbill/undotree",
 		keys = {
-			{
-				"<Leader>U",
-				":UndotreeToggle<CR>",
-				desc = "Undotree",
-			},
+			{ "<Leader>U", ":UndotreeToggle<CR>", desc = "Undotree" },
 		},
 	},
 
@@ -285,19 +245,12 @@ local plugins = {
 		end,
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		keys = {
-			{
-				"<leader>j",
-				"<cmd> TSJToggle <CR>",
-				desc = "TreeSJ toggle",
-			},
+			{ "<leader>j", "<cmd> TSJToggle <CR>", desc = "TreeSJ toggle" },
 		},
 	},
 
 	-- fix until https://github.com/neovim/neovim/issues/12517 lands to avoid files opening in quickfix and similar buffers
-	{
-		"stevearc/stickybuf.nvim",
-		opts = {},
-	},
+	{ "stevearc/stickybuf.nvim", opts = {} },
 
 	-- highlight colors, replaces NvChad/nvim-colorizer.lua
 	{
@@ -320,33 +273,25 @@ local plugins = {
 			"nvim-tree/nvim-web-devicons",
 		},
 		ft = "markdown",
-		keys = {
-			{
-				"<Leader>md",
-				":Markview<CR>",
-				desc = "Markview toggle",
-			},
-		},
+		keys = { { "<Leader>md", ":Markview<CR>", desc = "Markview toggle" } },
 	},
 
 	-- highlight words under cursor
 	{
 		"echasnovski/mini.cursorword",
-		event = "VeryLazy",
 		config = function()
 			require("mini.cursorword").setup()
 		end,
-		version = false,
+		version = "*",
 	},
 
 	-- more/enhanced treesitter textobjects
 	{
 		"echasnovski/mini.ai",
-		event = "VeryLazy",
 		config = function()
 			require("mini.ai").setup()
 		end,
-		version = false,
+		version = "*",
 	},
 
 	-- show visual separator for multiple windows

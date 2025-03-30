@@ -16,7 +16,7 @@ map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
 map("n", "<leader>fm", function()
-  require("conform").format { lsp_fallback = true }
+	require("conform").format({ lsp_fallback = true })
 end, { desc = "general format file" })
 
 -- global lsp mappings
@@ -26,41 +26,30 @@ map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP diagnostic locli
 map("n", "<leader>b", "<cmd>enew<CR>", { desc = "buffer new" })
 
 map("n", "<tab>", function()
-  require("nvchad.tabufline").next()
+	require("nvchad.tabufline").next()
 end, { desc = "buffer goto next" })
 
 map("n", "<S-tab>", function()
-  require("nvchad.tabufline").prev()
+	require("nvchad.tabufline").prev()
 end, { desc = "buffer goto prev" })
 
 map("n", "<leader>x", function()
-  require("nvchad.tabufline").close_buffer()
+	require("nvchad.tabufline").close_buffer()
 end, { desc = "buffer close" })
 
 -- whichkey
 map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
 
 map("n", "<leader>wk", function()
-  vim.cmd("WhichKey " .. vim.fn.input "WhichKey: ")
+	vim.cmd("WhichKey " .. vim.fn.input("WhichKey: "))
 end, { desc = "whichkey query lookup" })
 
-
 ----- normal mode -----
-map("n", "<C-d>", "<C-d>zz", {
-	desc = "center down",
-})
-map("n", "<C-u>", "<C-u>zz", {
-	desc = "center up",
-})
-map("n", "n", "nzzzv", {
-	desc = "center forward search",
-})
-map("n", "N", "Nzzzv", {
-	desc = "center backward search",
-})
-map("n", "<Leader>Y", '"+Y', {
-	noremap = true,
-})
+map("n", "<C-d>", "<C-d>zz", { desc = "center down" })
+map("n", "<C-u>", "<C-u>zz", { desc = "center up" })
+map("n", "n", "nzzzv", { desc = "center forward search" })
+map("n", "N", "Nzzzv", { desc = "center backward search" })
+map("n", "<Leader>Y", '"+Y', { noremap = true })
 map("n", "<Leader>y", '"+y')
 map("n", "<Leader>d", '"_d')
 map("n", "<leader>sx", "yy2o<ESC>kpV:!/bin/bash<CR>", { desc = "execute command in shell and print output to buffer" })
@@ -85,15 +74,16 @@ map("v", "<Leader>d", '"_d')
 map("v", "<C-j>", ":m '>+1<CR>gv=gv", {
 	desc = "Move visual selection down",
 })
-map("v", "<C-k>", ":m '<-2<CR>gv=gv", {
-	desc = "Move visual selection up",
-})
+map("v", "<C-k>", ":m '<-2<CR>gv=gv", { desc = "Move visual selection up" })
 map(
 	"v",
 	"<leader>sx",
 	"y'<P'<O<ESC>'>o<ESC>:<C-u>'<,'>!/bin/bash<CR>",
 	{ desc = "execute command in shell and print output to buffer" }
 )
+
+----- visual mode -----
+map("i", "jk", "<Esc>", { desc = "quick esc", silent = true })
 
 ----- autocommands -----
 vim.api.nvim_create_autocmd("FileType", {

@@ -48,6 +48,7 @@ M.mason = {
 
 		-- lint
 		"golangci-lint",
+		"hadolint",
 		"shellcheck",
 		"sqlfluff",
 		"tflint",

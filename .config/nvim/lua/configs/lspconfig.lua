@@ -1,14 +1,13 @@
 local nvlsp = require("nvchad.configs.lspconfig")
 local lspconfig = require("lspconfig")
-local capabilities = require('blink.cmp').get_lsp_capabilities()
+local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 nvlsp.defaults()
 
-local on_attach = nvlsp.on_attach
-local on_init = nvlsp.on_init
-
 local servers = {
 	"bashls",
+	"dockerls",
+	"docker_compose_language_service",
 	"ruff",
 	"terraformls",
 	"zls",
@@ -19,24 +18,48 @@ local servers = {
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
-		on_attach = on_attach,
-		on_init = on_init,
+		on_attach = nvlsp.on_attach,
+		on_init = nvlsp.on_init,
 		capabilities = capabilities,
 	})
 end
 
 lspconfig.gopls.setup({
 	capabilities = capabilities,
-	on_attach = on_attach,
-	on_init = on_init,
+	on_attach = nvlsp.on_attach,
+	on_init = function(client, _)
+		-- https://github.com/golang/go/issues/54531#issuecomment-1464982242
+		if client.name == "gopls" and not client.server_capabilities.semanticTokensProvider then
+			local semantic = client.config.capabilities.textDocument.semanticTokens
+			client.server_capabilities.semanticTokensProvider = {
+				full = true,
+				legend = { tokenModifiers = semantic.tokenModifiers, tokenTypes = semantic.tokenTypes },
+				range = true,
+			}
+		end
+	end,
 
 	settings = {
 		gopls = {
 			analyses = {
+				nilness = true,
+				unusedparams = true,
 				unusedvariable = true,
+				unusedwrite = true,
 				useany = true,
 			},
+			codelenses = {
+				gc_details = false,
+				generate = true,
+				regenerate_cgo = true,
+				run_govulncheck = true,
+				test = true,
+				tidy = true,
+				upgrade_dependency = true,
+				vendor = true,
+			},
 			completeUnimported = true,
+			directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
 			gofumpt = true,
 			-- ref: https://github.com/golang/tools/blob/master/gopls/doc/inlayHints.md
 			hints = {
@@ -48,6 +71,7 @@ lspconfig.gopls.setup({
 				parameterNames = true,
 				rangeVariableTypes = true,
 			},
+			semanticTokens = true,
 			staticcheck = true,
 			usePlaceholders = true,
 			vulncheck = "Imports",
@@ -57,8 +81,8 @@ lspconfig.gopls.setup({
 
 lspconfig.yamlls.setup({
 	capabilities = capabilities,
-	on_attach = on_attach,
-	on_init = on_init,
+	on_attach = nvlsp.on_attach,
+	on_init = nvlsp.on_init,
 
 	yaml = {
 		format = {
