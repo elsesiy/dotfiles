@@ -42,7 +42,7 @@ M.mason = {
 		"gofumpt",
 		"goimports",
 		"google-java-format",
-		"nixfmt",
+		-- "nixfmt",
 		"shfmt",
 		"stylua",
 		"yamlfix",

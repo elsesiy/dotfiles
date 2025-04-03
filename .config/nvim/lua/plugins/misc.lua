@@ -76,12 +76,14 @@ local plugins = {
 	{
 		"lewis6991/gitsigns.nvim",
 		keys = {
-			{ "]h", ":Gitsigns next_hunk<CR>", { desc = "Next git hunk" } },
-			{ "[h", ":Gitsigns prev_hunk<CR>", { desc = "Previous git hunk" } },
-			{ "<leader>hp", ":Gitsigns preview_hunk<CR>", { desc = "Preview hunk" } },
 			{ "<leader>hP", ":Gitsigns preview_hunk_inline<CR>", { desc = "Preview hunk inline" } },
+			{ "<leader>hR", ":Gitsigns reset_buffer<CR>", { desc = "Reset buffer" } },
+			{ "<leader>hp", ":Gitsigns preview_hunk<CR>", { desc = "Preview hunk" } },
+			{ "<leader>hr", ":Gitsigns reset_hunk<CR>", { desc = "Reset hunk" } },
 			{ "<leader>hs", ":Gitsigns stage_hunk<CR>", { desc = "Stage hunk" } },
-			{ "<leader>hr", ":Gitsigns undo_stage_hunk<CR>", { desc = "Reset hunk" } },
+			{ "<leader>hu", ":Gitsigns undo_stage_hunk<CR>", { desc = "Unstage hunk" } },
+			{ "[h", ":Gitsigns prev_hunk<CR>", { desc = "Previous git hunk" } },
+			{ "]h", ":Gitsigns next_hunk<CR>", { desc = "Next git hunk" } },
 		},
 	},
 
