@@ -117,4 +117,9 @@ end, {
 })
 
 ---- override NvChad defaults for diagnostics config ----
-vim.diagnostic.config({ virtual_text = false })
+vim.diagnostic.config({
+	severity_sort = true,
+	update_in_insert = true,
+	underline = true,
+	virtual_text = false,
+})
