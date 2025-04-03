@@ -106,13 +106,24 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- TODO: doesn't support snacks yet
--- vim.api.nvim_create_autocmd("LspAttach", {
--- 	callback = function(args)
--- 		vim.schedule(function()
--- 			map({ "n", "v" }, "<leader>ca", function()
--- 				require("tiny-code-action").code_action()
--- 			end, { noremap = true, silent = true, buffer = args.buf })
--- 		end)
--- 	end,
--- })
+-- override conflicting nvchad lsp mappings from https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/configs/lspconfig.lua#L5
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(args)
+		vim.schedule(function()
+			-- nvim 0.11 defaults: https://neovim.io/doc/user/lsp.html#_global-defaults
+			pcall(vim.keymap.del, "n", "gD", { buffer = args.buf })
+			pcall(vim.keymap.del, "n", "gd", { buffer = args.buf })
+			pcall(vim.keymap.del, "n", "gi", { buffer = args.buf })
+			pcall(vim.keymap.del, "n", "<leader>sh", { buffer = args.buf })
+			pcall(vim.keymap.del, "n", "D", { buffer = args.buf })
+			pcall(vim.keymap.del, "n", "<leader>ra", { buffer = args.buf })
+			pcall(vim.keymap.del, { "n", "v" }, "ca", { buffer = args.buf })
+			pcall(vim.keymap.del, "n", "gr", { buffer = args.buf })
+
+			-- TODO: doesn't support snacks yet
+			-- map({ "n", "v" }, "<leader>ca", function()
+			-- 	require("tiny-code-action").code_action()
+			-- end, { noremap = true, silent = true, buffer = args.buf })
+		end)
+	end,
+})
