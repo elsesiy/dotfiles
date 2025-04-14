@@ -222,14 +222,6 @@ local plugins = {
 		},
 	},
 
-	---- Undo
-	{
-		"mbbill/undotree",
-		keys = {
-			{ "<Leader>U", ":UndotreeToggle<CR>", desc = "Undotree" },
-		},
-	},
-
 	-- surround text objects
 	{
 		"kylechui/nvim-surround",
