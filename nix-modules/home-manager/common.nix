@@ -9,6 +9,7 @@
     crane
     curl
     fd
+    fx
     fzf
     delta
     gum
@@ -23,7 +24,6 @@
     hyperfine
     jdk
     jq
-    jqp
     kind
     krew
     kubebuilder
