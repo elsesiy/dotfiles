@@ -18,7 +18,7 @@ local prompts = {
 
 local default_model = function()
 	if vim.env.USER == "jelsesiy" then
-		return "claude-3.7-sonnet"
+		return "gemini-2.5-pro"
 	else
 		return "claude-3.5-sonnet"
 	end
