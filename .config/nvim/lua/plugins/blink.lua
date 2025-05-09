@@ -57,10 +57,8 @@ return {
 				-- ghost_text = { enabled = true },
 
 				menu = {
-					border = "rounded",
 					draw = { treesitter = { "lsp" } },
 				},
-				documentation = { window = { border = "rounded" } },
 			},
 
 			fuzzy = { implementation = "prefer_rust_with_warning" },
@@ -71,9 +69,6 @@ return {
 
 			signature = {
 				enabled = true,
-				window = {
-					border = "rounded",
-				},
 			},
 
 			sources = {
