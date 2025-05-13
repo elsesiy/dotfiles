@@ -73,7 +73,6 @@ return {
 
 			sources = {
 				default = { "lsp", "path", "snippets", "buffer", "copilot" },
-				-- TODO default = { "lsp", "path", "snippets", "buffer", "codecompanion" },
 				providers = {
 					copilot = {
 						name = "copilot",
@@ -90,11 +89,6 @@ return {
 							return items
 						end,
 					},
-					-- codecompanion = {
-					-- 	name = "CodeCompanion",
-					-- 	module = "codecompanion.providers.completion.blink",
-					-- 	enabled = true,
-					-- },
 				},
 			},
 		},
