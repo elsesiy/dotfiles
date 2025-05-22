@@ -14,7 +14,6 @@
       "rapidapi"
       "steam"
       "tuta-mail"
-      "zen-browser"
     ];
   };
 }

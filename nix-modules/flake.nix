@@ -43,6 +43,7 @@
           modules = common_modules ++ [
             ./nix-darwin/homebrew/personal.nix
             {
+              system.primaryUser = "elsesiy";
               users.users.elsesiy = {
                 name = "elsesiy";
                 home = "/Users/elsesiy";
@@ -64,6 +65,7 @@
           modules = common_modules ++ [
             ./nix-darwin/homebrew/work.nix
             {
+              system.primaryUser = "jelsesiy";
               users.users.jelsesiy = {
                 name = "jelsesiy";
                 home = "/Users/jelsesiy";
