@@ -7,6 +7,7 @@
     exercism
     exiftool
     ffmpeg
+    floorp
     gradle
     highlight
     pdfgrep
