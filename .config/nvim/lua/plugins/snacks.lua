@@ -120,7 +120,19 @@ return {
 
 			-- https://github.com/folke/snacks.nvim/blob/main/docs/indent.md
 			indent = {
-				enabled = true,
+				indent = {
+					enabled = false,
+				},
+				chunk = {
+					enabled = true,
+					char = {
+						horizontal = "─",
+						vertical = "│",
+						corner_top = "╭",
+						corner_bottom = "╰",
+						arrow = "─",
+					},
+				},
 			},
 
 			-- https://github.com/folke/snacks.nvim/blob/main/docs/input.md
@@ -137,7 +149,7 @@ return {
 						builtin = false,
 						cmd = { "delta" },
 					},
-          -- TODO: should be default
+					-- TODO: should be default
 					-- man_pager = "col -bx",
 				},
 
