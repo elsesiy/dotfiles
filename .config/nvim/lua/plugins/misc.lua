@@ -197,8 +197,10 @@ local plugins = {
 	},
 	{ "machakann/vim-highlightedyank", event = "VeryLazy" },
 	{ "kevinhwang91/nvim-bqf", event = "VeryLazy" },
-	---- Detect tabstop and shiftwidth automatically
-	{ "tpope/vim-sleuth", event = "VeryLazy" },
+	---- Detect tabstop and shiftwidth automatically, maybe replace with faster alternatives
+	{ "tpope/vim-sleuth", opts = {} },
+	-- { "Darazaki/indent-o-matic", opts = {} },
+  -- { "NMAC427/guess-indent.nvim", opts = {} },
 
 	-- Better folds
 	{
