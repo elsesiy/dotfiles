@@ -15,10 +15,6 @@ map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
 
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
-map("n", "<leader>fm", function()
-	require("conform").format({ lsp_fallback = true })
-end, { desc = "general format file" })
-
 -- global lsp mappings
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP diagnostic loclist" })
 
