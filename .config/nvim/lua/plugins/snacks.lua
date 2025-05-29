@@ -176,6 +176,9 @@ return {
 				enabled = true,
 			},
 
+			-- https://github.com/folke/snacks.nvim/blob/main/docs/terminal.md
+			terminal = {},
+
 			-- https://github.com/folke/snacks.nvim/blob/main/docs/words.md
 			words = {
 				enabled = true,

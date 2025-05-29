@@ -120,10 +120,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			pcall(vim.keymap.del, "n", "D", { buffer = args.buf })
 			pcall(vim.keymap.del, "n", "<leader>ra", { buffer = args.buf })
 
-			-- TODO: doesn't support snacks yet
-			-- map({ "n", "v" }, "<leader>ca", function()
-			-- 	require("tiny-code-action").code_action()
-			-- end, { noremap = true, silent = true, buffer = args.buf })
+			map({ "n", "v" }, "<leader>ca", function()
+				require("tiny-code-action").code_action()
+			end, { noremap = true, silent = true, buffer = args.buf })
 		end)
 	end,
 })

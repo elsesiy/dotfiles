@@ -19,9 +19,9 @@ return {
 
 		-- Key mappings (optional)
 		mappings = {
-			create = "<leader>wtc",
-			delete = "<leader>wtd",
-			switch = "<leader>wts",
+			create = "<leader>wc",
+			delete = "<leader>wd",
+			switch = "<leader>ws",
 		},
 	},
 }

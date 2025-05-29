@@ -103,17 +103,18 @@ return {
 		end,
 	},
 
-	-- {
-	-- 	"rachartier/tiny-code-action.nvim",
-	-- 	dependencies = {
-	-- 		{ "nvim-lua/plenary.nvim" },
-	-- 		{ "nvim-telescope/telescope.nvim" },
-	-- 	},
-	-- 	event = "LspAttach",
-	-- 	config = function()
-	-- 		require("tiny-code-action").setup({
-	-- 			backend = "delta",
-	-- 		})
-	-- 	end,
-	-- },
+	{
+		"rachartier/tiny-code-action.nvim",
+		event = "LspAttach",
+		opts = {
+			backend = "delta",
+			picker = "snacks",
+
+			backend_opts = {
+				delta = {
+					header_lines_to_remove = 4,
+				},
+			},
+		},
+	},
 }
