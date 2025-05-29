@@ -1,7 +1,7 @@
 local plugins = {
 	-- override misc built-in plugin configs
 	{
-		"williamboman/mason.nvim",
+		"mason-org/mason.nvim",
 		opts = {
 			PATH = "prepend",
 		},
