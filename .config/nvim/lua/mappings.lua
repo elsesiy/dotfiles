@@ -102,6 +102,14 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+local lint_g = vim.api.nvim_create_augroup("lint", { clear = true })
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+	group = lint_g,
+	callback = function()
+		require("lint").try_lint()
+	end,
+})
+
 -- override conflicting nvchad lsp mappings from https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/configs/lspconfig.lua#L5
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(args)

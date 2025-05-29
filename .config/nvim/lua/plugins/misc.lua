@@ -179,13 +179,6 @@ local plugins = {
 			require("configs.lspconfig")
 		end,
 	},
-	{
-		"mfussenegger/nvim-lint",
-		config = function()
-			require("configs.lint")
-		end,
-		event = { "BufReadPre", "BufNewFile" },
-	},
 
 	-- Better search motions
 	{
