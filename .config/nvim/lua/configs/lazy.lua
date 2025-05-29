@@ -3,6 +3,8 @@ return {
 	install = { colorscheme = { "catppuccin" } },
 
 	ui = {
+		-- https://github.com/folke/lazy.nvim/issues/1951
+		border = "single",
 		icons = {
 			ft = "",
 			lazy = "󰂠 ",
