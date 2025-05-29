@@ -132,6 +132,14 @@ keybinds clear-defaults=true {
         }
     }
     shared_except "locked" {
+        bind "Alt space" {
+            LaunchOrFocusPlugin "sessionizer" {
+                cwd "/"
+                floating true
+                move_to_focused_tab true
+                root_dirs "/Users/elsesiy/Developer;/Users/elsesiy/Documents;/Users/jelsesiy/Developer;/Users/jelsesiy/Documents"
+            }
+        }
         bind "Alt left" { MoveFocusOrTab "left"; }
         bind "Alt down" { MoveFocus "down"; }
         bind "Alt up" { MoveFocus "up"; }
@@ -262,6 +270,7 @@ plugins {
     }
     plugin-manager location="zellij:plugin-manager"
     session-manager location="zellij:session-manager"
+    sessionizer location="https://github.com/laperlej/zellij-sessionizer/releases/download/v0.4.3/zellij-sessionizer.wasm"
     status-bar location="zellij:status-bar"
     strider location="zellij:strider"
     tab-bar location="zellij:tab-bar"
