@@ -14,7 +14,7 @@
     protoc-gen-go
     protoc-gen-go-grpc
     protoc-gen-grpc-web
-    # podman doesn't compile on x86
+    podman
     tailscale
     tor
     yubikey-manager

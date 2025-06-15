@@ -13,7 +13,6 @@
     git-lfs
     git-secrets
     gnupg
-    google-cloud-sdk
     grpcui
     grype
     imagemagick

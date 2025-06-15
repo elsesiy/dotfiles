@@ -58,7 +58,7 @@
   security.pam.services.sudo_local.touchIdAuth = true;
 
   nix.settings.sandbox = false;
-  ids.gids.nixbld = 30000;
+  ids.gids.nixbld = 350;
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;

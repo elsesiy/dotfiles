@@ -1,14 +1,10 @@
 {
   homebrew = {
     brews = [
-      "node@22"
+      "node@24"
     ];
     casks = [
       "ferdium"
-      "ghostty"
-      "uhk-agent"
-      "wezterm" # nixpkg fails to build on x86
-      "wireshark" # nipkgs broken
     ];
     enable = true;
     # updates homebrew packages on activation,

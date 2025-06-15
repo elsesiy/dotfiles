@@ -12,10 +12,11 @@
     fx
     fzf
     delta
-    gum
     gh-dash
+    ghostty
     git
     glow
+    gum
     gnused
     # https://github.com/nvim-pack/nvim-spectre/issues/101
     (writeShellScriptBin "gsed" "exec ${pkgs.gnused}/bin/sed \"$@\"")
@@ -52,10 +53,12 @@
     tldr
     tokei
     tzdata
+    uhk-agent
     utm
     vhs
     watch
     wget
+    wireshark
     wrk
     xh
     yq
