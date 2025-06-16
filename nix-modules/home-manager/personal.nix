@@ -9,6 +9,7 @@
     ffmpeg
     floorp
     gradle
+    gnupg
     highlight
     pdfgrep
     protoc-gen-go

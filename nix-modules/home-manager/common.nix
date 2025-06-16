@@ -13,7 +13,6 @@
     fzf
     delta
     gh-dash
-    ghostty
     git
     glow
     gum
@@ -47,13 +46,13 @@
     ripgrep
     ruby
     rubyPackages.psych
+    spotify-player
     taskwarrior-tui
     taskwarrior3
     tcptraceroute
     tldr
     tokei
     tzdata
-    uhk-agent
     utm
     vhs
     watch

@@ -5,6 +5,8 @@
     ];
     casks = [
       "ferdium"
+      "ghostty" # nixpks broken
+      "uhk-agent" # nixpks doesn't support arm
     ];
     enable = true;
     # updates homebrew packages on activation,

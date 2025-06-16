@@ -8,6 +8,7 @@
       "1password"
       "brave-browser"
       "cryptomator"
+      "dropbox"
       "keepassxc"
       "keybase"
       "macfuse"
