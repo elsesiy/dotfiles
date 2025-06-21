@@ -11,6 +11,7 @@
       "dropbox"
       "keepassxc"
       "keybase"
+      "ledger-live"
       "macfuse"
       "rapidapi"
       "steam"
