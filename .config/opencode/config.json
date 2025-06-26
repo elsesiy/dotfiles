@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "catpuccin",
+  "theme": "catppuccin",
   "autoshare": false,
   "autoupdate": false,
   "provider": {
@@ -16,11 +16,17 @@
         "gpt-4.1": {
           "name": "gpt-4.1"
         },
-        "claude-sonnet-4": {
-          "name": "claude-sonnet-4"
+        "claude-3.5-sonnet": {
+          "name": "claude-3.5-sonnet"
         },
         "claude-3.7-sonnet": {
           "name": "claude-3.7-sonnet"
+        },
+        "claude-sonnet-4": {
+          "name": "claude-sonnet-4"
+        },
+        "claude-opus-4": {
+          "name": "claude-opus-4"
         },
         "o1": {
           "name": "o1"
