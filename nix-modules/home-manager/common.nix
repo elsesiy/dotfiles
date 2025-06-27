@@ -40,6 +40,7 @@
     postgresql
     procs
     protobuf
+    prr
     python3
     python312Packages.pip
     rectangle

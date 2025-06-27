@@ -1,6 +1,7 @@
 {
   homebrew = {
     brews = [
+      "bitwarden-cli"
       "ncdu"
       "vercel-cli"
     ];
