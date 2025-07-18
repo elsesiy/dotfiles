@@ -7,14 +7,15 @@
     exiftool
     ffmpeg
     floorp
-    gradle
     gnupg
+    gradle
     highlight
+    notion-app
     pdfgrep
+    podman
     protoc-gen-go
     protoc-gen-go-grpc
     protoc-gen-grpc-web
-    podman
     tailscale
     tor
     yubikey-manager
