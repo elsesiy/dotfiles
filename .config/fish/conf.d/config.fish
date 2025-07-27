@@ -24,3 +24,8 @@ set -Ux LANG en_US.UTF-8
 set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -Ux MANROFFOPT "-c"
 set -Ux RIPGREP_CONFIG_PATH ~/.config/ripgreprc
+
+# configure Bitwarden SSH agent if socket exists (requires default launchd ssh-agent to be disabled via launchctl disable user/$UID/com.openssh.ssh-agent)
+if test -S ~/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock
+    set -gx SSH_AUTH_SOCK ~/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock
+end
