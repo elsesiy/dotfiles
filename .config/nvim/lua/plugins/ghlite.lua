@@ -1,9 +1,7 @@
 return {
   {
     "daliusd/ghlite.nvim",
-    config = function()
-      require("ghlite").setup({})
-    end,
+    config = function() require("ghlite").setup({}) end,
     keys = {
       { "<leader>us", ":GHLitePRSelect<cr>", silent = true },
       { "<leader>uo", ":GHLitePRCheckout<cr>", silent = true },

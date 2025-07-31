@@ -5,9 +5,7 @@ return {
       -- setup dap config by VsCode launch.json file
       local vscode = require("dap.ext.vscode")
       local json = require("plenary.json")
-      vscode.json_decode = function(str)
-        return vim.json.decode(json.json_strip_comments(str))
-      end
+      vscode.json_decode = function(str) return vim.json.decode(json.json_strip_comments(str)) end
     end,
     dependencies = {
       "rcarriga/nvim-dap-ui",
@@ -18,7 +16,11 @@ return {
     },
     keys = {
       { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "toggle [d]ebug [b]reakpoint" },
-      { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: ")) end, desc = "[d]ebug [B]reakpoint" },
+      {
+        "<leader>dB",
+        function() require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: ")) end,
+        desc = "[d]ebug [B]reakpoint",
+      },
       { "<leader>dc", function() require("dap").continue() end, desc = "[d]ebug [c]ontinue (start here)" },
       { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "[d]ebug [C]ursor" },
       { "<leader>dg", function() require("dap").goto_() end, desc = "[d]ebug [g]o to line" },
@@ -43,15 +45,9 @@ return {
       local dap = require("dap")
       local dapui = require("dapui")
       dapui.setup(opts)
-      dap.listeners.after.event_initialized["dapui_config"] = function()
-        dapui.open({})
-      end
-      dap.listeners.before.event_terminated["dapui_config"] = function()
-        dapui.close({})
-      end
-      dap.listeners.before.event_exited["dapui_config"] = function()
-        dapui.close({})
-      end
+      dap.listeners.after.event_initialized["dapui_config"] = function() dapui.open({}) end
+      dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close({}) end
+      dap.listeners.before.event_exited["dapui_config"] = function() dapui.close({}) end
     end,
     dependencies = {
       "nvim-neotest/nvim-nio",
@@ -59,16 +55,12 @@ return {
     keys = {
       {
         "<leader>du",
-        function()
-          require("dapui").toggle({})
-        end,
+        function() require("dapui").toggle({}) end,
         desc = "[d]ap [u]i",
       },
       {
         "<leader>de",
-        function()
-          require("dapui").eval()
-        end,
+        function() require("dapui").eval() end,
         desc = "[d]ap [e]val",
       },
     },

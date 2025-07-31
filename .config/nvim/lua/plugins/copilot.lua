@@ -18,7 +18,7 @@ local prompts = {
 
 local default_model = function()
   if vim.env.USER == "jelsesiy" then
-    return "gemini-2.5-pro"
+    return "claude-sonnet-4"
   else
     return "claude-3.5-sonnet"
   end
@@ -54,28 +54,36 @@ return {
 
       chat.setup(opts)
 
-      vim.api.nvim_create_user_command("CopilotChatVisual", function(args)
-        chat.ask(args.args, { selection = select.visual })
-      end, { nargs = "*", range = true })
+      vim.api.nvim_create_user_command(
+        "CopilotChatVisual",
+        function(args) chat.ask(args.args, { selection = select.visual }) end,
+        { nargs = "*", range = true }
+      )
 
       -- Inline chat with Copilot
-      vim.api.nvim_create_user_command("CopilotChatInline", function(args)
-        chat.ask(args.args, {
-          selection = select.visual,
-          window = {
-            layout = "float",
-            relative = "cursor",
-            width = 1,
-            height = 0.4,
-            row = 1,
-          },
-        })
-      end, { nargs = "*", range = true })
+      vim.api.nvim_create_user_command(
+        "CopilotChatInline",
+        function(args)
+          chat.ask(args.args, {
+            selection = select.visual,
+            window = {
+              layout = "float",
+              relative = "cursor",
+              width = 1,
+              height = 0.4,
+              row = 1,
+            },
+          })
+        end,
+        { nargs = "*", range = true }
+      )
 
       -- Restore CopilotChatBuffer
-      vim.api.nvim_create_user_command("CopilotChatBuffer", function(args)
-        chat.ask(args.args, { selection = select.buffer })
-      end, { nargs = "*", range = true })
+      vim.api.nvim_create_user_command(
+        "CopilotChatBuffer",
+        function(args) chat.ask(args.args, { selection = select.buffer }) end,
+        { nargs = "*", range = true }
+      )
 
       -- Custom buffer for CopilotChat
       vim.api.nvim_create_autocmd("BufEnter", {
@@ -114,9 +122,7 @@ return {
       -- Chat with Copilot in visual mode
       {
         "<leader>ap",
-        function()
-          require("CopilotChat").select_prompt()
-        end,
+        function() require("CopilotChat").select_prompt() end,
         mode = "x",
         desc = "CopilotChat - Prompt actions",
       },

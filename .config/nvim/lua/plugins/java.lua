@@ -69,8 +69,7 @@ return {
         init_options = {
           bundles = {
             vim.fn.glob(
-              mason_dir
-              .. "/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"
+              mason_dir .. "/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"
             ),
             vim.fn.glob(mason_dir .. "/packages/java-test/extension/server/*.jar"),
           },

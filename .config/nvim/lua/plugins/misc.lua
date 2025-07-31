@@ -108,32 +108,22 @@ local plugins = {
         map("n", "<leader>hs", gitsigns.stage_hunk)
         map("n", "<leader>hr", gitsigns.reset_hunk)
 
-        map("v", "<leader>hs", function()
-          gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-        end)
+        map("v", "<leader>hs", function() gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end)
 
-        map("v", "<leader>hr", function()
-          gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-        end)
+        map("v", "<leader>hr", function() gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") }) end)
 
         map("n", "<leader>hS", gitsigns.stage_buffer)
         map("n", "<leader>hR", gitsigns.reset_buffer)
         map("n", "<leader>hp", gitsigns.preview_hunk)
         map("n", "<leader>hi", gitsigns.preview_hunk_inline)
 
-        map("n", "<leader>hb", function()
-          gitsigns.blame_line({ full = true })
-        end)
+        map("n", "<leader>hb", function() gitsigns.blame_line({ full = true }) end)
 
         map("n", "<leader>hd", gitsigns.diffthis)
 
-        map("n", "<leader>hD", function()
-          gitsigns.diffthis("~")
-        end)
+        map("n", "<leader>hD", function() gitsigns.diffthis("~") end)
 
-        map("n", "<leader>hQ", function()
-          gitsigns.setqflist("all")
-        end)
+        map("n", "<leader>hQ", function() gitsigns.setqflist("all") end)
         map("n", "<leader>hq", gitsigns.setqflist)
 
         -- Toggles
@@ -175,9 +165,7 @@ local plugins = {
   -- other plugins
   {
     "neovim/nvim-lspconfig",
-    config = function()
-      require("configs.lspconfig")
-    end,
+    config = function() require("configs.lspconfig") end,
   },
 
   -- Better search motions
@@ -213,10 +201,7 @@ local plugins = {
                   search = {
                     mode = "search",
                     exclude = {
-                      function(win)
-                        return vim.bo[vim.api.nvim_win_get_buf(win)].filetype
-                          ~= "snacks_picker_list"
-                      end,
+                      function(win) return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= "snacks_picker_list" end,
                     },
                   },
                   action = function(match)
@@ -256,9 +241,7 @@ local plugins = {
     config = function()
       --- @diagnostic disable: unused-local
       require("ufo").setup({
-        provider_selector = function(_bufnr, _filetype, _buftype)
-          return { "treesitter", "indent" }
-        end,
+        provider_selector = function(_bufnr, _filetype, _buftype) return { "treesitter", "indent" } end,
       })
     end,
     dependencies = {
@@ -275,17 +258,13 @@ local plugins = {
   {
     "kylechui/nvim-surround",
     event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup()
-    end,
+    config = function() require("nvim-surround").setup() end,
   },
 
   -- split/join objects, arrays, etc.
   {
     "Wansmer/treesj",
-    config = function()
-      require("treesj").setup()
-    end,
+    config = function() require("treesj").setup() end,
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     keys = {
       { "<leader>j", "<cmd> TSJToggle <CR>", desc = "TreeSJ toggle" },
@@ -322,18 +301,14 @@ local plugins = {
   -- highlight words under cursor
   {
     "echasnovski/mini.cursorword",
-    config = function()
-      require("mini.cursorword").setup()
-    end,
+    config = function() require("mini.cursorword").setup() end,
     version = "*",
   },
 
   -- more/enhanced treesitter textobjects
   {
     "echasnovski/mini.ai",
-    config = function()
-      require("mini.ai").setup()
-    end,
+    config = function() require("mini.ai").setup() end,
     version = "*",
   },
 

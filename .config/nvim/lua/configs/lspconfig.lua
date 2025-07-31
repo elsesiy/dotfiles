@@ -1,6 +1,6 @@
-local nvlsp = require("nvchad.configs.lspconfig")
-local lspconfig = require("lspconfig")
 local capabilities = require("blink.cmp").get_lsp_capabilities()
+local lspconfig = require("lspconfig")
+local nvlsp = require("nvchad.configs.lspconfig")
 
 nvlsp.defaults()
 
@@ -113,8 +113,8 @@ vim.keymap.set("n", "<leader>I", function()
   --- @diagnostic disable: missing-parameter
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, {
-    desc = "Toggle inlay hints",
-  })
+  desc = "Toggle inlay hints",
+})
 
 ---- override NvChad defaults for diagnostics config ----
 vim.diagnostic.config({

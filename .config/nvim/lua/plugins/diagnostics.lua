@@ -65,30 +65,22 @@ return {
     keys = {
       {
         "]t",
-        function()
-          require("todo-comments").jump_next()
-        end,
+        function() require("todo-comments").jump_next() end,
         desc = "Next todo comment",
       },
       {
         "[t",
-        function()
-          require("todo-comments").jump_prev()
-        end,
+        function() require("todo-comments").jump_prev() end,
         desc = "Previous todo comment",
       },
       {
         "<leader>st",
-        function()
-          Snacks.picker.todo_comments()
-        end,
+        function() Snacks.picker.todo_comments() end,
         desc = "Todo",
       },
       {
         "<leader>sT",
-        function()
-          Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } })
-        end,
+        function() Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } }) end,
         desc = "Todo/Fix/Fixme",
       },
     },
@@ -98,9 +90,7 @@ return {
   {
     "rachartier/tiny-inline-diagnostic.nvim",
     event = "VeryLazy",
-    config = function()
-      require("tiny-inline-diagnostic").setup()
-    end,
+    config = function() require("tiny-inline-diagnostic").setup() end,
   },
 
   {

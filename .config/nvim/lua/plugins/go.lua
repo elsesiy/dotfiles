@@ -28,9 +28,7 @@ return {
 
   {
     "olexsmir/gopher.nvim",
-    build = function()
-      vim.cmd([[silent! GoInstallDeps]])
-    end,
+    build = function() vim.cmd([[silent! GoInstallDeps]]) end,
     ft = "go",
     keys = {
       { "<leader>gsj", "<cmd>GoTagAdd json<CR>", desc = "Add json struct tags" },

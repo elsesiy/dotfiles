@@ -20,25 +20,19 @@ map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP diagnostic locli
 
 -- tabufline
 map("n", "<leader>b", "<cmd>enew<CR>", { desc = "buffer new" })
-
-map("n", "<tab>", function()
-  require("nvchad.tabufline").next()
-end, { desc = "buffer goto next" })
-
-map("n", "<S-tab>", function()
-  require("nvchad.tabufline").prev()
-end, { desc = "buffer goto prev" })
-
-map("n", "<leader>x", function()
-  require("nvchad.tabufline").close_buffer()
-end, { desc = "buffer close" })
+map("n", "<tab>", function() require("nvchad.tabufline").next() end, { desc = "buffer goto next" })
+map("n", "<S-tab>", function() require("nvchad.tabufline").prev() end, { desc = "buffer goto prev" })
+map("n", "<leader>x", function() require("nvchad.tabufline").close_buffer() end, { desc = "buffer close" })
 
 -- whichkey
 map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
 
-map("n", "<leader>wk", function()
-  vim.cmd("WhichKey " .. vim.fn.input("WhichKey: "))
-end, { desc = "whichkey query lookup" })
+map(
+  "n",
+  "<leader>wk",
+  function() vim.cmd("WhichKey " .. vim.fn.input("WhichKey: ")) end,
+  { desc = "whichkey query lookup" }
+)
 
 ----- normal mode -----
 map("n", "<C-d>", "<C-d>zz", { desc = "center down" })
@@ -97,17 +91,13 @@ vim.api.nvim_create_autocmd("FileType", {
     "query",
     "spectre_panel",
   },
-  callback = function()
-    vim.keymap.set("n", "q", vim.cmd.close, { desc = "Close the current buffer", buffer = true })
-  end,
+  callback = function() vim.keymap.set("n", "q", vim.cmd.close, { desc = "Close the current buffer", buffer = true }) end,
 })
 
 local lint_g = vim.api.nvim_create_augroup("lint", { clear = true })
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
   group = lint_g,
-  callback = function()
-    require("lint").try_lint()
-  end,
+  callback = function() require("lint").try_lint() end,
 })
 
 -- override conflicting nvchad lsp mappings from https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/configs/lspconfig.lua#L5
@@ -120,9 +110,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
       pcall(vim.keymap.del, "n", "D", { buffer = args.buf })
       pcall(vim.keymap.del, "n", "<leader>ra", { buffer = args.buf })
 
-      map({ "n", "v" }, "<leader>ca", function()
-        require("tiny-code-action").code_action()
-      end, { noremap = true, silent = true, buffer = args.buf })
+      map(
+        { "n", "v" },
+        "<leader>ca",
+        function() require("tiny-code-action").code_action() end,
+        { noremap = true, silent = true, buffer = args.buf }
+      )
     end)
   end,
 })

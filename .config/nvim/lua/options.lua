@@ -1,4 +1,4 @@
-require "nvchad.options"
+require("nvchad.options")
 
 -- Disable theme toggle
 vim.g.toggle_theme_icon = ""
@@ -34,16 +34,16 @@ vim.opt.clipboard = ""
 vim.lsp.set_log_level("off")
 -- fold config settings
 -- See: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
-vim.opt.foldcolumn = '0' -- disable fold column
+vim.opt.foldcolumn = "0" -- disable fold column
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
 
-vim.opt.winborder = 'single'
+vim.opt.winborder = "single"
 
 -- Improve diff experience
-vim.opt.diffopt:append('algorithm:patience')
-vim.opt.diffopt:append('indent-heuristic')
+vim.opt.diffopt:append("algorithm:patience")
+vim.opt.diffopt:append("indent-heuristic")
 
 -- Re-enable python provider https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/options.lua#L51-L55
 vim.g.loaded_python3_provider = 1
