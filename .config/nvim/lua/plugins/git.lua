@@ -1,7 +1,7 @@
 return {
-	-- Git integration
-	{ "tpope/vim-fugitive", event = "VeryLazy" },
+  -- Git integration
+  { "tpope/vim-fugitive", event = "VeryLazy" },
 
-	-- GitHub extension
-	{ "tpope/vim-rhubarb", event = "VeryLazy" },
+  -- GitHub extension
+  { "tpope/vim-rhubarb", event = "VeryLazy" },
 }
