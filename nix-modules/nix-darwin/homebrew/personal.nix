@@ -7,6 +7,7 @@
     ];
     casks = [
       "1password"
+      "battery"
       "brave-browser"
       "cryptomator"
       "dropbox"
