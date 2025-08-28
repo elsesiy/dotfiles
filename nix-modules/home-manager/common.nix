@@ -1,7 +1,7 @@
 { pkgs, unstable, lib, username, ... }: {
 
   home.username = lib.mkDefault "${username}";
-  home.homeDirectory = lib.mkDefault "/Users/${username}";
+  home.homeDirectory = lib.mkDefault "/home/${username}";
 
   home.stateVersion = "24.11";
 
