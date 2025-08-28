@@ -1,7 +1,6 @@
 {
   homebrew = {
     brews = [
-      "node@24"
       "sst/tap/opencode"
     ];
     casks = [

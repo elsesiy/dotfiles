@@ -1,6 +1,4 @@
 { pkgs, ... }: {
-  home.username = "jelsesiy"; 
-  home.homeDirectory = "/Users/jelsesiy"; 
 
   home.packages = with pkgs; [
     argocd

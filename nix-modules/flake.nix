@@ -3,36 +3,36 @@
 
   inputs = {
     darwin = {
-      url = "github:lnl7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    fenix = {
-      url = "github:nix-community/fenix";
+      url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/db93f9263581457386835a933ebb9d6443ff8c37";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
-  outputs = { nixpkgs, darwin, home-manager, flake-utils, fenix, ... }:
+  outputs = inputs@{ nixpkgs, nixpkgs-unstable, darwin, home-manager, flake-utils, ... }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
-
-          overlays = [
-            fenix.overlays.default
-          ];
         };
+        unstable = import nixpkgs-unstable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+        username = "jelsesiy";
       in
     {
       packages.darwinConfigurations = let
         common_modules = [
+          ./common.nix
           ./nix-darwin/common.nix
           home-manager.darwinModules.home-manager
           ./nix-darwin/homebrew/common.nix
@@ -43,12 +43,14 @@
           modules = common_modules ++ [
             ./nix-darwin/homebrew/personal.nix
             {
+              ids.gids.nixbld = 350;
               system.primaryUser = "elsesiy";
               users.users.elsesiy = {
                 name = "elsesiy";
                 home = "/Users/elsesiy";
                 shell = pkgs.fish;
               };
+              home-manager.extraSpecialArgs = { inherit inputs; username = "elsesiy"; };
               home-manager.users.elsesiy = {
                 imports = [
                   ./home-manager/common.nix
@@ -58,19 +60,21 @@
               };
             }
           ];
-          specialArgs = { inherit pkgs; };
+          specialArgs = { inherit pkgs unstable; };
         };
         work = darwin.lib.darwinSystem {
           inherit system;
           modules = common_modules ++ [
             ./nix-darwin/homebrew/work.nix
             {
-              system.primaryUser = "jelsesiy";
+              ids.gids.nixbld = 30000;
+              system.primaryUser = "${username}";
               users.users.jelsesiy = {
-                name = "jelsesiy";
+                name = "${username}";
                 home = "/Users/jelsesiy";
                 shell = pkgs.fish;
               };
+              home-manager.extraSpecialArgs = { inherit inputs username; };
               home-manager.users.jelsesiy = {
                 imports = [
                   ./home-manager/common.nix
@@ -80,7 +84,7 @@
               };
             }
           ];
-          specialArgs = { inherit pkgs; };
+          specialArgs = { inherit pkgs unstable; };
         };
       };
 
@@ -90,7 +94,7 @@
           modules = [
             ./home-manager/common.nix
           ];
-          extraSpecialArgs = { inherit pkgs; };
+          extraSpecialArgs = { inherit pkgs unstable inputs username; };
         };
       };
     }

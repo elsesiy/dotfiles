@@ -1,24 +1,23 @@
-{ pkgs, ... }: {
-  home.username = "elsesiy";
-  home.homeDirectory = "/Users/elsesiy";
+{ pkgs, unstable, ... }: {
 
-  home.packages = with pkgs; [
-    exercism
-    exiftool
-    ffmpeg
-    floorp
-    gnupg
-    gradle
-    highlight
-    notion-app
-    pdfgrep
-    podman
-    protoc-gen-go
-    protoc-gen-go-grpc
-    protoc-gen-grpc-web
-    tailscale
-    tor
-    yubikey-manager
-    zig
+  home.packages = [
+    pkgs.cosign
+    pkgs.exercism
+    pkgs.exiftool
+    pkgs.ffmpeg
+    pkgs.floorp
+    pkgs.gnupg
+    pkgs.gradle
+    pkgs.highlight
+    pkgs.notion-app
+    pkgs.pdfgrep
+    pkgs.podman
+    unstable.protoc-gen-go
+    unstable.protoc-gen-go-grpc
+    unstable.protoc-gen-grpc-web
+    pkgs.tailscale
+    pkgs.tor
+    pkgs.yubikey-manager
+    pkgs.zig
   ];
 }

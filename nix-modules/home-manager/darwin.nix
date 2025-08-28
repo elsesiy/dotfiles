@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, lib, unstable, ... }: {
   # https://github.com/nix-community/home-manager/issues/1341
   disabledModules = [ "targets/darwin/linkapps.nix" ];
   home.activation = lib.mkIf pkgs.stdenv.isDarwin {
@@ -21,4 +21,9 @@
       done
     '';
   };
+
+  home.packages = [
+    pkgs.rectangle
+    pkgs.utm
+  ];
 }

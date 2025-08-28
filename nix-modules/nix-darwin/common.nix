@@ -1,15 +1,8 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, unstable, ... }:
 
 {
-
   environment = {
     shells = [ pkgs.fish ];
-  };
-
-  programs = {
-    bash.enable = true;
-    fish.enable = true;
-    zsh.enable = true;
   };
 
   system = {
@@ -57,10 +50,9 @@
   };
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  nix.settings.sandbox = false;
-  ids.gids.nixbld = 350;
+  nix.settings.sandbox = true;
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.extraSpecialArgs = { inherit pkgs; };
+  home-manager.extraSpecialArgs = { inherit unstable; };
 }
