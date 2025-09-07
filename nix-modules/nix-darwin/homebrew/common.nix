@@ -6,7 +6,6 @@
     casks = [
       "ferdium"
       "ghostty" # nixpks broken
-      "lm-studio" # nixpks broken, switch to ollama once mlx support lands https://github.com/ollama/ollama/pull/9118
       "uhk-agent" # nixpks doesn't support arm
     ];
     taps = [

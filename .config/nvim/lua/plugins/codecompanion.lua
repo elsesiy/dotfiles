@@ -1,6 +1,6 @@
 local default_model = function()
   if vim.env.USER == "jelsesiy" then
-    return "gemini-2.5-pro"
+    return "claude-sonnet-4"
   else
     return "claude-3.5-sonnet"
   end

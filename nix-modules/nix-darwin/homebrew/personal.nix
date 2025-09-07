@@ -2,8 +2,6 @@
   homebrew = {
     brews = [
       "bitwarden-cli"
-      "ncdu"
-      "vercel-cli"
     ];
     casks = [
       "1password"
@@ -11,13 +9,13 @@
       "brave-browser"
       "cryptomator"
       "dropbox"
-      "keepassxc"
       "keybase"
-      "ledger-live"
+      "ledger-live" # x86_64-linux only
+      "lm-studio" # nixpks broken, switch to ollama once mlx support lands https://github.com/ollama/ollama/pull/9118
       "macfuse"
       "rapidapi"
       "steam"
-      "tuta-mail"
+      "tuta-mail" # x86_64-linux only
     ];
   };
 }

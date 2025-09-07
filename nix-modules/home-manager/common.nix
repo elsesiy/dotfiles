@@ -24,6 +24,7 @@
     # https://github.com/nvim-pack/nvim-spectre/issues/101
     (pkgs.writeShellScriptBin "gsed" "exec ${pkgs.gnused}/bin/sed \"$@\"")
     unstable.go
+    pkgs.graphviz
     pkgs.grpcurl
     pkgs.hyperfine
     pkgs.jdk
@@ -38,6 +39,7 @@
     pkgs.luajitPackages.luarocks
     pkgs.less
     pkgs.meld
+    pkgs.ncdu
     unstable.neovim
     pkgs.nodejs_22
     pkgs.openssl
