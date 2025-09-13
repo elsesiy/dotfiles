@@ -1,10 +1,4 @@
-local default_model = function()
-  if vim.env.USER == "jelsesiy" then
-    return "claude-sonnet-4"
-  else
-    return "claude-3.5-sonnet"
-  end
-end
+local env = require("env")
 
 return {
   {
@@ -12,7 +6,7 @@ return {
     cmd = "Copilot",
     config = function()
       require("copilot").setup({
-        copilot_model = default_model(),
+        copilot_model = env.ai_model(),
         suggestion = { enabled = false },
         panel = { enabled = false },
         server_opts_overrides = {

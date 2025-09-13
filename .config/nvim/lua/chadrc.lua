@@ -1,3 +1,4 @@
+local env = require("env")
 ---@type ChadrcConfig
 local M = {}
 
@@ -21,44 +22,7 @@ M.lsp = {
 
 M.mason = {
   cmd = true,
-  pkgs = {
-    -- dap
-    "delve",
-    "java-debug-adapter",
-    "java-test",
-
-    -- lsp
-    "bash-language-server",
-    "gopls",
-    "jdtls",
-    "lua-language-server",
-    "nil",
-    "ruff",
-    "terraform-ls",
-    "yaml-language-server",
-    "zls",
-
-    -- formatting
-    "gofumpt",
-    "goimports",
-    "google-java-format",
-    -- "nixfmt",
-    "shfmt",
-    "stylua",
-    "yamlfix",
-
-    -- lint
-    "golangci-lint",
-    "hadolint",
-    "shellcheck",
-    "sqlfluff",
-    "tflint",
-    "tfsec",
-    "yamllint",
-
-    -- spelling
-    "codespell",
-  },
+  pkgs = env.mason_pkgs(),
 }
 
 return M

@@ -1,20 +1,11 @@
 local capabilities = require("blink.cmp").get_lsp_capabilities()
 local lspconfig = require("lspconfig")
 local nvlsp = require("nvchad.configs.lspconfig")
+local env = require("env")
 
 nvlsp.defaults()
 
-local servers = {
-  "bashls",
-  "dockerls",
-  "docker_compose_language_service",
-  "ruff",
-  "terraformls",
-  "zls",
-
-  -- "jdtls" # managed via nvim-jdtls ft
-  -- "rust_analyzer" # managed via rustaceanvim
-}
+local servers = env.lsp_servers()
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
