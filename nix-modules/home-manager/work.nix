@@ -16,6 +16,7 @@
     imagemagick
     istioctl
     jsonnet
+    k3d
     k9s
     kube-linter
     kubeconform
