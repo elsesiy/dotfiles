@@ -27,6 +27,7 @@ end
 lspconfig.gopls.setup({
   capabilities = capabilities,
   on_attach = nvlsp.on_attach,
+  root_dir = lspconfig.util.root_pattern("go.mod", "go.work", ".git"),
   on_init = function(client, _)
     -- https://github.com/golang/go/issues/54531#issuecomment-1464982242
     if client.name == "gopls" and not client.server_capabilities.semanticTokensProvider then
@@ -43,6 +44,7 @@ lspconfig.gopls.setup({
     gopls = {
       analyses = {
         nilness = true,
+        ST1000 = false, -- disable https://github.com/golang/tools/blob/master/gopls/doc/analyzers.md#st1000-incorrect-or-missing-package-comment
         unusedparams = true,
         unusedvariable = true,
         unusedwrite = true,
@@ -52,21 +54,28 @@ lspconfig.gopls.setup({
         gc_details = false,
         generate = true,
         regenerate_cgo = true,
-        run_govulncheck = true,
         test = true,
         tidy = true,
         upgrade_dependency = true,
         vendor = true,
+        vulncheck = true,
       },
       completeUnimported = true,
-      directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
+      directoryFilters = {
+        "-.git",
+        "-.vscode",
+        "-.idea",
+        "-.vscode-test",
+        "-**/node_modules",
+        "-**/testdata",
+      },
       gofumpt = true,
       -- ref: https://github.com/golang/tools/blob/master/gopls/doc/inlayHints.md
       hints = {
         assignVariableTypes = true,
-        compositeLiteralFields = true,
-        compositeLiteralTypes = true,
-        constantValues = true,
+        compositeLiteralFields = false,
+        compositeLiteralTypes = false,
+        constantValues = false,
         functionTypeParameters = true,
         parameterNames = true,
         rangeVariableTypes = true,
@@ -88,6 +97,17 @@ lspconfig.yamlls.setup({
     format = {
       enable = false,
       singleQuote = true,
+    },
+  },
+})
+
+lspconfig.zls.setup({
+  capabilities = capabilities,
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  settings = {
+    zls = {
+      semantic_tokens = "partial",
     },
   },
 })
