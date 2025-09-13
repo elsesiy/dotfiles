@@ -73,6 +73,9 @@ return {
 
       sources = {
         default = { "lsp", "path", "snippets", "buffer", "copilot" },
+        per_filetype = {
+          sql = { "dadbod", "snippets", "buffer" },
+        },
         providers = {
           copilot = {
             name = "copilot",
@@ -89,6 +92,7 @@ return {
               return items
             end,
           },
+          dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
         },
       },
     },
