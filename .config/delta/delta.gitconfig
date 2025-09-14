@@ -10,15 +10,8 @@
   line-numbers = true
   navigate = true
   side-by-side = true
-[diff]
-  colorMoved = default
 [interactive]
   diffFilter = delta --color-only
-[merge]
-  tool = nvimdiff
-  conflictstyle = diff3
-[mergetool "nvimdiff"]
-    cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [pager]
   blame  = delta
   diff   = delta

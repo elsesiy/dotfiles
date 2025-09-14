@@ -53,6 +53,14 @@ Either use `JetBrainsMono` located in `fonts` or browse others [here](https://gi
        # install fish plugins
        fisher update
 
+       # update ~/.gitconfig
+       cat <<EOF >> ~/.gitconfig
+       [include]
+          path = ~/.config/delta/delta.gitconfig
+       [include]
+          path = ~/.config/git/common.gitconfig
+       EOF
+
 5. Start `nvim` and run `:MasonInstallAll`
 
 ### Nix
@@ -62,10 +70,10 @@ All required system configuration and packages utilize nix flakes (unstable nix 
 Depending on the target system, invocation will be different:
 ```
 # nix-darwin (mac)
-nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ~/nix-modules/#personal
+sudo nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ~/nix-modules/#personal
 
 # home-manager (linux)
-nix run home-manager/master --extra-experimental-features "nix-command flakes"  -- switch --flake ~/nix-modules/#development
+sudo nix run home-manager/master --extra-experimental-features "nix-command flakes"  -- switch --flake ~/nix-modules/#development
 ```
 
 Things you'd likely want to do periodically:
