@@ -24,6 +24,7 @@
     # https://github.com/nvim-pack/nvim-spectre/issues/101
     (pkgs.writeShellScriptBin "gsed" "exec ${pkgs.gnused}/bin/sed \"$@\"")
     unstable.go
+    unstable.golangci-lint
     pkgs.graphviz
     pkgs.grpcurl
     pkgs.hyperfine

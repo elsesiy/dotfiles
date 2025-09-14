@@ -50,7 +50,7 @@
   };
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  nix.settings.sandbox = true;
+  nix.settings.sandbox = "relaxed";
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
