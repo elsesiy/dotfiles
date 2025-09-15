@@ -6,6 +6,7 @@
     pkgs.exiftool
     pkgs.ffmpeg
     unstable.floorp-bin
+    pkgs.github-changelog-generator
     pkgs.gnupg
     pkgs.gradle
     pkgs.highlight
