@@ -25,6 +25,7 @@
     (pkgs.writeShellScriptBin "gsed" "exec ${pkgs.gnused}/bin/sed \"$@\"")
     unstable.go
     unstable.golangci-lint
+    unstable.govulncheck
     pkgs.graphviz
     pkgs.grpcurl
     pkgs.hyperfine
