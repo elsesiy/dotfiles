@@ -50,7 +50,7 @@ M.mason_pkgs = function()
   }
 
   local work_pkgs = {
-    "terraformls",
+    "terraform-ls",
     "tflint",
     "tfsec",
   }
