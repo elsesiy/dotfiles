@@ -1,24 +1,24 @@
 local capabilities = require("blink.cmp").get_lsp_capabilities()
-local lspconfig = require("lspconfig")
-local nvlsp = require("nvchad.configs.lspconfig")
 local env = require("env")
+local nvlsp = require("nvchad.configs.lspconfig")
 
 nvlsp.defaults()
 
 local servers = env.lsp_servers()
 
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup({
+  vim.lsp.config(lsp, {
     on_attach = nvlsp.on_attach,
     on_init = nvlsp.on_init,
     capabilities = capabilities,
   })
+  vim.lsp.enable(lsp)
 end
 
-lspconfig.gopls.setup({
+vim.lsp.config("gopls", {
   capabilities = capabilities,
   on_attach = nvlsp.on_attach,
-  root_dir = lspconfig.util.root_pattern("go.mod", "go.work", ".git"),
+  root_dir = function(bufnr, on_dir) on_dir(vim.fs.root(bufnr, { "go.mod", "go.work", ".git" })) end,
   on_init = function(client, _)
     -- https://github.com/golang/go/issues/54531#issuecomment-1464982242
     if client.name == "gopls" and not client.server_capabilities.semanticTokensProvider then
@@ -78,21 +78,25 @@ lspconfig.gopls.setup({
     },
   },
 })
+vim.lsp.enable("gopls")
 
-lspconfig.yamlls.setup({
+vim.lsp.config("yamlls", {
   capabilities = capabilities,
   on_attach = nvlsp.on_attach,
   on_init = nvlsp.on_init,
 
-  yaml = {
-    format = {
-      enable = false,
-      singleQuote = true,
+  settings = {
+    yaml = {
+      format = {
+        enable = false,
+        singleQuote = true,
+      },
     },
   },
 })
+vim.lsp.enable("yamlls")
 
-lspconfig.zls.setup({
+vim.lsp.config("zls", {
   capabilities = capabilities,
   on_attach = nvlsp.on_attach,
   on_init = nvlsp.on_init,
@@ -102,6 +106,7 @@ lspconfig.zls.setup({
     },
   },
 })
+vim.lsp.enable("zls")
 
 ---- lsp customization ----
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
