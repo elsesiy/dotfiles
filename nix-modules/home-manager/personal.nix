@@ -5,7 +5,7 @@
     pkgs.exercism
     pkgs.exiftool
     pkgs.ffmpeg
-    unstable.floorp-bin
+    unstable.floorp-bin-unwrapped
     pkgs.github-changelog-generator
     pkgs.gnupg
     pkgs.gradle
