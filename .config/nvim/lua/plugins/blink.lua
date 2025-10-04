@@ -74,6 +74,7 @@ return {
       sources = {
         default = { "lsp", "path", "snippets", "buffer", "copilot" },
         per_filetype = {
+          markdown = { inherit_defaults = true },
           sql = { "dadbod", "snippets", "buffer" },
         },
         providers = {

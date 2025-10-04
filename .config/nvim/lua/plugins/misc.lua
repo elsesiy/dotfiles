@@ -240,13 +240,21 @@ local plugins = {
 
   -- markdown support
   {
-    "OXY2DEV/markview.nvim",
+    "MeanderingProgrammer/render-markdown.nvim",
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
     },
-    ft = "markdown",
-    keys = { { "<Leader>md", ":Markview<CR>", desc = "Markview toggle" } },
+    ft = { "markdown", "copilot-chat", "opencode_output" },
+    keys = {
+      { "<Leader>md", "::RenderMarkdown toggle<CR>", desc = "RenderMarkdown toggle" },
+    },
+    opts = {
+      anti_conceal = { enabled = false },
+      blink = { enabled = true },
+      completions = { lsp = { enabled = true } },
+      file_types = { "markdown", "opencode_output" },
+    },
   },
 
   -- highlight words under cursor
