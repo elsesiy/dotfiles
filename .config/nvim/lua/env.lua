@@ -13,6 +13,7 @@ end
 M.mason_pkgs = function()
   local common_pkgs = {
     -- dap
+    "codelldb",
     "delve",
     "java-debug-adapter",
     "java-test",

@@ -3,7 +3,7 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local on_attach = function(client, buffer)
   nv_on_attach(client, buffer)
-  vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+  vim.lsp.inlay_hint.enable(true, { bufnr = buffer })
 end
 
 local options = {
@@ -15,11 +15,12 @@ local options = {
       ["rust-analyzer"] = {
         cargo = {
           allFeatures = true,
-          loadOutDirsFromCheck = true,
-          runBuildScripts = true,
+          buildScripts = {
+            enable = true,
+          },
         },
         -- Add clippy lints for Rust.
-        checkOnSave = {
+        check = {
           allFeatures = true,
           command = "clippy",
           extraArgs = { "--no-deps" },

@@ -6,6 +6,7 @@ return {
         keymap = {
           global = {
             toggle = "<leader>ot",
+            swap_position = "",
           },
         },
         text = {
