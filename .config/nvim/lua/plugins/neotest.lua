@@ -11,7 +11,7 @@ return {
       "nvim-neotest/neotest-vim-test",
 
       -- Adapters
-      "fredrikaverpil/neotest-golang",
+      { "fredrikaverpil/neotest-golang", tag = "v1.15.1" }, -- >2 requires nvim-treesitter on main which is currently blocked by NvChad, ref: https://github.com/NvChad/NvChad/pull/3313
       "rcasia/neotest-java",
       "lawrence-laz/neotest-zig",
     },
