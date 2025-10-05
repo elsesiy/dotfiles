@@ -72,6 +72,7 @@
 
     # rust
     unstable.cargo
+    unstable.cargo-edit
     unstable.clippy
     unstable.rust-analyzer
     unstable.rustc
