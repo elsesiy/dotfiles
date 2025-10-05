@@ -71,9 +71,11 @@
     pkgs.yq
 
     # rust
-    pkgs.cargo
+    unstable.cargo
+    unstable.clippy
+    unstable.rust-analyzer
     unstable.rustc
-    pkgs.rust-analyzer
+    unstable.rustfmt
   ];
 
   home.sessionVariables = {
