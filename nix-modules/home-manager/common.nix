@@ -55,6 +55,7 @@
     pkgs.ripgrep
     pkgs.ruby
     pkgs.rubyPackages.psych
+    pkgs.sd
     pkgs.spotify-player
     pkgs.taskwarrior-tui
     pkgs.taskwarrior3

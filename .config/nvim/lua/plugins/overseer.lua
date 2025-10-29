@@ -23,6 +23,15 @@ return {
       "OverseerTaskAction",
       "OverseerClearCache",
     },
+    -- stylua: ignore
+    keys = {
+      { "<leader>ow", "<cmd>OverseerToggle<cr>",      desc = "Task list" },
+      { "<leader>ox", "<cmd>OverseerRun<cr>",         desc = "Execute task" },
+      { "<leader>oq", "<cmd>OverseerQuickAction<cr>", desc = "Action recent task" },
+      { "<leader>ob", "<cmd>OverseerBuild<cr>",       desc = "Task builder" },
+      { "<leader>oT", "<cmd>OverseerTaskAction<cr>",  desc = "Task action" },
+      { "<leader>oc", "<cmd>OverseerClearCache<cr>",  desc = "Clear cache" },
+    },
     opts = {
       dap = false,
       task_list = {
@@ -49,15 +58,7 @@ return {
         },
       },
     },
-    -- stylua: ignore
-    keys = {
-      { "<leader>ow", "<cmd>OverseerToggle<cr>",      desc = "Task list" },
-      { "<leader>ox", "<cmd>OverseerRun<cr>",         desc = "Execute task" },
-      { "<leader>oq", "<cmd>OverseerQuickAction<cr>", desc = "Action recent task" },
-      { "<leader>ob", "<cmd>OverseerBuild<cr>",       desc = "Task builder" },
-      { "<leader>oT", "<cmd>OverseerTaskAction<cr>",  desc = "Task action" },
-      { "<leader>oc", "<cmd>OverseerClearCache<cr>",  desc = "Clear cache" },
-    },
+    tag = "v1.6.0", -- avoid breaking changes, see https://github.com/stevearc/overseer.nvim/pull/448
   },
   {
     "folke/which-key.nvim",

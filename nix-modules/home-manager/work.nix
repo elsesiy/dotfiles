@@ -14,12 +14,12 @@
     grpcui
     grype
     imagemagick
-    istioctl
     jsonnet
     k3d
     k9s
     kube-linter
     kubeconform
+    kubelogin-oidc
     kubernetes-helm
     kubeval
     kustomize
