@@ -54,11 +54,13 @@ vim.lsp.config("gopls", {
       completeUnimported = true,
       directoryFilters = {
         "-.git",
-        "-.vscode",
         "-.idea",
-        "-.vscode-test",
+        "-.vscode",
+        "-**/bin",
         "-**/node_modules",
         "-**/testdata",
+        "-**/vendor",
+        "-bazel-*",
       },
       gofumpt = true,
       -- ref: https://github.com/golang/tools/blob/master/gopls/doc/inlayHints.md
