@@ -4,7 +4,7 @@ local is_work = vim.env.USER == "jelsesiy"
 
 M.ai_model = function()
   if is_work then
-    return "claude-sonnet-4"
+    return "claude-sonnet-4.5"
   else
     return "claude-3.5-sonnet"
   end
