@@ -60,7 +60,10 @@ vim.lsp.config("gopls", {
         "-**/node_modules",
         "-**/testdata",
         "-**/vendor",
-        "-bazel-*",
+        "-bazel-bin",
+        "-bazel-out",
+        "-bazel-platform-debug",
+        "-bazel-testlogs",
       },
       gofumpt = true,
       -- ref: https://github.com/golang/tools/blob/master/gopls/doc/inlayHints.md
