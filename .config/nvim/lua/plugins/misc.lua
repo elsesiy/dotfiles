@@ -205,20 +205,15 @@ local plugins = {
     },
   },
 
-  -- surround text objects
-  {
-    "kylechui/nvim-surround",
-    event = "VeryLazy",
-    config = function() require("nvim-surround").setup() end,
-  },
-
   -- split/join objects, arrays, etc.
   {
     "Wansmer/treesj",
-    config = function() require("treesj").setup() end,
+    config = function() require("treesj").setup({ use_default_keymaps = false }) end,
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     keys = {
-      { "<leader>j", "<cmd> TSJToggle <CR>", desc = "TreeSJ toggle" },
+      { "<leader>lj", "<cmd> TSJToggle <CR>", desc = "TreeSJ toggle" },
+      { "<leader>ls", "<cmd> TSJSplit <CR>", desc = "TreeSJ split" },
+      { "<leader>lm", "<cmd> TSJJoin <CR>", desc = "TreeSJ join" },
     },
   },
 
@@ -257,17 +252,27 @@ local plugins = {
     },
   },
 
-  -- highlight words under cursor
+  -- more/enhanced treesitter textobjects
   {
-    "echasnovski/mini.cursorword",
-    config = function() require("mini.cursorword").setup() end,
+    "nvim-mini/mini.ai",
+    config = function() require("mini.ai").setup() end,
+    event = "VeryLazy",
     version = "*",
   },
 
-  -- more/enhanced treesitter textobjects
+  -- highlight words under cursor
   {
-    "echasnovski/mini.ai",
-    config = function() require("mini.ai").setup() end,
+    "nvim-mini/mini.cursorword",
+    config = function() require("mini.cursorword").setup() end,
+    event = "VeryLazy",
+    version = "*",
+  },
+
+  -- surround text objects
+  {
+    "nvim-mini/mini.surround",
+    event = "VeryLazy",
+    config = function() require("mini.surround").setup() end,
     version = "*",
   },
 
