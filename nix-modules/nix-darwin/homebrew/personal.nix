@@ -8,7 +8,7 @@
       # "battery" broken on Tahoe, temp use https://github.com/js4jiang5/BatteryOptimizer_for_MAC instead
       "brave-browser"
       "cryptomator"
-      "docker"
+      "docker-desktop"
       "dropbox"
       "floorp"
       "keybase"
@@ -17,7 +17,6 @@
       "macfuse"
       "rapidapi"
       "steam"
-      "tuta-mail" # x86_64-linux only
     ];
   };
 }
