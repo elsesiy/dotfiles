@@ -7,6 +7,7 @@
     pkgs.ffmpeg
     # unstable.floorp-bin-unwrapped
     pkgs.github-changelog-generator
+    unstable.goreleaser
     pkgs.gnupg
     pkgs.gradle
     pkgs.highlight
