@@ -29,7 +29,6 @@ return {
       { "<leader>ox", "<cmd>OverseerRun<cr>",         desc = "Execute task" },
       { "<leader>oq", "<cmd>OverseerQuickAction<cr>", desc = "Action recent task" },
       { "<leader>ob", "<cmd>OverseerBuild<cr>",       desc = "Task builder" },
-      { "<leader>oT", "<cmd>OverseerTaskAction<cr>",  desc = "Task action" },
       { "<leader>oc", "<cmd>OverseerClearCache<cr>",  desc = "Clear cache" },
     },
     opts = {

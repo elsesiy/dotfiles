@@ -157,6 +157,10 @@ return {
         exclude = {
           "**/.git/*",
           "**/node_modules/*",
+          "**/bazel-*/",
+          "**/bazel-bin/",
+          "**/bazel-out/",
+          "**/bazel-testlogs/",
           "**/vendor/*",
         },
 
