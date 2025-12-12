@@ -12,24 +12,15 @@ return {
       "OverseerOpen",
       "OverseerClose",
       "OverseerToggle",
-      "OverseerSaveBundle",
-      "OverseerLoadBundle",
-      "OverseerDeleteBundle",
-      "OverseerRunCmd",
       "OverseerRun",
-      "OverseerInfo",
-      "OverseerBuild",
-      "OverseerQuickAction",
+      "OverseerShell",
       "OverseerTaskAction",
-      "OverseerClearCache",
     },
     -- stylua: ignore
     keys = {
-      { "<leader>ow", "<cmd>OverseerToggle<cr>",      desc = "Task list" },
-      { "<leader>ox", "<cmd>OverseerRun<cr>",         desc = "Execute task" },
-      { "<leader>oq", "<cmd>OverseerQuickAction<cr>", desc = "Action recent task" },
-      { "<leader>ob", "<cmd>OverseerBuild<cr>",       desc = "Task builder" },
-      { "<leader>oc", "<cmd>OverseerClearCache<cr>",  desc = "Clear cache" },
+      { "<leader>ow", "<cmd>OverseerToggle<cr>", desc = "Task list" },
+      { "<leader>ox", "<cmd>OverseerRun<cr>", desc = "Execute task" },
+      { "<leader>os", "<cmd>OverseerShell<cr>", desc = "Execute ad-hoc command" },
     },
     opts = {
       dap = false,
@@ -57,7 +48,6 @@ return {
         },
       },
     },
-    tag = "v1.6.0", -- avoid breaking changes, see https://github.com/stevearc/overseer.nvim/pull/448
   },
   {
     "folke/which-key.nvim",
