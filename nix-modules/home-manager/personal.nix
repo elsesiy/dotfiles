@@ -12,7 +12,6 @@
     pkgs.gradle
     pkgs.highlight
     unstable.keepassxc
-    pkgs.nodePackages.speed-test
     pkgs.nodePackages.vercel
     pkgs.notion-app
     pkgs.pdfgrep
