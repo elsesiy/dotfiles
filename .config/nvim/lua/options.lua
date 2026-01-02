@@ -1,4 +1,5 @@
 require("nvchad.options")
+local env = require("env")
 
 -- Disable theme toggle
 vim.g.toggle_theme_icon = ""
@@ -47,3 +48,7 @@ vim.opt.diffopt:append("indent-heuristic")
 
 -- Re-enable python provider https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/options.lua#L51-L55
 vim.g.loaded_python3_provider = 1
+
+if env.is_cws() then
+  vim.g.clipboard = 'osc52'
+end

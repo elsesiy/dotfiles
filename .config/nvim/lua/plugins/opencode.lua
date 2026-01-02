@@ -1,3 +1,5 @@
+local env = require("env")
+
 return {
   "sudo-tee/opencode.nvim",
   config = function()
@@ -120,5 +122,6 @@ return {
       preferred_picker = "snacks",
     })
   end,
+  enabled = function() return not env.is_cws() end,
   event = "VeryLazy",
 }

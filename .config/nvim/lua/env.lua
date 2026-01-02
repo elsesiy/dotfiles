@@ -2,6 +2,8 @@ local M = {}
 
 local is_work = vim.env.USER == "jelsesiy"
 
+M.is_cws = function() return vim.uv.fs_stat("/etc/dpe-workspace") end
+
 M.ai_model = function()
   if is_work then
     return "claude-sonnet-4.5"
