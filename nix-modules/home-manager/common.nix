@@ -42,7 +42,6 @@
     pkgs.less
     pkgs.meld
     pkgs.ncdu
-    unstable.neovim
     pkgs.nodejs_22
     pkgs.openssl
     pkgs.pet
@@ -81,7 +80,6 @@
   ];
 
   home.sessionVariables = {
-    EDITOR = "/etc/profiles/per-user/$USER/bin/nvim";
     TERMINFO_DIRS = "/etc/profiles/per-user/$USER/share/terminfo";
     PATH = "$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:$PATH";
   };
@@ -119,6 +117,16 @@
         editor = "nvim";
         git_protocol = "ssh";
       };
+    };
+
+    neovim = {
+      enable = true;
+      package = unstable.neovim-unwrapped;
+
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+      vimdiffAlias = true;
     };
 
     starship = {
