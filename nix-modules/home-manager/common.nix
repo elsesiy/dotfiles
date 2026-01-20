@@ -55,6 +55,7 @@
     pkgs.ruby
     pkgs.rubyPackages.psych
     pkgs.sd
+    unstable.snitch
     pkgs.spotify-player
     pkgs.taskwarrior-tui
     pkgs.taskwarrior3

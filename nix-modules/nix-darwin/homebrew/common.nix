@@ -7,6 +7,7 @@
       "ferdium"
       "ghostty" # nixpks broken
       "uhk-agent" # nixpks doesn't support arm
+      "tonisives/tap/ovim" # no nixpkg yet
     ];
     taps = [
       "sst/homebrew-tap"
