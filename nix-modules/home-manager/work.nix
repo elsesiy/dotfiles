@@ -26,10 +26,11 @@
     lcov
     maven
     mdp
-    open-policy-agent
+    # open-policy-agent broken
     qemu
     redis
     tfswitch
+    utm
     vault
     zstd
   ];

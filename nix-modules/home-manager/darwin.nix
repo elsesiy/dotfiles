@@ -1,8 +1,6 @@
-{ config, pkgs, lib, unstable, ... }: {
+{ pkgs, ... }: {
 
-  home.packages = [
-    unstable.filen-desktop
-    pkgs.rectangle
-    pkgs.utm
+  home.packages = with pkgs; [
+    rectangle
   ];
 }

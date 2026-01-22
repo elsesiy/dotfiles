@@ -5,6 +5,7 @@
     pkgs.exercism
     pkgs.exiftool
     pkgs.ffmpeg
+    unstable.filen-desktop
     # unstable.floorp-bin-unwrapped
     pkgs.github-changelog-generator
     unstable.goreleaser

@@ -62,6 +62,7 @@
     pkgs.tcptraceroute
     pkgs.tldr
     pkgs.tokei
+    pkgs.tree-sitter
     pkgs.tzdata
     pkgs.vhs
     pkgs.watch

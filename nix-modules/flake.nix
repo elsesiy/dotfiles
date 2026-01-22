@@ -67,7 +67,7 @@
           modules = common_modules ++ [
             ./nix-darwin/homebrew/work.nix
             {
-              ids.gids.nixbld = 30000;
+              ids.gids.nixbld = 350;
               system.primaryUser = "${username}";
               users.users.jelsesiy = {
                 name = "${username}";
