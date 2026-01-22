@@ -5,13 +5,21 @@ return {
       "nvim-neotest/nvim-nio",
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
-      "nvim-treesitter/nvim-treesitter",
+      {
+        "nvim-treesitter/nvim-treesitter",
+        branch = "main",
+        build = function() vim.cmd(":TSUpdate go") end,
+      },
 
       "nvim-neotest/neotest-plenary",
       "nvim-neotest/neotest-vim-test",
 
       -- Adapters
-      { "fredrikaverpil/neotest-golang", tag = "v1.15.1" }, -- >2 requires nvim-treesitter on main which is currently blocked by NvChad, ref: https://github.com/NvChad/NvChad/pull/3313
+      {
+        "fredrikaverpil/neotest-golang",
+        version = "*",
+        build = function() vim.system({ "go", "install", "gotest.tools/gotestsum@latest" }):wait() end,
+      },
       "rcasia/neotest-java",
       "lawrence-laz/neotest-zig",
     },
@@ -21,6 +29,7 @@ return {
         -- Here we can set options for neotest-golang, e.g.
         -- go_test_args = { "-v", "-race", "-count=1", "-timeout=60s" },
         dap_go_enabled = true, -- requires leoluz/nvim-dap-go
+        runner = "gotestsum",
       }
       opts.adapters["neotest-java"] = {}
       opts.adapters["neotest-zig"] = {}
