@@ -21,7 +21,7 @@
     unstable.protoc-gen-go-grpc
     unstable.protoc-gen-grpc-web
     pkgs.tailscale
-    pkgs.tor
+    # pkgs.tor
     pkgs.yubikey-manager
     pkgs.zig
   ];

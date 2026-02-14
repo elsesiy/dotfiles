@@ -2,17 +2,12 @@ return {
   {
     "nvim-neotest/neotest",
     dependencies = {
-      "nvim-neotest/nvim-nio",
-      "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
-      {
-        "nvim-treesitter/nvim-treesitter",
-        branch = "main",
-        build = function() vim.cmd(":TSUpdate go") end,
-      },
-
+      "nvim-lua/plenary.nvim",
       "nvim-neotest/neotest-plenary",
       "nvim-neotest/neotest-vim-test",
+      "nvim-neotest/nvim-nio",
+      "nvim-treesitter/nvim-treesitter",
 
       -- Adapters
       {
@@ -20,8 +15,8 @@ return {
         version = "*",
         build = function() vim.system({ "go", "install", "gotest.tools/gotestsum@latest" }):wait() end,
       },
-      "rcasia/neotest-java",
       "lawrence-laz/neotest-zig",
+      "rcasia/neotest-java",
     },
     opts = function(_, opts)
       opts.adapters = opts.adapters or {}
