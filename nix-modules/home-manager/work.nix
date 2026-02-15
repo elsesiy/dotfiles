@@ -1,11 +1,12 @@
-{ pkgs, ... }: {
+{ unstable, ... }: {
 
-  home.packages = with pkgs; [
+  home.packages = with unstable; [
     argocd
     aws-iam-authenticator
     awscli2
     bazelisk
     buf
+    claude-code-acp
     dive
     ghz
     git-lfs

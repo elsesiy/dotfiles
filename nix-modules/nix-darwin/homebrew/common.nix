@@ -1,16 +1,10 @@
 {
   homebrew = {
-    brews = [
-      "sst/tap/opencode"
-    ];
     casks = [
       "ferdium"
       "ghostty" # nixpks broken
       "uhk-agent" # nixpks doesn't support arm
       "tonisives/tap/ovim" # no nixpkg yet
-    ];
-    taps = [
-      "sst/homebrew-tap"
     ];
     enable = true;
     # updates homebrew packages on activation,
