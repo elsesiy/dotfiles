@@ -15,6 +15,7 @@ cursor-style                   = block
 cursor-style-blink             = false
 macos-titlebar-style           = hidden
 mouse-hide-while-typing        = true
+resize-overlay                 = never
 theme                          = Catppuccin Mocha
 
 # Icon
@@ -30,8 +31,8 @@ confirm-close-surface          = false
 # Key bindings
 keybind                       = super+shift+i=inspector:toggle
 keybind                       = super+shift+r=reload_config
-keybind                       = global:cmd+s=toggle_quick_terminal
+keybind                       = global:cmd+\=toggle_quick_terminal
 keybind                       = ctrl+z=unbind
 
 # SSH
-shell-integration-features    = ssh-terminfo,ssh-env
+shell-integration-features    = no-cursor,ssh-terminfo,ssh-env
