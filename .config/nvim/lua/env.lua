@@ -6,9 +6,9 @@ M.is_cws = function() return vim.uv.fs_stat("/etc/dpe-workspace") end
 
 M.ai_model = function()
   if is_work then
-    return "claude-sonnet-4.5"
+    return "claude-opus-4.6"
   else
-    return "claude-3.5-sonnet"
+    return "gpt-41-copilot"
   end
 end
 
