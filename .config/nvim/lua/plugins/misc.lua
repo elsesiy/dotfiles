@@ -248,7 +248,7 @@ local plugins = {
       anti_conceal = { enabled = false },
       blink = { enabled = true },
       completions = { lsp = { enabled = true } },
-      file_types = { "markdown", "opencode_output" },
+      file_types = { "markdown", "md", "AgenticChat", "opencode_output" },
     },
   },
 

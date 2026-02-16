@@ -12,6 +12,14 @@ M.ai_model = function()
   end
 end
 
+M.ai_acp_tool = function()
+  if M.is_cws() then
+    return "claude-acp"
+  else
+    return "opencode-acp"
+  end
+end
+
 M.mason_pkgs = function()
   local common_pkgs = {
     -- dap

@@ -5,6 +5,7 @@ return {
       "rafamadriz/friendly-snippets",
       "giuxtaposition/blink-cmp-copilot",
     },
+    enabled = function() return not vim.tbl_contains({ "AgenticInput" }, vim.bo.filetype) end,
     event = "InsertEnter",
     opts = {
       appearance = {
