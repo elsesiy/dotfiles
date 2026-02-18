@@ -93,7 +93,7 @@
           inherit pkgs;
           modules = [
             ./home-manager/common.nix
-          ];
+          ] ++ nixpkgs.lib.optional (builtins.pathExists ./home-manager/optional.nix) ./home-manager/optional.nix;
           extraSpecialArgs = { inherit pkgs unstable inputs username; };
         };
       };
