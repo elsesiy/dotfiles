@@ -1,5 +1,7 @@
 [column]
   ui = auto
+[core]
+  commentChar = ";"
 [branch]
   sort = -committerdate
 [tag]
