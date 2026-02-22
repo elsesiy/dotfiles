@@ -1,6 +1,8 @@
 { pkgs, unstable, ... }: {
 
   home.packages = [
+    unstable.codex
+    unstable.codex-acp
     pkgs.cosign
     pkgs.exercism
     pkgs.exiftool
@@ -20,6 +22,7 @@
     unstable.protoc-gen-go
     unstable.protoc-gen-go-grpc
     unstable.protoc-gen-grpc-web
+    unstable.selene
     pkgs.tailscale
     # pkgs.tor
     pkgs.yubikey-manager
