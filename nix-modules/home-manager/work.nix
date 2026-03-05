@@ -5,7 +5,6 @@
     aws-iam-authenticator
     awscli2
     bazelisk
-    buf
     claude-code-acp
     dive
     ghz
@@ -32,7 +31,8 @@
     redis
     tfswitch
     utm
-    vault
+    uv
+    vault-bin
     zstd
   ];
 }

@@ -10,6 +10,7 @@
       "cryptomator"
       "docker-desktop"
       "dropbox"
+      "filen"
       "floorp"
       "keybase"
       "ledger-wallet" # x86_64-linux only
