@@ -8,7 +8,7 @@ return {
       provider = env.ai_acp_tool(),
       acp_providers = env.is_cws()
           and {
-            ["claude-acp"] = {
+            ["claude-agent-acp"] = {
               -- Temporary until https://github.com/carlos-algms/agentic.nvim/issues/120 is addressed
               --
               -- The transport only forwards a small set of essential env vars

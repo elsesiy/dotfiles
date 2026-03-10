@@ -5,7 +5,6 @@
     aws-iam-authenticator
     awscli2
     bazelisk
-    claude-code-acp
     dive
     ghz
     git-lfs

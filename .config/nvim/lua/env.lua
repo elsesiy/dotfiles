@@ -14,7 +14,7 @@ end
 
 M.ai_acp_tool = function()
   if M.is_cws() then
-    return "claude-acp"
+    return "claude-agent-acp"
   else
     return "opencode-acp"
   end
