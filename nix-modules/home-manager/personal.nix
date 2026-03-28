@@ -25,6 +25,7 @@
     unstable.selene
     pkgs.tailscale
     # pkgs.tor
+    unstable.utm
     pkgs.yubikey-manager
     pkgs.zig
   ];

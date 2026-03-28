@@ -2,7 +2,6 @@
   homebrew = {
     brews = [
       "azure-cli"
-      "claude-agent-acp"
       "pulumi"
     ];
     casks = [

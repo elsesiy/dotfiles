@@ -5,6 +5,7 @@
     aws-iam-authenticator
     awscli2
     bazelisk
+    claude-agent-acp
     dive
     ghz
     git-lfs
@@ -29,7 +30,6 @@
     qemu
     redis
     tfswitch
-    utm
     uv
     vault-bin
     zstd
