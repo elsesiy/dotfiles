@@ -113,19 +113,24 @@ vim.lsp.config("zls", {
 vim.lsp.enable("zls")
 
 ---- lsp customization ----
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = {
-    { "╭", "Comment" },
-    { "─", "Comment" },
-    { "╮", "Comment" },
-    { "│", "Comment" },
-    { "╯", "Comment" },
-    { "─", "Comment" },
-    { "╰", "Comment" },
-    { "│", "Comment" },
+vim.lsp.config("*", {
+  handlers = {
+    ["textDocument/hover"] = function(err, result, ctx, config)
+      config = config or {}
+      config.border = config.border or {
+        { "╭", "Comment" },
+        { "─", "Comment" },
+        { "╮", "Comment" },
+        { "│", "Comment" },
+        { "╯", "Comment" },
+        { "─", "Comment" },
+        { "╰", "Comment" },
+        { "│", "Comment" },
+      }
+      config.silent = config.silent or true
+      return vim.lsp.handlers.hover(err, result, ctx, config)
+    end,
   },
-  -- hide 'No information available' message
-  silent = true,
 })
 
 ---- keymaps -----

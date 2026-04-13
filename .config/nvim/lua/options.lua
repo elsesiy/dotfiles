@@ -1,6 +1,9 @@
 require("nvchad.options")
 local env = require("env")
 
+-- Enable experimental UI
+require("vim._core.ui2").enable({})
+
 -- Disable theme toggle
 vim.g.toggle_theme_icon = ""
 -- Enable virtual text inlining for DAP
@@ -32,7 +35,7 @@ vim.opt.formatoptions:remove("c", "r", "o")
 -- Disable clipboard
 vim.opt.clipboard = ""
 -- Disable lsp logging, set to "debug" when needed
-vim.lsp.set_log_level("off")
+vim.lsp.log.set_level("off")
 -- fold config settings
 -- See: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
 vim.opt.foldcolumn = "0" -- disable fold column
