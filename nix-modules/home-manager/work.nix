@@ -26,6 +26,7 @@
     lcov
     maven
     mdp
+    opencode
     # open-policy-agent broken
     qemu
     redis

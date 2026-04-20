@@ -44,7 +44,6 @@
     pkgs.ncdu
     pkgs.nodejs_22
     pkgs.openssl
-    unstable.opencode
     pkgs.pet
     pkgs.postgresql
     pkgs.procs

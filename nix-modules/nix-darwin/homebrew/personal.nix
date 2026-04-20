@@ -2,6 +2,8 @@
   homebrew = {
     brews = [
       "bitwarden-cli"
+      "anomalyco/tap/opencode"
+      "jundot/omlx/omlx"
     ];
     casks = [
       "1password"
@@ -14,10 +16,16 @@
       "floorp"
       "keybase"
       "ledger-wallet" # x86_64-linux only
-      "lm-studio" # nixpks broken, switch to ollama once mlx support lands https://github.com/ollama/ollama/pull/9118
       "macfuse"
       "rapidapi"
       "steam"
+    ];
+    taps = [
+      "anomalyco/tap"
+      {
+        name = "jundot/omlx";
+        clone_target = "https://github.com/jundot/omlx";
+      }
     ];
   };
 }
