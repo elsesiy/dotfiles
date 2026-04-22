@@ -45,6 +45,7 @@
     pkgs.nodejs_22
     pkgs.openssl
     pkgs.pet
+    pkgs.podman
     pkgs.postgresql
     pkgs.procs
     pkgs.protobuf

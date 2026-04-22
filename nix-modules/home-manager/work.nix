@@ -6,6 +6,9 @@
     awscli2
     bazelisk
     claude-agent-acp
+    codex
+    codex-acp
+    direnv
     dive
     ghz
     git-lfs

@@ -1,8 +1,6 @@
 { pkgs, unstable, ... }: {
 
   home.packages = [
-    unstable.codex
-    unstable.codex-acp
     pkgs.cosign
     pkgs.exercism
     pkgs.exiftool
@@ -18,14 +16,13 @@
     pkgs.nodePackages.vercel
     pkgs.notion-app
     pkgs.pdfgrep
-    pkgs.podman
     unstable.protoc-gen-go
     unstable.protoc-gen-go-grpc
     unstable.protoc-gen-grpc-web
     unstable.selene
     pkgs.tailscale
     # pkgs.tor
-    unstable.utm
+    # unstable.utm
     pkgs.yubikey-manager
     pkgs.zig
   ];
