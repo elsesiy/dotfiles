@@ -1,5 +1,5 @@
 local nv_on_attach = require("nvchad.configs.lspconfig").on_attach
-local capabilities = require("nvchad.configs.lspconfig").capabilities
+local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 local on_attach = function(client, buffer)
   nv_on_attach(client, buffer)

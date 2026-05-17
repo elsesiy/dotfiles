@@ -14,6 +14,6 @@ return {
       function() require("spectre").open_file_search({ select_word = true }) end,
       "Replace in current file",
     },
-    { "<Leader>rw", "v", '<esc><cmd>lua require("spectre").open_visual()<CR>', "Search current word" },
+    { "<Leader>rw", function() require("spectre").open_visual() end, mode = "v", desc = "Search current word" },
   },
 }
