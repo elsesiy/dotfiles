@@ -20,7 +20,7 @@
     unstable.protoc-gen-go-grpc
     unstable.protoc-gen-grpc-web
     unstable.selene
-    pkgs.tailscale
+    unstable.tailscale
     # pkgs.tor
     # unstable.utm
     pkgs.yubikey-manager
