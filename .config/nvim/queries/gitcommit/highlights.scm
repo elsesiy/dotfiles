@@ -1,4 +1,5 @@
-; Custom highlights for git commit editor to work with markdwon like syntax
+; extends
+; Custom highlights for git commit editor to work with markdown like syntax
 
 (title) @function
 
@@ -43,10 +44,8 @@
 
 (scissor) @comment
 
-; Capture all nodes that start with semicolon as comments
-((_) @comment
- (#match? @comment "^;.*"))
+((message_line) @comment
+ (#lua-match? @comment "^;"))
 
-; Makes markdown like headers starting with # highlighted
-((_) @function
- (#match? @function "^#.*"))
+((message_line) @comment @nospell
+ (#lua-match? @comment "^#"))
