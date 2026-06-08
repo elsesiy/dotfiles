@@ -13,14 +13,14 @@
     pkgs.gradle
     pkgs.highlight
     unstable.keepassxc
-    pkgs.nodePackages.vercel
+    # pkgs.nodePackages.vercel
     pkgs.notion-app
     pkgs.pdfgrep
     unstable.protoc-gen-go
     unstable.protoc-gen-go-grpc
     unstable.protoc-gen-grpc-web
     unstable.selene
-    unstable.tailscale
+    unstable.tailscale-gui
     # pkgs.tor
     # unstable.utm
     pkgs.yubikey-manager

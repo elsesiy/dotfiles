@@ -1,11 +1,16 @@
--- source: https://github.com/yazi-rs/plugins/blob/ac88ed352aa02730fdf6fdc5f064676de78b56d8/jump-to-char.yazi/init.lua
-local AVAILABLE_CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+--- @since 25.5.31
+
+-- source: https://github.com/yazi-rs/plugins/blob/main/jump-to-char.yazi/main.lua
+
+local AVAILABLE_CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789."
 
 local changed = ya.sync(function(st, new)
 	local b = st.last ~= new
 	st.last = new
-	return b
+	return b or not cx.active.finder
 end)
+
+local escape = function(s) return s == "." and "\\." or s end
 
 return {
 	entry = function()
@@ -19,10 +24,11 @@ return {
 			return
 		end
 
-		if changed(cands[idx].on) then
-			ya.manager_emit("find_do", { "^" .. cands[idx].on })
+		local kw = escape(cands[idx].on)
+		if changed(kw) then
+			ya.emit("find_do", { "^" .. kw })
 		else
-			ya.manager_emit("find_arrow", {})
+			ya.emit("find_arrow", {})
 		end
 	end,
 }

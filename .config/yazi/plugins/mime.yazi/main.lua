@@ -1467,7 +1467,7 @@ function M:preload()
 	end
   
 	if #mimes then
-	  ya.manager_emit("update_mimetype", {}, mimes)
+	  ya.emit("update_mimetype", {}, mimes)
 	  return 3
 	end
 	return 2

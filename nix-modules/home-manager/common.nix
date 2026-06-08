@@ -3,7 +3,7 @@
   home.username = lib.mkDefault "${username}";
   home.homeDirectory = lib.mkDefault "/home/${username}";
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "26.05";
 
   home.packages = [
     pkgs.bat
@@ -103,6 +103,8 @@
   programs = {
     home-manager.enable = true;
 
+    man.generateCaches = false;
+
     fish.enable = true;
 
     atuin = {
@@ -127,6 +129,7 @@
       package = unstable.neovim-unwrapped;
 
       defaultEditor = true;
+      sideloadInitLua = true;
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;

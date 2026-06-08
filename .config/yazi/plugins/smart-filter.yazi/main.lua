@@ -1,4 +1,7 @@
--- source: https://github.com/yazi-rs/plugins/blob/ac88ed352aa02730fdf6fdc5f064676de78b56d8/smart-filter.yazi/init.lua
+--- @since 25.12.29
+
+-- source: https://github.com/yazi-rs/plugins/blob/main/smart-filter.yazi/main.lua
+
 local hovered = ya.sync(function()
 	local h = cx.active.current.hovered
 	if not h then
@@ -15,7 +18,7 @@ end)
 local function prompt()
 	return ya.input {
 		title = "Smart filter:",
-		position = { "center", w = 50 },
+		pos = { "center", w = 50 },
 		realtime = true,
 		debounce = 0.1,
 	}
@@ -27,20 +30,21 @@ local function entry()
 	while true do
 		local value, event = input:recv()
 		if event ~= 1 and event ~= 3 then
-			ya.manager_emit("escape", { filter = true })
+			ya.emit("escape", { filter = true })
 			break
 		end
 
-		ya.manager_emit("filter_do", { value, smart = true })
+		ya.emit("filter_do", { value, smart = true })
 
 		local h = hovered()
 		if h.unique and h.is_dir then
-			ya.manager_emit("escape", { filter = true })
-			ya.manager_emit("enter", { h.url })
+			ya.emit("escape", { filter = true })
+			ya.emit("enter", {})
 			input = prompt()
 		elseif event == 1 then
-			ya.manager_emit("escape", { filter = true })
-			ya.manager_emit(h.is_dir and "enter" or "open", { h.url })
+			ya.emit("escape", { filter = true })
+			ya.emit(h.is_dir and "enter" or "open", { h.url })
+			break
 		end
 	end
 end
