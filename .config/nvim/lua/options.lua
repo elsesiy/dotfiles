@@ -17,7 +17,7 @@ vim.opt.guicursor = ""
 -- Display long lines as just one line
 vim.opt.wrap = false
 -- The encoding written to file
-vim.opt.fileencoding = "utf-8"
+vim.opt_global.fileencoding = "utf-8"
 -- Show the cursor position all the time
 vim.opt.ruler = true
 -- Treat dash separated words as a word text object
