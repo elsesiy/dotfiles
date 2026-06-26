@@ -19,17 +19,6 @@ vim.lsp.config("gopls", {
   capabilities = capabilities,
   on_attach = nvlsp.on_attach,
   root_dir = function(bufnr, on_dir) on_dir(vim.fs.root(bufnr, { "go.mod", "go.work", ".git" })) end,
-  on_init = function(client, _)
-    -- https://github.com/golang/go/issues/54531#issuecomment-1464982242
-    if client.name == "gopls" and not client.server_capabilities.semanticTokensProvider then
-      local semantic = client.config.capabilities.textDocument.semanticTokens
-      client.server_capabilities.semanticTokensProvider = {
-        full = true,
-        legend = { tokenModifiers = semantic.tokenModifiers, tokenTypes = semantic.tokenTypes },
-        range = true,
-      }
-    end
-  end,
 
   settings = {
     gopls = {

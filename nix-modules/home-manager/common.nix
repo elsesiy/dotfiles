@@ -80,6 +80,8 @@
     unstable.rust-analyzer
     unstable.rustc
     unstable.rustfmt
+  ] ++ lib.optionals pkgs.stdenv.isLinux [ 
+    pkgs.ghostty.terminfo # remote shells inherit TERM=xterm-ghostty from local ghostty
   ];
 
   home.sessionVariables = {
