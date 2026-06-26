@@ -85,7 +85,7 @@
   ];
 
   home.sessionVariables = {
-    TERMINFO_DIRS = "/etc/profiles/per-user/$USER/share/terminfo";
+    TERMINFO_DIRS = "$HOME/.nix-profile/share/terminfo:/etc/profiles/per-user/$USER/share/terminfo";
     PATH = "$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:$PATH";
   };
 
