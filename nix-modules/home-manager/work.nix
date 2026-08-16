@@ -5,7 +5,6 @@
     aws-iam-authenticator
     awscli2
     bazelisk
-    claude-agent-acp
     codex
     codex-acp
     dive

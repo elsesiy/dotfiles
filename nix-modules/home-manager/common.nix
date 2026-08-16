@@ -10,6 +10,7 @@
     pkgs.binutils
     pkgs.buf
     pkgs.clang-tools
+    unstable.claude-agent-acp
     pkgs.crane
     pkgs.curl
     pkgs.fd
@@ -31,7 +32,7 @@
     pkgs.hyperfine
     pkgs.jdk
     pkgs.jq
-    pkgs.kind
+    unstable.kind
     pkgs.krew
     pkgs.kubebuilder
     pkgs.kubectl
