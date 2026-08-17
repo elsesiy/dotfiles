@@ -14,10 +14,12 @@
       "dropbox"
       "filen"
       "floorp"
+      "fluidvoice"
       "keybase"
       "ledger-wallet" # x86_64-linux only
       "macfuse"
       "rapidapi"
+      "sshfs-mac"
       "steam"
     ];
     taps = [
