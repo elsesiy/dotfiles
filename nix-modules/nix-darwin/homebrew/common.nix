@@ -1,8 +1,5 @@
 {
   homebrew = {
-    brews = [
-      "rtk"
-    ];
     casks = [
       "ferdium"
       "ghostty" # nixpks broken

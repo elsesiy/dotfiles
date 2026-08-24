@@ -61,8 +61,6 @@ Either use `JetBrainsMono` located in `fonts` or browse others [here](https://gi
           path = ~/.config/git/common.gitconfig
        EOF
 
-       rtk init
-
        # (Optional) Start brew services, e.g.
        brew services start omlx
 
