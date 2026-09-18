@@ -1,13 +1,13 @@
 {
   homebrew = {
     brews = [
-      "bitwarden-cli"
       "anomalyco/tap/opencode"
+      "bitwarden-cli"
       "jundot/omlx/omlx"
     ];
     casks = [
       "1password"
-      # "battery" broken on Tahoe, temp use https://github.com/js4jiang5/BatteryOptimizer_for_MAC instead
+      "battopt"
       "brave-browser"
       "cryptomator"
       "docker-desktop"
@@ -24,6 +24,7 @@
     ];
     taps = [
       "anomalyco/tap"
+      "js4jiang5/homebrew-battopt"
       {
         name = "jundot/omlx";
         clone_target = "https://github.com/jundot/omlx";
