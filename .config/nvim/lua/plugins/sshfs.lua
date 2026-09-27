@@ -1,5 +1,7 @@
 return {
   "uhs-robert/sshfs.nvim",
   event = "VeryLazy",
-  opts = {},
+  opts = {
+    lead_prefix = "<leader>M",
+  },
 }

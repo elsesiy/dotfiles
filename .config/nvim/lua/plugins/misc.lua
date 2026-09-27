@@ -65,6 +65,8 @@ local plugins = {
         "zig",
       },
     },
+    -- main branch ignores `ensure_installed` in setup(), install explicitly (no-op if present)
+    config = function(_, opts) require("nvim-treesitter").install(opts.ensure_installed) end,
   },
   {
     "folke/which-key.nvim",
@@ -83,7 +85,7 @@ local plugins = {
 
         local function map(mode, l, r, opts)
           opts = opts or {}
-          opts.buffer = bufnr
+          opts.buf = bufnr
           vim.keymap.set(mode, l, r, opts)
         end
 
