@@ -152,6 +152,8 @@
 
     zellij = {
       enable = true;
+      attachExistingSession = true;
+      exitShellOnExit = true;
       enableBashIntegration = true;
       enableFishIntegration = true;
       enableZshIntegration = true;

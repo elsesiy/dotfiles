@@ -25,7 +25,6 @@ macos-icon-ghost-color         = purple
 macos-icon-screen-color        = black
 
 # Other
-command                        = /etc/profiles/per-user/$USER/bin/zellij
 confirm-close-surface          = false
 
 # Key bindings

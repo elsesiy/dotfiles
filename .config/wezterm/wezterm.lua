@@ -1,6 +1,5 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
-local user = os.getenv('USER')
 
 -- https://wezfurlong.org/wezterm/config/lua/config/term.html
 if (os.getenv("TERMINFO_DIRS")) then
@@ -13,7 +12,6 @@ end
 
 config.check_for_updates = false
 config.color_scheme = "Catppuccin Mocha"
-config.default_prog = { "/etc/profiles/per-user/" .. user .. "/bin/zellij" }
 config.disable_default_key_bindings = true
 config.enable_tab_bar = false
 config.font = wezterm.font_with_fallback({
