@@ -4,16 +4,8 @@ local is_work = vim.env.USER == "jelsesiy"
 
 M.is_cws = function() return vim.uv.fs_stat("/etc/dpe-workspace") end
 
-M.ai_model = function()
-  if is_work then
-    return "claude-opus-4.6"
-  else
-    return "gpt-41-copilot"
-  end
-end
-
 M.ai_acp_tool = function()
-  if M.is_cws() then
+  if is_work then
     return "claude-agent-acp"
   else
     return "opencode-acp"

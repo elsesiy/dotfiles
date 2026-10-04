@@ -242,7 +242,7 @@ local plugins = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
     },
-    ft = { "markdown", "copilot-chat", "opencode_output" },
+    ft = { "markdown" },
     keys = {
       { "<Leader>md", "::RenderMarkdown toggle<CR>", desc = "RenderMarkdown toggle" },
     },
@@ -250,7 +250,7 @@ local plugins = {
       anti_conceal = { enabled = false },
       blink = { enabled = true },
       completions = { lsp = { enabled = true } },
-      file_types = { "markdown", "md", "AgenticChat", "opencode_output" },
+      file_types = { "markdown", "md", "AgenticChat" },
     },
   },
 
