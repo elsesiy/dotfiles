@@ -49,6 +49,10 @@
     startup.chime = false;
   };
   security.pam.services.sudo_local.touchIdAuth = true;
+  security.pki.caCertificateBlacklist = [
+    "Comodo AAA Services root"
+    "emSign ECC Root CA - G3"
+  ];
 
   nix.settings.sandbox = "relaxed";
 
