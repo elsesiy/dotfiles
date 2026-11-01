@@ -1,22 +1,19 @@
 # Global agent instructions
 
 - Write all responses using ASD-STE100 Simplified Technical English. Use short sentences (under 20 words for steps), simple active verbs, and basic technical words. Do not use fluff, marketing terms, or made-up jargon.
-- Never use the em dash "—". Use plain dash "-" instead
-- When writing commit messages, NEVER auto-add your agent name as co-author
-- Use conventional commit messages
+- Never use the em dash (U+2014). Use a plain dash "-" instead.
+- When writing commit messages or PR descriptions, NEVER auto-add your agent name as co-author.
+- Use conventional commit messages.
 - When opening Pull Requests, do not document prior iterations. Always document only the current and final change status.
-- Never manually modify CHANGELOG.md, go vendor, node_modules or any files that are marked as auto-generated
-- When making technical decisions, do not give much weight to development cost.
-  Instead, prefer quality, simplicity, robustness, scalability, and long term maintainability.
-- For one-off or infrequent operational work, start with the simplest direct end-to-end path. Do not build wrappers, control planes, policy layers, custom verifiers, or automation unless the direct path exposes a concrete blocker or repeated need that justifies the added machinery.
+- Never manually modify CHANGELOG.md, vendor/ directories, node_modules/, or any files that are marked as auto-generated.
+- When making technical decisions, prefer quality, simplicity, robustness, scalability, and long term maintainability over development cost. For one-off work, start with the simplest end-to-end path (see ponytail).
 - When doing bug fixes, always start with reproducing the bug in an E2E setting as closely aligned with how an end user would experience it as possible.
   This makes sure you find the real problem so your fix will actually solve it.
-- When end-to-end testing a product, be picky about the UI you see and be obsessed with pixel perfection.
-  If something clearly looks off, even if it is not directly related to what you are doing, try to get it fixed along the way.
-- Apply that same high standard to engineering excellence: lint, test failures, and test flakiness.
-  If you see one, even if it is not caused by what you are working on right now, still get it fixed.
-- Before using "dynamic workflows", "ultra code" or any harness feature that immediately spawns a large swarm of subagents, always explain the tradeoffs and ask the user for explicit approval.
-- When completing a task, always conduct a code review using ponytail. If ponytail is unavailable, prompt me to add it.
+- Apply a high standard everywhere: be picky about UI and pixel details, and fix lint, test failures, and test flakiness even when they are outside your current task.
+- When adding new tests, ensure they are focused on business logic and not tautological tests.
+- Before using any harness feature that spawns many subagents, explain the tradeoffs and ask the user for explicit approval.
+- When completing a task, run a ponytail review for over-engineering, plus a correctness review. If ponytail is unavailable, prompt me to add it.
+- Do not install system tools outside nix. Do not use homebrew or direct downloads. Use `nix-shell -p <pkg> --run '<cmd>'` or `nix shell nixpkgs#<pkg> -c <cmd>`.
 
 ## Maintaining this file
 
