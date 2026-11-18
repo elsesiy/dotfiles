@@ -4,6 +4,7 @@
 - Never use the em dash (U+2014). Use a plain dash "-" instead.
 - When writing commit messages or PR descriptions, NEVER auto-add your agent name as co-author.
 - Use conventional commit messages.
+- Always open Pull Requests as draft.
 - When opening Pull Requests, do not document prior iterations. Always document only the current and final change status.
 - Never manually modify CHANGELOG.md, vendor/ directories, node_modules/, or any files that are marked as auto-generated.
 - When making technical decisions, prefer quality, simplicity, robustness, scalability, and long term maintainability over development cost. For one-off work, start with the simplest end-to-end path (see ponytail).
