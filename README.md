@@ -5,17 +5,15 @@ Central place to manage my dotfiles.
 |Component|Application|
 |---|---|
 |OS|Darwin/Linux|
-|Terminal|[Ghostty](https://ghostty.org/)|
-|Terminal Multiplexer|[Zellij](https://zellij.dev/)|
+|Terminal|[Rex](https://www.superlogical.com/rex)|
 |Editor|Neovim ([NvChad](https://github.com/NvChad/NvChad))|
 |Shell|[Fish](https://fishshell.com/)|
 |Misc configs|bat, rg, yazi|
 
 ## Pre-requisites
 
-- Install font for icons to work & update terminal accordingly.
-Either use `JetBrainsMono` located in `fonts` or browse others [here](https://github.com/ryanoasis/nerd-fonts)
 - Install [Nix (Package Manager)](https://nixos.org/download/)
+- The terminal font (JetBrainsMono Nerd Font Mono) is installed via Nix on macOS. On other systems, install it from [nerd-fonts](https://github.com/ryanoasis/nerd-fonts).
 
 ## Usage
 
@@ -49,6 +47,10 @@ Either use `JetBrainsMono` located in `fonts` or browse others [here](https://gi
 
        # rebuild bat cache
        bat cache --build
+
+       # apply Rex theme, font, left toolbar & agents integration (turn on Remote Control in Rex settings first)
+       # if it asks for a client, pick the app one: rex client ls, then rex -C <id> do apply_appearance
+       rex do apply_appearance
 
        # install fish plugins
        fisher update

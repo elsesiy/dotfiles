@@ -108,7 +108,15 @@
 
     man.generateCaches = false;
 
-    fish.enable = true;
+    fish = {
+      enable = true;
+      # nix-darwin resets PATH on shell start, which drops the rex dir Rex adds
+      interactiveShellInit = ''
+        if set -q REX_BIN_DIR
+          fish_add_path --path --prepend --move $REX_BIN_DIR
+        end
+      '';
+    };
 
     atuin = {
       enable = true; # default shell integration
@@ -154,9 +162,7 @@
       enable = true;
       attachExistingSession = true;
       exitShellOnExit = true;
-      enableBashIntegration = true;
-      enableFishIntegration = true;
-      enableZshIntegration = true;
+      enableFishIntegration = pkgs.stdenv.isLinux; # Rex multiplexes on macOS
     };
 
     zoxide = {

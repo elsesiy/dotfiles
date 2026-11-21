@@ -3,6 +3,12 @@
 {
   environment = {
     shells = [ pkgs.fish ];
+    # nix-darwin resets PATH on shell start, which drops the rex dir Rex adds
+    interactiveShellInit = ''
+      if [ -n "$REX_BIN_DIR" ]; then
+        export PATH="$REX_BIN_DIR:$PATH"
+      fi
+    '';
   };
 
   system = {
